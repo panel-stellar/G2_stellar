@@ -1,1 +1,1 @@
-# G3_stellar
+# G2_stellar
