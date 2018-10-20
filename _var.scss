@@ -1,0 +1,21 @@
+$basefont: 18px;
+$fontsize: 90px;
+$fontfamily: 微軟正黑體;
+$fontWeight : bold;
+$num: 20px;
+$textcenter : center;
+
+//
+$moblie : 721px;
+$medium:  1090px;
+$desktop : 1920px;
+
+//
+$breakpoint : (moblie : 721px,
+medium: 988px,
+desktop: 722px,
+xx-desktop: 2000px);
+
+//
+$position-ab : absolute;
+$position-fx : fixed;
