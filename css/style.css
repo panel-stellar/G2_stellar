@@ -1,0 +1,763 @@
+body {
+  line-height: 1; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+.clearfix:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  clear: both; }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+@font-face {
+  font-family: 'Noto Sans TC', sans-serif;
+  src: url(http://fonts.googleapis.com/earlyaccess/notosanstc.css); }
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans TC', sans-serif; }
+
+section {
+  width: 100%;
+  padding: 50px 0; }
+
+section > div {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto; }
+
+button, input[type=text], input[type=file] {
+  -webkit-appearance: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: none;
+  background-color: #fff; }
+
+input[type=text], input[type=file] {
+  border-radius: 3px; }
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+.gallery_box {
+  position: relative;
+  -webkit-box-shadow: 0px 0px 5px #fff;
+  box-shadow: 0px 0px 5px #fff; }
+  .gallery_box a {
+    color: #fff; }
+
+.album_p {
+  margin-left: 10px; }
+
+.album_username a {
+  font-size: 18px;
+  font-weight: 700; }
+
+.album_username, .album_loc, .album_date {
+  padding: 3px 0; }
+
+.album_loc, .album_date {
+  display: inline-block; }
+
+.album_date {
+  font-size: 14px;
+  vertical-align: top; }
+  .album_date.gallery {
+    color: #fff; }
+
+.album_statistics {
+  font-size: 0; }
+  .album_statistics span, .album_statistics i {
+    font-size: 18px;
+    margin: 0 3px; }
+  .album_statistics.gallery {
+    padding: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0; }
+  .album_statistics.lightbox {
+    padding: 10px 0px; }
+
+.album_view, .album_comment {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 5px; }
+  .album_view.gallery, .album_comment.gallery {
+    color: #fff; }
+  .album_view.lightbox, .album_comment.lightbox {
+    color: #111; }
+
+.album_mul_icon {
+  color: #fff;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 22px;
+  padding: 10px; }
+
+.album_userpic, .album_p {
+  display: inline-block;
+  vertical-align: middle; }
+
+.album_userinfo {
+  font-size: 0; }
+  .album_userinfo.gallery {
+    position: absolute;
+    padding: 10px;
+    left: 0;
+    top: 0; }
+  .album_userinfo.lightbox {
+    color: #111;
+    padding: 10px 0px; }
+
+.album_userpic {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%; }
+
+.album_loc {
+  font-size: 14px; }
+  .album_loc:after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 1px;
+    height: 0;
+    padding-bottom: 15%;
+    margin: 0 10px; }
+  .album_loc.gallery:after {
+    background-color: #fff; }
+  .album_loc.lightbox:after {
+    background-color: #111; }
+
+.lightbox_sec {
+  display: none; }
+  .lightbox_sec .lightbox_content {
+    position: relative; }
+  .lightbox_sec .lightbox_box {
+    background-color: #fff;
+    position: fixed;
+    top: 8%;
+    left: 0;
+    right: 0;
+    bottom: 5%;
+    margin: auto;
+    z-index: 2;
+    padding: 25px;
+    max-height: 100%;
+    overflow: auto;
+    border-radius: 5px; }
+  .lightbox_sec .lightbox_bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    background-color: rgba(0, 0, 0, 0.8); }
+  .lightbox_sec a {
+    color: #111; }
+  .lightbox_sec .lightbox_box_upper, .lightbox_sec .lightbox_box_lower {
+    position: relative; }
+  .lightbox_sec .album_carousel {
+    position: relative; }
+    .lightbox_sec .album_carousel img {
+      margin: auto; }
+    .lightbox_sec .album_carousel .prev, .lightbox_sec .album_carousel .next {
+      color: rgba(200, 200, 200, 0.9);
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      font-size: 36px;
+      padding: 10px; }
+    .lightbox_sec .album_carousel .prev {
+      left: 0; }
+    .lightbox_sec .album_carousel .next {
+      right: 0; }
+  .lightbox_sec .album_tags {
+    font-size: 0;
+    margin: 20px 0px; }
+    .lightbox_sec .album_tags .album_tag {
+      padding: 5px;
+      margin: 5px 0px;
+      border: 1px solid #111; }
+  .lightbox_sec .album_tags {
+    font-size: 0;
+    margin: 20px 0px; }
+    .lightbox_sec .album_tags .album_tag {
+      padding: 5px;
+      margin: 5px 0px;
+      border: 1px solid #111; }
+    .lightbox_sec .album_tags .album_tag {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px; }
+  .lightbox_sec .response_box {
+    position: relative;
+    padding: 15px 10px; }
+  .lightbox_sec .response_userpic, .lightbox_sec .response_p {
+    display: inline-block;
+    vertical-align: middle; }
+  .lightbox_sec .response_p {
+    margin-left: 10px; }
+  .lightbox_sec .response_userinfo {
+    font-size: 0;
+    color: #111;
+    padding: 10px 0px; }
+  .lightbox_sec .response_userpic {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%; }
+  .lightbox_sec .response_username a {
+    font-size: 18px;
+    font-weight: 700; }
+  .lightbox_sec .response_username, .lightbox_sec .response_floor, .lightbox_sec .response_date, .lightbox_sec .response_time {
+    padding: 3px 0; }
+  .lightbox_sec .response_floor, .lightbox_sec .response_date, .lightbox_sec .response_time {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px; }
+  .lightbox_sec .response_floor:after, .lightbox_sec .response_date:after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 1px;
+    height: 15px;
+    margin: 0 8px;
+    background-color: #111; }
+  .lightbox_sec .album_msg_box {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 0;
+    background-color: #a4d9f9; }
+    .lightbox_sec .album_msg_box .msg_box {
+      height: 35px;
+      border-radius: 3px;
+      padding: 5px;
+      -webkit-transition: .4s;
+      -o-transition: .4s;
+      transition: .4s; }
+      .lightbox_sec .album_msg_box .msg_box:focus {
+        height: 100px;
+        -webkit-transition: .4s;
+        -o-transition: .4s;
+        transition: .4s; }
+    .lightbox_sec .album_msg_box .send_btn {
+      color: #41bffa;
+      font-weight: 700;
+      border-radius: 3px; }
+  .lightbox_sec .response_msg {
+    padding: 15px 0px; }
+  .lightbox_sec .album_date {
+    font-size: 14px;
+    vertical-align: top; }
+    .lightbox_sec .album_date.gallery {
+      color: #fff; }
+  .lightbox_sec #album_menu, .lightbox_sec .response_menu {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    text-align: right; }
+    .lightbox_sec #album_menu .menu_btn, .lightbox_sec .response_menu .menu_btn {
+      font-size: 26px; }
+  .lightbox_sec .drop_down_menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0%;
+    z-index: 1;
+    background-color: #ccc;
+    -webkit-box-shadow: 1px 5px 5px #888;
+    box-shadow: 1px 5px 5px #888; }
+    .lightbox_sec .drop_down_menu .edit_btn, .lightbox_sec .drop_down_menu .report_btn, .lightbox_sec .drop_down_menu .cancel_btn {
+      width: 120px;
+      height: 45px;
+      font-size: 16px; }
+    .lightbox_sec .drop_down_menu .cancel_btn {
+      color: #f00; }
+  .lightbox_sec .lightbox_close_btn {
+    font-size: 20px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 40px;
+    border-radius: 0 0 0 50%;
+    background-color: #aaa;
+    text-align: center;
+    line-height: 40px; }
+
+.gallery_marks {
+  font-size: 0;
+  text-align: center;
+  padding: 20px 0px; }
+  .gallery_marks li {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px; }
+  .gallery_marks .gallery_mark {
+    font-size: 22px;
+    padding: 5px;
+    color: #fff; }
+
+#albumUpdate_page {
+  background-image: url("../../../pic/bg_6.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+  #albumUpdate_page .albumUpdate_content {
+    max-width: 1200px; }
+  #albumUpdate_page header {
+    width: 90%;
+    color: #fff;
+    text-align: left;
+    background-color: transparent;
+    max-width: 1200px;
+    margin: auto; }
+  #albumUpdate_page .submit_btn, #albumUpdate_page .cancel_btn, #albumUpdate_page .select_btn, #albumUpdate_page .add_btn {
+    height: 30px;
+    font-size: 14px; }
+  #albumUpdate_page .submit_btn, #albumUpdate_page .cancel_btn {
+    width: 100px; }
+  #albumUpdate_page .select_btn {
+    width: 120px; }
+  #albumUpdate_page .form_cell {
+    padding: 20px 0px; }
+  #albumUpdate_page a {
+    color: #fff; }
+  #albumUpdate_page label {
+    display: block;
+    font-size: 20px;
+    padding-bottom: 3px; }
+  #albumUpdate_page input[type=text] {
+    display: block;
+    padding: 5px; }
+  #albumUpdate_page form {
+    position: relative; }
+  #albumUpdate_page .albumUpdate_content {
+    color: #fff; }
+  #albumUpdate_page .album_form_dragArea {
+    position: relative;
+    background-color: #fff;
+    border-radius: 3px; }
+  #albumUpdate_page .album_form_uploader {
+    width: 100%;
+    font-size: 0;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    height: 100%;
+    position: relative;
+    bottom: 15px;
+    z-index: 1; }
+  #albumUpdate_page .album_form_sub input[type="text"] {
+    height: 35px; }
+  #albumUpdate_page .album_form_desc input[type="text"], #albumUpdate_page .album_form_tags input[type="text"] {
+    width: 100%;
+    height: 35px;
+    -webkit-transition: .4s;
+    -o-transition: .4s;
+    transition: .4s;
+    vertical-align: top; }
+  #albumUpdate_page .album_form_desc input[type="text"]:focus {
+    height: 100px;
+    -webkit-transition: .4s;
+    -o-transition: .4s;
+    transition: .4s; }
+  #albumUpdate_page .album_form_tags input[type="text"]:focus {
+    height: 50px;
+    -webkit-transition: .4s;
+    -o-transition: .4s;
+    transition: .4s; }
+  #albumUpdate_page .hint_form {
+    color: #aaa;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+    #albumUpdate_page .hint_form i {
+      font-size: 60px; }
+  #albumUpdate_page .album_tag {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 8px;
+    border: 1px solid #fff;
+    font-size: 16px;
+    margin: 5px 5px 5px 0; }
+    #albumUpdate_page .album_tag i {
+      margin-left: 5px; }
+  #albumUpdate_page .album_form_tagsArea {
+    padding: 20px 0; }
+  #albumUpdate_page .album_form_selection {
+    padding: 10px;
+    background-color: #fff; }
+  #albumUpdate_page option {
+    text-align: center; }
+  #albumUpdate_page .album_form_btns {
+    padding: 30px 0 10px;
+    text-align: center; }
+  #albumUpdate_page .album_form_images {
+    font-size: 0;
+    height: 0;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; }
+    #albumUpdate_page .album_form_images img {
+      height: 100%;
+      margin: auto; }
+  #albumUpdate_page .delete_btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-transform: translate(20%, -20%);
+    -ms-transform: translate(20%, -20%);
+    transform: translate(20%, -20%);
+    background-color: #aaa; }
+
+#popular_album {
+  position: relative; }
+  #popular_album header {
+    width: 90%;
+    color: #fff;
+    text-align: left;
+    background-color: transparent;
+    max-width: 1200px;
+    margin: auto; }
+
+.popular_album_sec {
+  color: #fff;
+  height: 100vh; }
+  .popular_album_sec .popular_album_content {
+    width: 600px;
+    height: 300px; }
+
+.swiper-container {
+  width: 90%;
+  margin: auto;
+  max-width: 1200px; }
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover; }
+
+#star_knowledge_page {
+  color: #fff;
+  background-image: url("../../../pic/bg_6.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+  #star_knowledge_page .star_knowledge_sec {
+    height: 100vh; }
+  #star_knowledge_page .star_knowledge_content {
+    max-width: 1200px; }
+  #star_knowledge_page header {
+    width: 90%;
+    color: #fff;
+    text-align: left;
+    background-color: transparent;
+    max-width: 1200px;
+    margin: auto; }
+  #star_knowledge_page .planet {
+    background-color: #111;
+    width: 45%; }
+  #star_knowledge_page .star_knowledge_content_upper {
+    padding: 0px 0 400px 0; }
+  #star_knowledge_page .star_knowledge_intro {
+    width: 50%;
+    float: right; }
+  #star_knowledge_page .intro_head {
+    padding-bottom: 30px; }
+  #star_knowledge_page .video {
+    width: 50%; }
+  #star_knowledge_page iframe {
+    margin: auto; }
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .dm-1 {
+    width: 8.33333%; }
+  .dm-2 {
+    width: 16.66667%; }
+  .dm-3 {
+    width: 25%; }
+  .dm-4 {
+    width: 33.33333%; }
+  .dm-5 {
+    width: 41.66667%; }
+  .dm-6 {
+    width: 50%; }
+  .dm-7 {
+    width: 58.33333%; }
+  .dm-8 {
+    width: 66.66667%; }
+  .dm-9 {
+    width: 75%; }
+  .dm-10 {
+    width: 83.33333%; }
+  .dm-11 {
+    width: 91.66667%; }
+  .dm-12 {
+    width: 100%; }
+  .dm-1, .dm-2, .dm-3, .dm-4, .dm-5, .dm-6, .dm-7, .dm-8, .dm-9, .dm-10, .dm-11, .dm-12 {
+    float: left; }
+  h1 {
+    font-size: 35px;
+    letter-spacing: 1px;
+    line-height: 1; }
+  h2 {
+    font-size: 24px;
+    letter-spacing: 1px;
+    line-height: 1; }
+  h3 {
+    font-size: 28px;
+    letter-spacing: 1px;
+    line-height: 1; }
+  h4 {
+    font-size: 24px;
+    letter-spacing: 1px;
+    line-height: 1; }
+  h5 {
+    font-size: 22px;
+    letter-spacing: 1px;
+    line-height: 1; }
+  h6 {
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 1; }
+  p {
+    font-size: 17px;
+    letter-spacing: 1px;
+    line-height: 1.4; }
+  a {
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 1; }
+  .gallery_sec {
+    padding: 60px 0px; }
+  .gallery_box {
+    width: 100%;
+    margin-bottom: 10px; }
+  .lightbox_sec .lightbox_box {
+    width: 90%; }
+  .lightbox_sec .album_tag {
+    font-size: 14px; }
+  .album_carousel img {
+    max-height: 400px; }
+  .album_msg_box {
+    text-align: center; }
+    .album_msg_box .msg_box {
+      width: 100%;
+      display: block; }
+    .album_msg_box .album_userpic {
+      margin: 0 5px 10px 0; }
+    .album_msg_box .send_btn {
+      width: 100%;
+      height: 30px;
+      margin-top: 10px; }
+  #albumUpdate_page .album_form_sub input[type="text"] {
+    width: 70%; }
+  #albumUpdate_page .album_form_images .album_form_image_line {
+    width: 46%;
+    color: #111;
+    height: 150px;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin: 25px calc(8% / 4);
+    text-align: center;
+    padding: 5px;
+    border: 2px solid #aaa; }
+  #albumUpdate_page .album_form_images .image_name {
+    font-size: 14px;
+    margin: 8px 0px; }
+  #albumUpdate_page .album_form_dragArea {
+    height: 600px; }
+  #albumUpdate_page .album_form_btns button {
+    margin: 0 20px; }
+  #albumUpdate_page .album_form_tags input[type="text"], #albumUpdate_page .album_form_tags .add_btn {
+    display: block;
+    width: 100%; }
+  #albumUpdate_page .album_form_tags input[type="text"] {
+    height: 40px; }
+    #albumUpdate_page .album_form_tags input[type="text"]:focus {
+      height: 50px;
+      -webkit-transition: .4s;
+      -o-transition: .4s;
+      transition: .4s; }
+  #albumUpdate_page .album_form_tags .add_btn {
+    height: 30px;
+    margin-top: 10px; } }
+
+@media screen and (min-width: 768px) and (max-width: 1920px) {
+  .dl-1 {
+    width: 8.33333%; }
+  .dl-2 {
+    width: 16.66667%; }
+  .dl-3 {
+    width: 25%; }
+  .dl-4 {
+    width: 33.33333%; }
+  .dl-5 {
+    width: 41.66667%; }
+  .dl-6 {
+    width: 50%; }
+  .dl-7 {
+    width: 58.33333%; }
+  .dl-8 {
+    width: 66.66667%; }
+  .dl-9 {
+    width: 75%; }
+  .dl-10 {
+    width: 83.33333%; }
+  .dl-11 {
+    width: 91.66667%; }
+  .dl-12 {
+    width: 100%; }
+  .dl-1, .dl-2, .dl-3, .dl-4, .dl-5, .dl-6, .dl-7, .dl-8, .dl-9, .dl-10, .dl-11, .dl-12 {
+    float: left; }
+  h1 {
+    font-size: 35px;
+    letter-spacing: 1px;
+    line-height: 1; }
+  h2 {
+    font-size: 36px;
+    letter-spacing: 1px;
+    line-height: 1; }
+  h3 {
+    font-size: 24px;
+    letter-spacing: 1px;
+    line-height: 1; }
+  h4 {
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 1; }
+  h5 {
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 1; }
+  h6 {
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 1; }
+  p {
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 1.4; }
+  a {
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 1; }
+  .gallery_sec {
+    padding: 60px 0px; }
+  .gallery_box {
+    width: 32%;
+    float: left;
+    margin: 20px 0.666667%; }
+    .gallery_box .album_username a:hover {
+      color: #fc0; }
+    .gallery_box .album_loc:hover {
+      color: #fc0; }
+  .gallery_mark:hover {
+    color: #fc0; }
+  .lightbox_sec .lightbox_box {
+    width: 70%; }
+  .lightbox_sec .album_tag {
+    font-size: 16px; }
+  .album_carousel img {
+    max-height: 500px; }
+  .album_msg_box .album_user_pic, .album_msg_box .msg_box, .album_msg_box .send_btn {
+    display: inline-block;
+    vertical-align: middle; }
+  .album_msg_box .album_userpic, .album_msg_box .msg_box {
+    margin-right: 5px; }
+  .album_msg_box .msg_box {
+    width: calc(100% - 110px); }
+  .album_msg_box .send_btn {
+    width: 60px;
+    height: 35px; }
+    .album_msg_box .send_btn:hover {
+      color: #fff;
+      background-color: #41bffa; }
+  .drop_down_menu .edit_btn:hover, .drop_down_menu .report_btn:hover, .drop_down_menu .cancel_btn:hover {
+    background-color: #eee; }
+  #albumUpdate_page .album_form_sub input[type="text"] {
+    width: 50%; }
+  #albumUpdate_page .album_form_images .album_form_image_line {
+    width: 30%;
+    color: #111;
+    height: 150px;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin: 25px calc(10% / 6);
+    text-align: center;
+    padding: 5px;
+    border: 2px solid #aaa; }
+  #albumUpdate_page .album_form_images .image_name {
+    font-size: 16px;
+    margin: 8px 0px; }
+  #albumUpdate_page .album_form_tags {
+    font-size: 0; }
+    #albumUpdate_page .album_form_tags input[type="text"], #albumUpdate_page .album_form_tags .add_btn {
+      display: inline-block;
+      vertical-align: middle; }
+    #albumUpdate_page .album_form_tags input[type="text"] {
+      width: calc(100% - 110px); }
+    #albumUpdate_page .album_form_tags .add_btn {
+      width: 100px;
+      height: 35px;
+      margin-left: 10px; }
+  #albumUpdate_page .album_form_btns button {
+    margin: 0 50px; }
+  #albumUpdate_page .album_form_dragArea {
+    height: 420px; } }

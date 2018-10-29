@@ -1,6 +1,4 @@
-* {
-	outline: 1px solid red;
-}
+
 
 /*-------------------------------------*/
 /*-------------------------------------*/
@@ -73,14 +71,14 @@ body {
 	overflow: scroll;
 	transform:translateX(0px) translateY(0px) rotateY(0deg);
 	top: 10vh;
-	background-color: #aaa;
+	/* background-color: #aaa; */
 	transition: 1s;
-	box-shadow: 0px 0px 10px #aaa;
+	/* box-shadow: 0px 0px 10px #aaa; */
 	border-radius: 5px 0 0 5px;
 	position: relative;
 	/* 隱藏卷軸 */
 	overflow-x: hidden;
-	overflow-y: hidden;
+	/* overflow-y: hidden; */
 	/* 隱藏卷軸 */
 	top: 0;
 	left: 0;
@@ -204,6 +202,10 @@ body {
 .logo img{
 	width: 50px;
 	vertical-align: bottom;
+}
+
+.larger.mobile_display > img {
+	display: inline-block;
 }
 
 

@@ -1,0 +1,474 @@
+
+/* -------------------- Homepage basic setting (Cross devices) -------------------- */
+
+.act_sec,.gallery_sec{
+    position: fixed;
+    top: 50%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 90%;
+    margin:auto;
+    max-width: 1200px;
+    transform:translate(0,-50%);
+}
+
+img{vertical-align: bottom;}
+
+/* -------------------- Canvas basic setting (Cross devices) -------------------- */
+
+.set_bgImage {
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/index/homepage_bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    left:0;
+    top:0;
+}
+
+#three_canvas {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+body::-webkit-scrollbar {display: none;}
+
+#whitebox {
+    width: 500px;
+    height: 300px;
+    background-color: #fff;
+    position: fixed;
+    left: -400px;
+    top: 200px;
+}
+.wrap_progressbar {
+    position: fixed;
+    right: 30px;
+    top: 30%;
+  
+}
+.whitedot {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #aaa;
+}
+.whitedot + .whitedot {
+    margin-top: 50px;
+    position: relative;
+}
+.whitedot + .whitedot::after {
+    content: '';
+    width: 0px;
+    height: 40px;
+    position: absolute;
+    border-left: 1px dotted #aaa;
+    left: 49%;
+    bottom: 15px;
+}
+.bigdot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 0, 0, 0.5);
+    position: absolute;
+    top: -5px;
+    left: -5px;  /*每次+60 就會往下一個點*/
+    z-index: 10;
+}
+
+/* ----------------- First panel (Cross devices) ----------------- */
+
+/* parallax objects */
+
+#scene{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    bottom: 0;
+    overflow: hidden;
+}
+.mountain{
+    position: relative;
+    width: 100%;
+    height:50%;
+    transform: translateY(100%);
+}
+.layerBg{
+    position: absolute;
+    bottom: -100%;
+}
+
+/* ----------------- Second panel (Cross devices) ----------------- */
+
+/* light box background setting */
+
+.lightbox_sec{
+    background-color:rgba(0,0,0,.8);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    z-index: 6;
+}
+
+/* Event info setting */
+
+.lightbox_content.act_box {
+    background-color: #12377c;
+    box-sizing: border-box;
+    padding: 15px;
+    box-shadow: 0 0 30px rgb(124, 181, 255);
+    border-radius: 3px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    transform: translateY(-50%);
+}
+.event_img {
+    width: 100%;
+}
+.sign_up_number span {
+    font-size: 16px;
+    line-height: 40px;
+}
+.event_name_hoster {
+    font-size: 0;
+    box-sizing: border-box;
+    padding: 15px 0;
+}
+.event_name_hoster > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+.event_name_hoster > h4 {
+    padding-right: 15px;
+}
+
+.event_name_hoster > p{
+    padding-left: 15px;
+}
+.event_location_time {
+    font-size: 0;
+    box-sizing: border-box;
+    padding: 0px 0px 10px 0;
+}
+.event_location_time img {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+.event_location_time > p {
+    display: inline-block;
+    vertical-align: middle;
+}
+.event_location_time > p:first-child {
+    padding-right: 15px;
+}
+.event_row > div {
+    box-sizing: border-box;
+    width: 32%;
+}
+.event_row:nth-child(2) {
+    margin: auto 2%;
+}
+
+/* ------- Activity section (Cross devices) ------- */
+
+.act_content{
+    font-size:0;
+    position: relative;
+}
+.act_content_box{
+    color:#fff;
+    text-align: center;
+    position: relative;
+}
+
+/* calendar settings */
+
+.act_content_box.calendar_block{
+    padding: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+	background-color: #12377c;
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgb(124, 181, 255);
+    
+}
+.cancel_calendar {
+	width: 20px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+    transform: rotate(90deg);
+}
+/* #calendar{display: none;} */
+.cancel_calendar img {
+	width: 100%;
+}
+#calendar_block {
+    width: 100%;
+    height:0px;
+    overflow: hidden;
+}
+.calendar_row {
+	display: flex;
+	justify-content: space-around;
+}
+.calendar_row p {
+	font-size: 14px;
+}
+#calendar_block .calendar_row:first-child {
+	box-sizing: border-box;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #fff;
+	margin: 0;
+}
+#calendar_block .calendar_row:first-child > div {
+	font-size: 14px;
+}
+#calendar_block .calendar_row + .calendar_row {
+	margin: 10px 0 0 0;
+}
+.calendar_weekday,.calendar_data {
+	text-align: center;
+	color: #fff;
+	line-height: 35px;
+	width: 35px;
+	height: 35px;
+	border-radius: 17.5px;	
+	transition: 0.5s;
+}
+.hover_color {
+	cursor: pointer;
+}
+.hover_color:hover {
+	background-color: #ff5e6a;
+}
+.show_month_controll {
+	width: 100%;
+	font-size: 0;
+	text-align: center;
+	font-size: 0;
+}
+.show_month_controll > * {
+	display: inline-block;
+	vertical-align: middle;
+}
+.pre_next_month_btn {
+	width: 15px;
+	margin: 0 15px;
+}
+.pre_next_month_btn img {
+	width: 100%;
+}
+#showCurrentMonth {
+	font-size: 18px;
+	color: #fff;
+	margin: 10px 0;
+}
+
+/* Map settings */
+
+.act_content_box.map img{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ------------ Third Panel ------------ */
+
+/* gallery box settings */
+
+#homepage .gallery_box{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+}
+#homepage .gallery_box:nth-child(2n){
+    left: -105%;     
+}
+#homepage .gallery_box:nth-child(2n+1){
+    right: -105%;
+}
+.gallery_box {
+    -webkit-box-shadow: 0px 0px 5px #fff;
+    box-shadow: 0px 0px 5px #fff; }
+
+.gallery_box a {
+    color: #fff; }
+
+/* album settings */
+
+.album_p {
+margin-left: 10px; }
+
+.album_username a {
+font-size: 18px;
+font-weight: 700; }
+
+.album_username, .album_loc, .album_date {
+padding: 3px 0; }
+
+.album_loc, .album_date {
+display: inline-block; }
+
+.album_date {
+font-size: 14px;
+vertical-align: top; }
+.album_date.gallery {
+    color: #fff; }
+
+.album_statistics {
+font-size: 0; }
+.album_statistics span, .album_statistics i {
+    font-size: 18px;
+    margin: 0 3px; }
+.album_statistics.gallery {
+    padding: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0; }
+.album_view, .album_comment {
+display: inline-block;
+vertical-align: middle;
+margin: 0 5px; }
+.album_view.gallery, .album_comment.gallery {
+    color: #fff; }
+.album_mul_icon {
+color: #fff;
+position: absolute;
+right: 0;
+top: 0;
+font-size: 22px;
+padding: 10px; }
+
+.album_userpic, .album_p {
+display: inline-block;
+vertical-align: middle; }
+
+.album_userinfo {
+font-size: 0; }
+.album_userinfo.gallery {
+    position: absolute;
+    padding: 10px;
+    left: 0;
+    top: 0; }
+.album_userpic {
+width: 40px;
+height: 40px;
+overflow: hidden;
+border-radius: 50%; }
+
+.album_loc {
+font-size: 14px; }
+.album_loc:after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 1px;
+    height: 0;
+    padding-bottom: 15%;
+    margin: 0 10px; }
+.album_loc.gallery:after {
+    background-color: #fff; }
+
+
+@media screen and (min-width: 320px) and (max-width: 767px){
+    /* gallery box */
+    #homepage .gallery_box{
+        width: 85%;
+    }
+    /* parallax settings */
+    .layerBg{
+        max-height:600px;
+    }
+    /* act settings */
+
+    .act_content_box.calendar_block{
+        left:-3999px;
+        max-width: 300px;
+        margin:auto;
+    }
+    .act_content_box.map{
+        right:-3999px;
+        transform: translateY(-100%); 
+    }
+    /* lightbox setting */
+    .lightbox_content.act_box {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width:1439px){
+    /* gallery box */
+    #homepage .gallery_box{
+        width: 40%;
+    }
+    /* parallax settings */
+    .layerBg{
+        max-height:600px;
+    }
+    /* act settings */
+    .act_content_box{
+        width: 50%;
+        margin:0 auto;
+    }
+    .act_content_box.map,.act_content_box.calendar_block{
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .act_content_box.map{
+        right:-3999px;  
+    }
+    .act_content_box.calendar_block{
+        left:-3999px;
+    }
+    /* lightbox setting */
+    .lightbox_content.act_box {
+        width: 45%;  
+    }
+}
+
+@media screen and (min-width:1440px){
+    /* gallery box */
+    #homepage .gallery_box{
+        width: 25%;
+    }
+    /* parallax settings */    
+    .layerBg{
+        max-height:800px;
+    }
+    /* act settings */
+    .act_content_box{
+        width: 40%;
+        display: inline-block;
+        vertical-align: middle;
+        margin:0 calc(20% / 4);
+    }
+    .act_content_box.map{
+        right:-3999px;  
+    }
+    .act_content_box.calendar_block{
+        left:-3999px;
+    }
+    /* lightbox setting */
+    .lightbox_content.act_box {
+        width: 30%;  
+    }
+}

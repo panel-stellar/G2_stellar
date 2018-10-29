@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+	<link rel="stylesheet" href="css/stellar_initSet.css">
+	<link rel="stylesheet" href="css/stellar_nav_login_signup_box.css">
+	<link rel="stylesheet" href="css/styleForHomepage.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+	<title>index</title>
+</head>
+<body id="homepage">
+	
+	<div class="wrap_header_nav">
+		<input type="checkbox" name="" id="translate_view">
+		<div class="main_header_content">
+			<header class="header_content">
+				<label for="translate_view" class="mobile_display">
+					<div class="wrap_hbg" id="hbg_controller">
+						<div class="wrap_hbg_d">
+							<div class="hbg hbg_1"></div>
+							<div class="hbg hbg_2"></div>
+							<div class="hbg hbg_2_1"></div>
+							<div class="hbg hbg_3"></div>
+						</div>
+					</div>
+				</label>
+				<div class="logo">
+					<a href="index.html"><img src="img/index/logo1.png"></a>
+				</div>
+				<div class="larger mobile_display">
+					<div class="bell" id="mobile_bell">
+						<img class="mobile_display" src="img/index/icon_yellow_bell.png">
+						<div class="showinfo mobile_display">
+							<span>3</span>
+						</div>
+		
+					</div>
+					<img src="img/index/icon_white_larger.png">
+				</div>
+				<nav>
+					<ul class="nav_list">
+						<li>
+							<div class="mem_info">
+								<div class="bell web_bell web_display" id="web_bell_web">
+									<img class="web_display" src="img/index/icon_yellow_bell.png">
+									<div class="showinfo web_display">
+										<span>3</span>
+									</div>
+								</div>
+								<div class="mem_img mem_name_center">	
+									<img src="img/index/p.jpg">
+								</div>
+								<div class="mem_name_center" id="mem_name_center">
+									<p class="mem_name">Michelle</p>
+									<p class="mem_center mobile_display"><a href="member_center.html">會員中心</a></p>
+								</div>
+							</div>
+							<ul class="member_list web_display">
+	                            <li><a href="member_center.html" class="p_normalformat">會員中心</a></li>
+	                            <li><a href="#" class="p_normalformat login_box">登出</a></li>
+	                        </ul>
+	                        <div class="connet_info_list"></div>
+						</li>
+						<li><a href="event_filter_surfing.html">揪團觀星</a></li>
+						<li><a href="album_surfing.html">星空相簿</a></li>
+						<li><a href="knowledge.html">觀星知識</a></li>
+						<li class="mobile_display login_box"><a href="#">登出</a></li>
+					</ul>
+				</nav>
+				<div class="show_info_detail" id="show_info_detail">
+					<ul class="info_detail_list">
+						<li>
+							<p>您的文章<span>「推薦觀星景點」</span>有新回覆</p>
+							<p><span>Jone</span><span>台北陽明山、花蓮七星潭...</span></p>
+						</li>
+						<li>
+							<p>您的相簿<span>「台北烘爐地」</span>被檢舉超過三次將停權</p>
+							<p>因政治商業內容不符本站規範，您將被停權一個月</p>
+						</li>
+						<li>
+							<p>您的文章<span>「推薦觀星景點」</span>有新回覆</p>
+							<p><span>Jone</span><span>台北陽明山、花蓮七星潭...</span></p>
+						</li>
+						<li>
+							<p>您的相簿<span>「台北烘爐地」</span>被檢舉超過三次將停權</p>
+							<p>因政治商業內容不符本站規範，您將被停權一個月</p>
+						</li>
+						<li>
+							<p>您的文章<span>「推薦觀星景點」</span>有新回覆</p>
+							<p><span>Jone</span><span>台北陽明山、花蓮七星潭...</span></p>
+						</li>
+						<li><a href="#">查看所有通知</a></li>
+					</ul>
+				</div>
+			</header>
+		</div>
+
+		<div class="main_content_camera">
+			<div class="main_content_space">
+				<div class="main_content">
+				<!-- 畫面放這裡 -->
+					<!-- Three.js enviornment -->
+					<canvas id="three_canvas"></canvas>
+					<div class="set_bgImage"></div>
+
+					<div class="wrap_progressbar">
+						<div class="bigdot" id="bigdot"></div>
+						<div class="whitedot"></div>
+						<div class="whitedot"></div>
+						<div class="whitedot"></div>
+						<div class="whitedot"></div>
+					</div>
+					<!-- First panel -->
+					<div id="scene">
+						<div class="mountain" data-depth="0.3">
+							<div class="layerBg">
+								<img src="img/index/bg9.png" alt="picLost">
+							</div>
+						</div>
+						<div class="mountain" data-depth="0.4">
+							<div class="layerBg">
+								<img src="img/index/bg11.png" alt="picLost">
+							</div>
+						</div>
+						<div class="mountain" data-depth="0.5">
+							<div class="layerBg">
+								<img src="img/index/bg12.png" alt="picLost">
+							</div>
+						</div>
+						<div class="mountain" data-depth="0.6">
+							<div class="layerBg">
+								<img src="img/index/bg13.png" alt="picLost">
+							</div>
+						</div>
+						<div class="mountain" data-depth="0.7">
+							<div class="layerBg">
+								<img src="img/index/bg15.png" alt="picLost">
+							</div>
+						</div> 
+					</div>
+					<!-- Second panel -->
+					<section class="act_sec">
+						<div class="act_content">
+							<div class="act_content_box calendar_block">
+								<div class="cancel_calendar">
+									<img src="img/index/icon_white_rightarrow.png">
+								</div>
+								<div class="show_month_controll">
+									<div class="pre_next_month_btn">
+										<img id="lastMonth" src="img/index/icon_white_leftarrow.png">
+									</div>
+									<h2 id="showCurrentMonth"></h2>
+									<div class="pre_next_month_btn">
+										<img id="nextMonth" src="img/index/icon_white_rightarrow.png">
+									</div>
+								</div>
+								<div id="calendar"> </div>
+							</div>
+							<div class="act_content_box map">
+								<img src="img/index/TW-01.png" alt="picLost">
+							</div>
+						</div>
+					</section>
+					<!-- Light box -->
+					<section class="lightbox_sec" id="lightbox">
+						<div class="lightbox_content act_box" id="act_info_holder">
+							<div class="event_info_box">
+								<div class="event_img img_d">
+									<img src="img/index/a2.jpg">
+								</div>
+								<div class="event_name_hoster">
+									<h3>玉山觀星</h3>
+									<p>
+										<span>北部</span>｜<span>2018/8/27</span>
+									</p>
+								</div>
+								<div class="event_location_time">
+									<p>黃偉文</p>
+									<p>4.3</p>
+									<img src="img/index/star.png" alt="#">
+								</div>
+								<p class="event_disc p_style1_0">
+									在無光害的大雪山森林遊樂區位於高海拔地區，視野遼闊、無光害，一直是愛好天文及星空攝影人士的私房景點；大雪山林道 43K 遊客服務中心區及48-50K小雪山區域，沿線有不少的觀星地點，可謂一條名符其實的星光大道！
+								</p>
+							</div>
+						</div>
+					</section>
+					<!-- Third panel -->
+					<section class="gallery_sec">
+						<div class="gallery_content">
+
+							<div class="gallery_box gb1">
+								<div class="album_userinfo gallery">
+									<a href="#" class="album_userpic gallery"><img src="img/index/sample_8.jpeg" alt="picLost"></a>
+									<div class="album_p gallery">
+										<h4 class="album_username gallery"><a href="#">Gin Huang</a></h4>
+										<a href="#" class="album_loc gallery">Taichung</a>
+										<p class="album_date gallery">2018.09.25</p>
+									</div>
+								</div>
+								<div class="album_img gallery">
+									<a href="#">
+										<img src="img/index/sample_1.jpg" alt="picLost">
+									</a>
+								</div>
+								<div class="album_mul_icon gallery">
+									<i class="far fa-images icon"></i>
+								</div>
+								<div class="album_statistics gallery">
+									<div class="album_view gallery">
+										<i class="fas fa-eye icon gallery"></i>
+										<span class="album_view_num gallery">1</span>
+									</div>
+									<div class="album_comment gallery">
+										<i class="far fa-comment-alt icon gallery"></i>
+										<span class="album_comment_num gallery">25</span>
+									</div>
+								</div>
+							</div>
+							<div class="gallery_box gb2">
+								<div class="album_userinfo gallery">
+									<a href="#" class="album_userpic gallery"><img src="img/index/sample_8.jpeg" alt="picLost"></a>
+									<div class="album_p gallery">
+										<h4 class="album_username gallery"><a href="#">Gin Huang</a></h4>
+										<a href="#" class="album_loc gallery">Taichung</a>
+										<p class="album_date gallery">2018.09.25</p>
+									</div>
+								</div>
+								<div class="album_img gallery">
+									<a href="#">
+										<img src="img/index/sample_2.jpg" alt="picLost">
+									</a>
+								</div>
+								<div class="album_mul_icon gallery">
+									<i class="far fa-images icon"></i>
+								</div>
+								<div class="album_statistics gallery">
+									<div class="album_view gallery">
+										<i class="fas fa-eye icon gallery"></i>
+										<span class="album_view_num gallery">1</span>
+									</div>
+									<div class="album_comment gallery">
+										<i class="far fa-comment-alt icon gallery"></i>
+										<span class="album_comment_num gallery">25</span>
+									</div>
+								</div>
+							</div>
+							<div class="gallery_box gb3">
+								<div class="album_userinfo gallery">
+									<a href="#" class="album_userpic gallery"><img src="img/index/sample_8.jpeg" alt="picLost"></a>
+									<div class="album_p gallery">
+										<h4 class="album_username gallery"><a href="#">Gin Huang</a></h4>
+										<a href="#" class="album_loc gallery">Taichung</a>
+										<p class="album_date gallery">2018.09.25</p>
+									</div>
+								</div>
+								<div class="album_img gallery">
+									<a href="#">
+										<img src="img/index/sample_3.jpg" alt="picLost">
+									</a>
+								</div>
+								<div class="album_mul_icon gallery">
+									<i class="far fa-images icon"></i>
+								</div>
+								<div class="album_statistics gallery">
+									<div class="album_view gallery">
+										<i class="fas fa-eye icon gallery"></i>
+										<span class="album_view_num gallery">1</span>
+									</div>
+									<div class="album_comment gallery">
+										<i class="far fa-comment-alt icon gallery"></i>
+										<span class="album_comment_num gallery">25</span>
+									</div>
+								</div>
+							</div>
+							<div class="gallery_box gb4">
+								<div class="album_userinfo gallery">
+									<a href="#" class="album_userpic gallery"><img src="img/index/sample_8.jpeg" alt="picLost"></a>
+									<div class="album_p gallery">
+										<h4 class="album_username gallery"><a href="#">Gin Huang</a></h4>
+										<a href="#" class="album_loc gallery">Taichung</a>
+										<p class="album_date gallery">2018.09.25</p>
+									</div>
+								</div>
+								<div class="album_img gallery">
+									<a href="#">
+										<img src="img/index/sample_4.jpg" alt="picLost">
+									</a>
+								</div>
+								<div class="album_mul_icon gallery">
+									<i class="far fa-images icon"></i>
+								</div>
+								<div class="album_statistics gallery">
+									<div class="album_view gallery">
+										<i class="fas fa-eye icon gallery"></i>
+										<span class="album_view_num gallery">1</span>
+									</div>
+									<div class="album_comment gallery">
+										<i class="far fa-comment-alt icon gallery"></i>
+										<span class="album_comment_num gallery">25</span>
+									</div>
+								</div>
+							</div>
+							<div class="gallery_box gb5">
+								<div class="album_userinfo gallery">
+									<a href="#" class="album_userpic gallery"><img src="img/index/sample_8.jpeg" alt="picLost"></a>
+									<div class="album_p gallery">
+										<h4 class="album_username gallery"><a href="#">Gin Huang</a></h4>
+										<a href="#" class="album_loc gallery">Taichung</a>
+										<p class="album_date gallery">2018.09.25</p>
+									</div>
+								</div>
+								<div class="album_img gallery">
+									<a href="#">
+										<img src="img/index/sample_5.jpg" alt="picLost">
+									</a>
+								</div>
+								<div class="album_mul_icon gallery">
+									<i class="far fa-images icon"></i>
+								</div>
+								<div class="album_statistics gallery">
+									<div class="album_view gallery">
+										<i class="fas fa-eye icon gallery"></i>
+										<span class="album_view_num gallery">1</span>
+									</div>
+									<div class="album_comment gallery">
+										<i class="far fa-comment-alt icon gallery"></i>
+										<span class="album_comment_num gallery">25</span>
+									</div>
+								</div>
+							</div>
+							<div class="gallery_box gb6">
+								<div class="album_userinfo gallery">
+									<a href="#" class="album_userpic gallery"><img src="img/index/sample_8.jpeg" alt="picLost"></a>
+									<div class="album_p gallery">
+										<h4 class="album_username gallery"><a href="#">Gin Huang</a></h4>
+										<a href="#" class="album_loc gallery">Taichung</a>
+										<p class="album_date gallery">2018.09.25</p>
+									</div>
+								</div>
+								<div class="album_img gallery">
+									<a href="#">
+										<img src="img/index/sample_6.jpg" alt="picLost">
+									</a>
+								</div>
+								<div class="album_mul_icon gallery">
+									<i class="far fa-images icon"></i>
+								</div>
+								<div class="album_statistics gallery">
+									<div class="album_view gallery">
+										<i class="fas fa-eye icon gallery"></i>
+										<span class="album_view_num gallery">1</span>
+									</div>
+									<div class="album_comment gallery">
+										<i class="far fa-comment-alt icon gallery"></i>
+										<span class="album_comment_num gallery">25</span>
+									</div>
+								</div>
+							</div>
+							<div class="gallery_box gb7">
+								<div class="album_userinfo gallery">
+									<a href="#" class="album_userpic gallery"><img src="img/index/sample_8.jpeg" alt="picLost"></a>
+									<div class="album_p gallery">
+										<h4 class="album_username gallery"><a href="#">Gin Huang</a></h4>
+										<a href="#" class="album_loc gallery">Taichung</a>
+										<p class="album_date gallery">2018.09.25</p>
+									</div>
+								</div>
+								<div class="album_img gallery">
+									<a href="#">
+										<img src="img/index/sample_7.jpg" alt="picLost">
+									</a>
+								</div>
+								<div class="album_mul_icon gallery">
+									<i class="far fa-images icon"></i>
+								</div>
+								<div class="album_statistics gallery">
+									<div class="album_view gallery">
+										<i class="fas fa-eye icon gallery"></i>
+										<span class="album_view_num gallery">1</span>
+									</div>
+									<div class="album_comment gallery">
+										<i class="far fa-comment-alt icon gallery"></i>
+										<span class="album_comment_num gallery">25</span>
+									</div>
+								</div>
+							</div>
+							<div class="gallery_box gb8">
+								<div class="album_userinfo gallery">
+									<a href="#" class="album_userpic gallery"><img src="img/index/sample_8.jpeg" alt="picLost"></a>
+									<div class="album_p gallery">
+										<h4 class="album_username gallery"><a href="#">Gin Huang</a></h4>
+										<a href="#" class="album_loc gallery">Taichung</a>
+										<p class="album_date gallery">2018.09.25</p>
+									</div>
+								</div>
+								<div class="album_img gallery">
+									<a href="#">
+										<img src="img/index/sample_8.jpeg" alt="picLost">
+									</a>
+								</div>
+								<div class="album_mul_icon gallery">
+									<i class="far fa-images icon"></i>
+								</div>
+								<div class="album_statistics gallery">
+									<div class="album_view gallery">
+										<i class="fas fa-eye icon gallery"></i>
+										<span class="album_view_num gallery">1</span>
+									</div>
+									<div class="album_comment gallery">
+										<i class="far fa-comment-alt icon gallery"></i>
+										<span class="album_comment_num gallery">25</span>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</section>
+	
+				</div>	
+			</div>
+		</div>
+
+	</div>
+
+	<!-- 登入註冊燈箱從這開始 -->
+
+	<section class="login_signup_sec">
+		<div class="login_signup_content">
+			<div class="wrap_login_signup">
+				<div class="wrap_logo_switch clearfix">
+					<div class="decorate_logo">
+						<img src="img/logo1.png">
+					</div>
+					<div class="switch_display">
+						<div class="close_box" id="close_box">
+							<img id="close_login_signup_box" src="img/index/icon_white_X.png">
+						</div>
+
+						<div class="switch_selector">
+							<p id="login">登入</p>
+							<p id="signup">註冊</p>
+							<div class="switch_light"><!--切換光條--></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<div class="member_signup_input">
+
+					<!-- 登入 -->
+					<div class="input_bar login_display">
+						<p class="show_account_info" id="show_account_text">帳號</p>
+						<div class="wrap_account_input">
+							<input class="input2" type="text" name="" id="account_input"placeholder="帳號">
+						</div>
+					</div>
+
+					<div class="input_bar login_display">
+						<p class="show_account_info" id="show_account_password">密碼</p>
+						<div>
+							<input class="input2" 
+							id="account_password" type="password" name="" placeholder="密碼">
+						</div>
+					</div>
+
+					<!-- 註冊 -->
+					<div class="input_bar signup_display">
+						<p class="show_signup_info" id="show_account_password">帳號</p>
+						<div>
+							<input class="input2" type="text" name="">
+						</div>
+					</div>
+					
+					<div class="input_bar signup_display">
+						<p class="show_signup_info" id="show_account_password">密碼</p>
+						<div>
+							<input class="input2" type="password" name="">
+						</div>
+					</div>
+					
+					<div class="input_bar signup_display">
+						<p class="show_signup_info" id="show_account_password">確認密碼</p>
+						<div>
+							<input class="input2" type="password" name="">
+						</div>
+					</div>
+					
+					<div class="input_bar signup_display">
+						<p class="show_signup_info" id="show_account_password">暱稱</p>
+						<div>
+							<input class="input2" type="text" name="">
+						</div>
+					</div>
+					
+					<div class="input_bar signup_display">
+						<p class="show_signup_info" id="show_account_password">E-mail</p>
+						<div>
+							<input class="input2" type="text" name="" >
+						</div>
+					</div>
+					
+					<div class="error_forgot_submit_bar ">
+						<p class="show_error" id="show_error">帳號或密碼錯誤</p>
+						<a class="forget_password login_display">忘記密碼</a>
+						<button class="login_submit_btn form_submit_btn">
+							<p class="signup_display">註冊</p>
+							<img class="login_display" src="img/index/icon_white_goleftarrow.png">
+						</button>
+					</div>
+
+				</div>
+			</div>
+			
+		</div>
+	</section>
+
+	<!-- 登入註冊燈箱在這結束 -->
+
+
+
+
+
+
+
+
+
+	<script src="js/jquery_3.3.1_min.js"></script>
+	<script src="js/nav_login_signup_box.js"></script>
+	<script src="js/threeOnlyForHomepage.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+	<script src="js/scriptForHomepage.js"></script>
+
+</body>
+</html>
