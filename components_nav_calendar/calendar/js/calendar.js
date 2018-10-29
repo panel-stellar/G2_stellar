@@ -176,3 +176,7 @@ function showCurrentMonth(thisMonth = currentMonth) {
 function getClickDate() {
 	console.log(this.getAttribute('data-daterecord'));
 }
+
+$('.cancel_calendar').click(function() {
+	$('.calendar_block').css('display','none');
+})

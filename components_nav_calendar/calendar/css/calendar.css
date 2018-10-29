@@ -21,6 +21,7 @@ p {
 	padding: 10px;
 	background-color: #44227a;
 	border-radius: 5px;
+	position: relative;
 }
 
 
@@ -96,8 +97,21 @@ p {
 	width: 100%;
 }
 
-h2 {
+#showCurrentMonth {
 	font-size: 18px;
 	color: #fff;
 	margin: 10px 0;
 }
+
+.cancel_calendar {
+	width: 20px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+
+}
+
+.cancel_calendar img {
+	width: 100%;
+}
+
