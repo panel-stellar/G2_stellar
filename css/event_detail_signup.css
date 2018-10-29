@@ -1,4 +1,9 @@
 @charset "UTF-8";
+
+  h3,h4,p,span,a{
+    color:#FFF;
+
+}
 body {
   line-height: 1; }
 
@@ -346,7 +351,7 @@ body {
   border-radius: 5px;
   box-sizing: border-box;
   padding: 15px;
-  background-image: url("/img/bg26.png");
+  background-image: url("../img/event_detail_signup/bg26.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

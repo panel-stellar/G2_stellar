@@ -1,4 +1,7 @@
 @charset "UTF-8";
+h3,h4,p,span,a,li{
+  color:#FFF;
+}
 body {
   line-height: 1; }
 
@@ -412,7 +415,11 @@ label {
       display: inline-block;
       vertical-align: middle; }
     .wrap_timeline_event .wrap_event_info .event_name_hoster > h4 {
-      padding-right: 15px; }
+      padding-right: 15px; 
+    }
+    .wrap_timeline_event .wrap_event_info .event_name_hoster >a {
+        padding-right: 15px; 
+      }  
     .wrap_timeline_event .wrap_event_info .event_location_time {
       font-size: 0;
       box-sizing: border-box;
@@ -595,7 +602,7 @@ label {
     letter-spacing: 1px;
     line-height: 1; }
   h4 {
-    font-size: 20px;
+    font-size: 24px;
     letter-spacing: 1px;
     line-height: 1; }
   h5 {
