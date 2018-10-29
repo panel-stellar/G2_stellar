@@ -1,0 +1,103 @@
+/* .calendar_block */
+/* .calendar_row */
+/* .calendar_weekday */
+/* .calendar_data */
+
+* {
+	/*outline: 1px solid #f00;*/
+}
+
+body {
+	font-family: "微軟正黑體"
+}
+
+p {
+	margin: 0;
+}
+
+.calendar_block {
+	width: 300px;
+	box-sizing: border-box;
+	padding: 10px;
+	background-color: #44227a;
+	border-radius: 5px;
+}
+
+
+
+#calendar_block {
+	width: 100%;
+
+}
+
+.calendar_row {
+	display: flex;
+	justify-content: space-around;
+}
+
+.calendar_row p {
+	font-size: 14px;
+}
+
+#calendar_block .calendar_row:first-child {
+	box-sizing: border-box;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #fff;
+	margin: 0;
+}
+
+#calendar_block .calendar_row:first-child > div {
+	font-size: 14px;
+}
+
+#calendar_block .calendar_row + .calendar_row {
+	margin: 10px 0 0 0;
+}
+
+
+.calendar_weekday,
+.calendar_data {
+	text-align: center;
+	color: #fff;
+	/*background-color: #1c204d;*/
+	line-height: 35px;
+	width: 35px;
+	height: 35px;
+	border-radius: 17.5px;	
+	transition: 0.5s;
+}
+
+.hover_color {
+	cursor: pointer;
+}
+
+.hover_color:hover {
+	background-color: #ff5e6a;
+}
+
+.show_month_controll {
+	width: 100%;
+	font-size: 0;
+	text-align: center;
+	font-size: 0;
+}
+
+.show_month_controll > * {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.pre_next_month_btn {
+	width: 15px;
+	margin: 0 15px;
+}
+
+.pre_next_month_btn img {
+	width: 100%;
+}
+
+h2 {
+	font-size: 18px;
+	color: #fff;
+	margin: 10px 0;
+}

@@ -85,15 +85,6 @@ $(window).ready(function() {
 		$('#account_password').attr({'placeholder': '' });
 	})
 
-	//hover訊息通知時字變色
-	$('.info_detail_list > li').mouseenter(function() {
-		$(this).find('p,a').css('color','#ff5e6a');
-	})
-
-	$('.info_detail_list > li').mouseleave(function() {
-		$(this).find('p,a').css('color','#ffffff');
-	})
-
 
 
 	//hover登入時變色
@@ -185,12 +176,6 @@ $(window).ready(function() {
 		$('.login_signup_sec').css('display', 'none');
 			loginBoxFlag = 0;
 	});
-
-
-	var getResizeWidth = document.getElementsByClassName('main_content_camera');
-	console.log(getResizeWidth[0].clientWidth);
-	console.log(document.body.clientWidth);
-
 
 
 })
