@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no,shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>album_update</title>
+    <link rel="stylesheet" href="css/stellar_initSet.css">
+    <link rel="stylesheet" href="css/stellar_nav_login_signup_box.css">
+    <link rel="stylesheet" href="css/album_update.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+<body id="albumUpdate_page">
+
+    <div class="wrap_header_nav">
+        <input type="checkbox" name="" id="translate_view">
+        <div class="main_header_content">
+
+            <header class="header_content">
+                <label for="translate_view" class="mobile_display">
+                    <div class="wrap_hbg" id="hbg_controller">
+                        <div class="wrap_hbg_d">
+                            <div class="hbg hbg_1"></div>
+                            <div class="hbg hbg_2"></div>
+                            <div class="hbg hbg_2_1"></div>
+                            <div class="hbg hbg_3"></div>
+                        </div>
+                    </div>
+                </label>
+
+                <div class="logo">
+                    <a href="index.html"><img src="img/logo1.png"></a>
+                </div>
+
+                <div class="larger mobile_display">
+                    <div class="bell" id="mobile_bell">
+                        <img class="mobile_display" src="img/icon_yellow_bell.png">
+                        <div class="showinfo mobile_display">
+                            <span>3</span>
+                        </div>
+        
+                    </div>
+                    <img src="img/icon_white_larger.png">
+                </div>
+
+                <nav>
+                    <ul class="nav_list">
+                        <li>
+                            <div class="mem_info">
+                                <div class="bell web_bell web_display" id="web_bell_web">
+                                    <img class="web_display" src="img/icon_yellow_bell.png">
+                                    <div class="showinfo web_display">
+                                        <span>3</span>
+                                    </div>
+                                </div>
+
+                                <div class="mem_img mem_name_center">	
+                                    <img src="img/p.jpg">
+                                </div>
+                                <div class="mem_name_center" id="mem_name_center">
+                                    <p class="mem_name">Michelle</p>
+                                    <p class="mem_center mobile_display">會員中心</p>
+                                </div>
+
+                            </div>
+                            <ul class="member_list web_display">
+                                <li><a href="#" class="p_normalformat">會員中心</a></li>
+                                <li><a href="#" class="p_normalformat login_box">登出</a></li>
+                            </ul>
+                            <div class="connet_info_list"></div>
+                        </li>
+                        <li><a href="event_filter_surfing.html">揪團觀星</a></li>
+                        <li><a href="album_surfing.html">星空相簿</a></li>
+                        <li><a href="knowledge.html">觀星知識</a></li>
+                        <li class="mobile_display login_box"><a href="#">登出</a></li>
+                    </ul>
+                </nav>
+
+                <div class="show_info_detail" id="show_info_detail">
+                    <ul class="info_detail_list">
+                        <li>
+                            <p>您的文章<span>「推薦觀星景點」</span>有新回覆</p>
+                            <p><span>Jone</span><span>台北陽明山、花蓮七星潭...</span></p>
+                        </li>
+                        <li>
+                            <p>您的相簿<span>「台北烘爐地」</span>被檢舉超過三次將停權</p>
+                            <p>因政治商業內容不符本站規範，您將被停權一個月</p>
+                        </li>
+                        <li>
+                            <p>您的文章<span>「推薦觀星景點」</span>有新回覆</p>
+                            <p><span>Jone</span><span>台北陽明山、花蓮七星潭...</span></p>
+                        </li>
+                        <li>
+                            <p>您的相簿<span>「台北烘爐地」</span>被檢舉超過三次將停權</p>
+                            <p>因政治商業內容不符本站規範，您將被停權一個月</p>
+                        </li>
+                        <li>
+                            <p>您的文章<span>「推薦觀星景點」</span>有新回覆</p>
+                            <p><span>Jone</span><span>台北陽明山、花蓮七星潭...</span></p>
+                        </li>
+                        <li><a href="#">查看所有通知</a></li>
+                    </ul>
+                </div>
+
+            </header>
+
+        </div>
+
+        <div class="main_content_camera">
+            <div class="main_content_space">
+                <div class="main_content">
+                    <!-- 畫面放這裡 -->
+                    <section class="albumUpdate_sec">
+                        <div class="albumUpdate_content">
+                            <form action="#" method="POST">
+                                <div class="album_form_top">
+                                    <div class="album_form_sub form_cell">
+                                        <label class="album_form_title">相簿名稱</label>
+                                        <input type="text">
+                                    </div>            
+                                </div>
+                                <div class="album_form_dragArea">
+                                    <input type="file" name="img_uploader" class="album_form_uploader" accept="image/*" multiple>
+                                    <ul class="album_form_images clearfix">
+                                        <!-- <li class="album_form_image_line">
+                                            <img src="../../../pic/sample_1.jpg" alt="picLost">
+                                            <p class="image_name">JustForTest.jpg</p>
+                                            <button class="delete_btn"><i class="fas fa-times"></i></button>
+                                        </li> -->
+                                    </ul>   
+                                    <div class="hint_form">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <p>點擊或拖曳相片到這裡上傳喔！</p>
+                                    </div>
+                                </div>
+                                <div class="album_form_bottom">
+                                    <div class="album_form_desc form_cell">
+                                        <label class="album_form_title">相簿描述</label>
+                                        <input type="text" placeholder="幫這本相簿加上一點敘述吧！">
+                                    </div>
+                                    <div class="album_form_tags form_cell">
+                                        <label class="album_form_title">相簿標籤</label>
+                                        <input type="text" placeholder="幫這本相簿加上一些標籤會讓其他人更容易找到你喔！（每個標籤請用逗點隔開 ex: 九份,基隆）">
+                                        <button class="add_btn">新增標籤</button>
+                                        <div class="album_form_tagsArea">
+                                            <a href="#" class="album_tag">永久佔位哥<i class="fas fa-times"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="album_form_acts form_cell">
+                                        <label class="album_form_title">將這本相簿同步分享到你所參與的活動頁面吧！</label>
+                                        <select name="actList" id="actList" class="album_form_selection">
+                                            <option value="null">選擇揪團</option>
+                                            <option value="num89757">偉哥觀星團--編號：89757</option>
+                                            <option value="num89757">偉哥觀星團--編號：89757</option>
+                                            <option value="num89757">偉哥觀星團--編號：89757</option>
+                                            <option value="num89757">偉哥觀星團--編號：89757</option>
+                                        </select>
+                                    </div>
+                                    <div class="album_form_btns">
+                                        <button type="submit" class="submit_btn">送出</button>
+                                        <button class="cancel_btn">取消</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </div>	
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 登入註冊燈箱從這開始 -->
+
+    <section class="login_signup_sec">
+        <div class="login_signup_content">
+            <div class="wrap_login_signup">
+                <div class="wrap_logo_switch clearfix">
+                    <div class="decorate_logo">
+                        <img src="img/logo1.png">
+                    </div>
+                    <div class="switch_display">
+                        <div class="close_box" id="close_box">
+                            <img id="close_login_signup_box" src="img/icon_white_X.png">
+                        </div>
+
+                        <div class="switch_selector">
+                            <p id="login">登入</p>
+                            <p id="signup">註冊</p>
+                            <div class="switch_light"><!--切換光條--></div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+
+                <div class="member_signup_input">
+
+                    <!-- 登入 -->
+                    <div class="input_bar login_display">
+                        <p class="show_account_info" id="show_account_text">帳號</p>
+                        <div class="wrap_account_input">
+                            <input class="input2" type="text" name="" id="account_input"placeholder="帳號">
+                        </div>
+                    </div>
+
+                    <div class="input_bar login_display">
+                        <p class="show_account_info" id="show_account_password">密碼</p>
+                        <div>
+                            <input class="input2" 
+                            id="account_password" type="password" name="" placeholder="密碼">
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- 註冊 -->
+                    <div class="input_bar signup_display">
+                        <p class="show_signup_info" id="show_account_password">帳號</p>
+                        <div>
+                            <input class="input2" type="text" name="">
+                        </div>
+                    </div>
+                    
+                    <div class="input_bar signup_display">
+                        <p class="show_signup_info" id="show_account_password">密碼</p>
+                        <div>
+                            <input class="input2" type="password" name="">
+                        </div>
+                    </div>
+                    
+                    <div class="input_bar signup_display">
+                        <p class="show_signup_info" id="show_account_password">確認密碼</p>
+                        <div>
+                            <input class="input2" type="password" name="">
+                        </div>
+                    </div>
+                    
+                    <div class="input_bar signup_display">
+                        <p class="show_signup_info" id="show_account_password">暱稱</p>
+                        <div>
+                            <input class="input2" type="text" name="">
+                        </div>
+                    </div>
+                    
+                    <div class="input_bar signup_display">
+                        <p class="show_signup_info" id="show_account_password">E-mail</p>
+                        <div>
+                            <input class="input2" type="text" name="" >
+                        </div>
+                    </div>
+                    
+                    <div class="error_forgot_submit_bar ">
+                        <p class="show_error" id="show_error">帳號或密碼錯誤</p>
+                        <a class="forget_password login_display">忘記密碼</a>
+                        <button class="login_submit_btn form_submit_btn">
+                            <p class="signup_display">註冊</p>
+                            <img class="login_display" src="img/icon_white_goleftarrow.png">
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- 登入註冊燈箱在這結束 -->
+
+    <!-- Javascript -->
+    <script src="js/jquery_3.3.1_min.js"></script>
+    <script src="js/nav_login_signup_box.js"></script>
+
+    <script>
+        
+        window.addEventListener('load',function(){
+
+            
+            // Upload images and preview function
+
+            var getUploadArea = document.querySelector('.album_form_dragArea');
+            var getUploader = document.querySelector('.album_form_uploader');
+            var getShowTimeArea = document.querySelector('.album_form_images');
+            var getHint = document.querySelector('.hint_form');
+
+            
+            console.log(window.getComputedStyle(getUploader,null).getPropertyValue("z-index"));
+
+            getUploader.onchange = showTime;
+
+            getUploader.addEventListener('drop',function(e){
+
+                e.preventDefault();
+                getUploader.files = e.dataTransfer.files;
+
+            })
+
+            function showTime(){
+
+                getUploader.style.zIndex = '0'; 
+
+                var uploadedImgs = getUploader.files;
+                
+                for(let i=0; i<uploadedImgs.length; i++){
+                    var imgReader = new FileReader();
+                    var uploadedImgName = uploadedImgs[i].name;
+                    var previewImg = document.createElement('img');
+                    imgReader.readAsDataURL(uploadedImgs[i]);
+                    imgReader.onload = function(){
+                        // console.log(this.result);
+                        previewImg.src = this.result;
+                    }
+                    var deleteBtn = document.createElement('button');
+                    var previewImgName = document.createElement('p');
+                    var previewImgLine = document.createElement('li');
+
+                    previewImgLine.classList.add('album_form_image_line');
+                    previewImgName.classList.add('image_name');
+                    deleteBtn.classList.add('delete_btn');
+                    deleteBtn.innerHTML = '<i class="fas fa-times"></i>';
+                    deleteBtn.onclick = RemoveImg;
+                    previewImgName.innerText = uploadedImgName;
+
+                    previewImgLine.appendChild(previewImg);
+                    previewImgLine.appendChild(previewImgName);
+                    previewImgLine.appendChild(deleteBtn);
+
+                    getShowTimeArea.appendChild(previewImgLine);
+
+                    getHint.style.display = 'none';
+                    
+                }
+            }
+
+            // User can click on picture to remove it from board 
+            
+            function RemoveImg(e){
+                e.preventDefault();
+                getShowTimeArea.removeChild(this.parentNode);
+                console.log(this.parentNode.length);
+                if(this.parentNode.length === undefined){
+                    getHint.style.display = 'block';
+                }
+            }
+
+            // Add and delete album tags
+            
+            var getTagInput = document.querySelector('.album_form_tags input[type=text]');
+            var getAddBtn = document.querySelector('.add_btn');
+            var getTagsArea = document.querySelector('.album_form_tagsArea');
+            
+            getAddBtn.onclick = addTags;
+
+            function addTags(e){
+
+                var initialValue = getTagInput.value;
+
+                if(initialValue == ''){
+                    alert('請好好地填你的標籤，謝謝合作');
+                    return false;
+                }
+
+                e.preventDefault();
+                var tagValue = getTagInput.value.split(',');
+                var tagValueLen = tagValue.length;
+
+                if(tagValue.indexOf('') > 0){
+                    var nullIndex = tagValue.indexOf('');
+                    tagValue.splice(nullIndex,1);
+                }    
+
+                //  console.log(tagValue.length);
+                 
+                 for(let i=0; i<tagValue.length; i++){
+                     var newTag = document.createElement('a');
+                     newTag.classList.add('album_tag');
+                     newTag.href = '#';
+                     newTag.innerHTML = tagValue[i]+'<i class="fas fa-times"></i>';
+                     getTagsArea.appendChild(newTag);
+                     newTag.onclick = deleteTag;
+                 }
+                 getTagInput.value = '';
+            }
+
+            function deleteTag(e){
+                e.preventDefault();
+                this.parentNode.removeChild(this);
+            }
+
+            // Enable enterkey on some specific function
+
+            function enableEnterKeys(e){
+                e = e || window.event;
+                if(e.keycode == 13){
+                    getAddBtn.click();
+                }
+            }
+            
+        },false)
+    
+    </script>
+    
+</body>
+</html>

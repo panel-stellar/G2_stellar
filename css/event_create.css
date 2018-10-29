@@ -1,8 +1,12 @@
+
 @charset "UTF-8";
 * {
   font-family: 微軟正黑體; }
   * h4, * a, * p, * span {
     color: #FFF; }
+
+
+
 
 .tree {
   background-image: url("../img/event_detail_signup/tree.png");
@@ -187,3 +191,11 @@
     display: inline-block;
     width: 45%;
     vertical-align: middle; } }
+
+        
+    .initiate_group_col input,
+    .initiate_group_col select{
+      height: 30px;
+    }
+
+ 
