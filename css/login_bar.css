@@ -1,0 +1,188 @@
+* {
+	/*outline: 1px solid red;*/
+}
+
+.login_signup_sec {
+	width: 300px;
+	height: 380px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	background-image: linear-gradient(to bottom, #111 0%, #1c204d 20%);
+	opacity: 0.9;
+	border-radius: 5px;
+	padding: 0;
+	display: none;
+	z-index: 50;
+}
+
+/*----------wrap login signup----------*/
+
+img {
+	vertical-align: bottom;
+}
+
+
+
+.wrap_logo_switch {
+	font-size: 0;
+	display: flex;
+	box-sizing: border-box;
+	padding: 30px 30px 0 30px;
+}
+
+.wrap_logo_switch > div {
+	
+}
+
+.decorate_logo {
+	flex: 4;
+	box-sizing: border-box;
+	/*padding: 10px;*/
+}
+
+.switch_display {
+	flex: 6;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	
+}
+
+.close_box {
+	height: 30px;
+	text-align: right;
+	position: relative;
+}
+
+.close_box img {
+	width: 20px;
+	position: absolute;
+	top: -20px;
+	right: -20px;
+	
+}
+
+.switch_light {
+	width: 26px;
+	height: 3px;
+	border-radius: 3px;
+	background-color: #ff5e6a;
+	position: absolute;
+	left: 38px;
+	bottom: -7px;
+	transition: 1s;
+	box-shadow: 0px 0px 10px #ff5e6a;
+}
+
+
+
+.switch_selector {
+	font-size: 0;
+	text-align: right;
+	position: relative;
+}
+
+.switch_selector > p {
+	font-weight: 700;
+	display: inline-block;
+	vertical-align: middle;
+	width: 50%;
+	font-size: 16px;
+	color: #fff;
+}
+
+.switch_selector p:hover {
+	color: #ff5e6a;
+	cursor: pointer;
+}
+
+
+/*----------member input----------*/
+
+.member_signup_input {
+	box-sizing: border-box;
+	padding: 0 30px 30px 30px;
+	margin-top: 60px;
+}
+
+.member_signup_input .input2 {
+	width: 100%;
+	padding-left: 0;
+	color: #fff;
+}
+
+.show_account_info,
+.show_account_info,
+.forget_password {
+	font-size: 14px;
+	padding: 0 0 5px 0;
+	color: #fff;
+}
+
+.show_account_info,
+.show_account_info {
+	opacity: 0;
+}
+
+.password_bar,
+.error_forgot_submit {
+	margin-top: 10px;
+}
+
+.forget_password {
+	margin-top: 5px;
+	display: block;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.error_forgot_submit_bar {
+	position: relative;
+	margin-top: 30px;
+	/*text-align: center;*/
+}
+
+.show_error {
+	font-size: 14px;
+	font-weight: 700;
+	color: #f00;
+	/*密碼錯誤時出現*/
+	visibility: hidden;
+
+}
+
+.login_submit_btn {
+	width: 45px;
+	height: 45px;
+	/*display: inline-block;*/
+	position: absolute;
+	top: -3px;
+	right: -40px;
+}
+
+.login_display {
+	/*display: none;*/
+}
+
+/* 註冊 */
+
+.show_signup_info {
+	font-size: 14px;
+	color: #fff;
+}
+
+.signup_display  {
+	display: none;
+}
+
+.input_bar {
+	margin-bottom: 15px ;
+}
+
+@media screen and (min-width: 768px) {
+	
+}
