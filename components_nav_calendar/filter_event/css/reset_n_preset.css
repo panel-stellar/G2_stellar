@@ -1,0 +1,373 @@
+* {
+	/*outline: 1px solid #f00;*/
+}
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* color */
+/*#b56949*/
+/*#ba3f44*/
+
+/*-same set---------------------------*/
+
+body {
+	font-family: "微軟正黑體";
+}
+
+
+a {
+	text-decoration: none;
+	font-size: 14px;
+	color: #111;
+}
+
+p, span {
+	font-size: 16px;
+	color: #fff;
+}
+
+.clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.img_d img {
+	width: 100%;
+	font-size: 0;
+}
+
+ul, li {
+	text-decoration: none;
+}
+
+/* 文字設定 */
+
+	/* 主標 */
+.main_title {
+	text-align: center;
+	margin-bottom: 120px;
+}
+
+.main_title h2{
+	color: #ba3f44;
+    font-size: 35px;
+    writing-mode: vertical-lr;
+    margin: auto;
+    display: inline-block;
+    vertical-align: bottom;
+    position: relative;
+}
+
+.main_title h2:after {
+	content: '';
+    width: 1px;
+    height: 80px;
+    display: block;
+    background-color: #ba3f44;
+    position: absolute;
+    left: 22px;
+   	top: 110%;
+}
+
+.main_title p {
+	color: #ccc;
+    font-size: 16px;
+    writing-mode: vertical-lr;
+    margin: auto;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+	/* 一般文字段落 */
+
+h3 {
+	color: #b56949;
+    font-size: 22px;
+    letter-spacing: 1.3px;
+}
+
+h4 {
+	color: #b56949;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1.3px;
+}
+
+.p_style1_f {
+	padding: 15px 0 0 0;
+	font-size: 15px;
+	line-height: 24px;
+    letter-spacing: 1.2px;
+    text-align: justify;
+}
+
+.p_style1_0 {
+	/*padding: 0;*/
+	font-size: 15px;
+	line-height: 24px;
+    letter-spacing: 1.2px;
+    text-align: justify;
+}
+
+
+.p_style1 {
+	padding: 10px 0 0 0;
+	font-size: 15px;
+	line-height: 24px;
+	letter-spacing: 1.2px;
+    text-align: justify;
+}
+
+	/* 常用區塊 */
+
+.wrap_text_d {
+	box-sizing: border-box;
+	padding: 15px;
+}
+
+	/* 其他 */
+section {
+	width: 100%;
+	margin: 150px 0;
+}
+
+section > div {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.web_display {
+	display: none;
+}
+
+.mobile_display {
+	display: block;
+}
+
+.space {
+	height: 50px;
+}
+
+.more_btn_right {
+	text-align: right;
+	margin-top: 30px;
+}
+
+.more_btn a {
+	color: #ba3f44;
+	box-sizing: border-box;
+	padding: 5px 50px 0 0;
+	display: inline-block;
+}
+
+.more_btn span {
+	position: relative;
+}
+
+.more_btn span::after {
+	content: '';
+	width: 80px;
+	height: 1px;
+	display: inline-block;
+	background-color: #ba3f44;
+	position: absolute;
+	left: 0;
+	top: 120%;
+	
+}
+
+.more_btn a:hover span::after {
+	width: 1px;
+	height: 1px;
+	transform-origin: 0;
+	transform: scaleX(80);
+	transition: transform 1s;
+}
+
+/* button */
+
+.wrap_btn {
+	text-align: center;
+}
+
+.btn {
+	display: inline-block;
+	color: #fff;
+	background-color: #A52A2A;
+	box-sizing: border-box;
+	padding: 5px;
+	border-radius: 3px;
+}
+
+@media screen and (min-width: 768px) {
+	section > div {
+		width: 90%;
+
+	}
+	
+	.web_display {
+		display: block;	
+	}
+
+	.mobile_display {
+		display: none;
+	}
+
+}
+
+/* 樣板1-mobile:直的主標、圖、文字 web:主標10%、圖45%、文字45% >> */
+
+.tpl1_straight_to_104545 {
+	font-size: 0px;
+}
+
+/* 樣板2-mobile:圖、文字 web:圖45%、文字45% */
+
+.tpl2_straight_to_5050 {
+	font-size: 0px;
+}
+
+
+
+
+/* grid system */
+.col-mobile-1,
+.col-mobile-2,
+.col-mobile-3,
+.col-mobile-4,
+.col-mobile-5,
+.col-mobile-6,
+.col-mobile-7,
+.col-mobile-8,
+.col-mobile-9,
+.col-mobile-10,
+.col-mobile-11,
+.col-mobile-12 {
+	box-sizing: border-box;
+	padding: 0 10px; 
+	float: left;
+}
+
+.col-mobile-1 { width: 8.333333%; }
+.col-mobile-2 { width: 16.666666%; }
+.col-mobile-3 { width: 25%; }
+.col-mobile-4 { width: 33.333333%; }
+.col-mobile-5 { width: 41.666666%; }
+.col-mobile-6 { width: 50%; }
+.col-mobile-7 { width: 58.333333%; }
+.col-mobile-8 { width: 66.666666%; }
+.col-mobile-9 { width: 75%; }
+.col-mobile-10 { width: 83.333333%; }
+.col-mobile-11 { width: 91.666666%; }
+.col-mobile-12 { width: 100%; }
+
+
+@media screen and (min-width: 768px) {
+
+	/* 樣板1-mobile:直的主標、圖、文字 web:主標10%、圖45%、文字45% */
+
+	.tpl1_1st {
+		width: 10%;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.tpl1_2nd,
+	.tpl1_3rd {
+		width: 45%;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	/* 樣板2-mobile:圖、文字 web:圖45%、文字45% */
+
+	.tpl2_1st,
+	.tpl2_2nd {
+		width: 50%;
+		display: inline-block;
+		vertical-align: top;		
+	}
+
+	/* grid system */
+
+	.col-web-1,
+	.col-web-2,
+	.col-web-3,
+	.col-web-4,
+	.col-web-5,
+	.col-web-6,
+	.col-web-7,
+	.col-web-8,
+	.col-web-9,
+	.col-web-10,
+	.col-web-11,
+	.col-web-12 {
+		box-sizing: border-box;
+		padding: 0 10px; 
+		float: left;
+	}
+
+	.col-web-1 { width: 8.333333%; }
+	.col-web-2 { width: 16.666666%; }
+	.col-web-3 { width: 25%; }
+	.col-web-4 { width: 33.333333%; }
+	.col-web-5 { width: 41.666666%; }
+	.col-web-6 { width: 50%; }
+	.col-web-7 { width: 58.333333%; }
+	.col-web-8 { width: 66.666666%; }
+	.col-web-9 { width: 75%; }
+	.col-web-10 { width: 83.333333%; }
+	.col-web-11 { width: 91.666666%; }
+	.col-web-12 { width: 100%; }
+
+}
+

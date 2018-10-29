@@ -1,0 +1,38 @@
+@media screen and (min-width: 768px) {
+	.create_event > a {
+		display: inline-block;
+	}
+
+	.wrap_filter {
+		display: flex;
+	}
+
+	.wrap_filter > div {
+		flex: 1;
+	}
+
+	.filter,
+	.create_event {
+		margin: 5px;
+		height: 80px;
+	}
+
+	.filter p,
+	.filter div {
+		height: 30px;
+	}
+
+	.create_event {
+		text-align: center;
+		background-color: transparent;
+
+	}
+
+	.create_event::before {
+		content: '';
+		height: 100%;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+}

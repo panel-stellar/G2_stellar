@@ -5,8 +5,6 @@ var getLastMonthBtn = document.getElementById('lastMonth');
 var getNextMonthBtn = document.getElementById('nextMonth');
 
 
-alert('!');
-
 //建立table
 var newTableElement = document.createElement('div');
 var newTableTdElement = document.createElement('div');
@@ -33,6 +31,7 @@ function calcLastMonth() {
 	currentMonthParameter--;
 	currentMonth = new Date(currentYearParameter, date.getMonth()+currentMonthParameter, 1);
 	showCurrentMonth();
+	console.log(currentMonth);
 
 }
 
@@ -40,14 +39,15 @@ function calcNextMonth() {
 	currentMonthParameter++;
 	currentMonth = new Date(currentYearParameter, date.getMonth()+currentMonthParameter, 1);
 	showCurrentMonth();
+	console.log(currentMonth);
 
 }
 
 showCurrentMonth();
 
 function showCurrentMonth(thisMonth = currentMonth) {
-	getCalendar.removeChild(getCalendar.childNodes[1]);
-
+	console.log(getCalendar.childNodes[4])
+	getCalendar.removeChild(getCalendar.childNodes[0]);
 
 	//建立table
 	var newTableElement = document.createElement('div');
@@ -55,7 +55,7 @@ function showCurrentMonth(thisMonth = currentMonth) {
 	newTableElement.setAttribute("id", "calendar_block");
 	getCalendar.appendChild(newTableElement);
 
-	getCurrentMonth.innerHTML = `${thisMonth.getFullYear()} ${thisMonth.getMonth()+1}月`;
+	getCurrentMonth.innerHTML = `${thisMonth.getMonth()+1}月, ${thisMonth.getFullYear()}`;
 
 
 	//當月有幾天
@@ -115,13 +115,13 @@ function showCurrentMonth(thisMonth = currentMonth) {
 
 	monthArrIndex = 0;
 	for ( let i = 0 ; i <= homManyWeekforArr ; i++ ) {
-		var newTableTrElement = document.createElement('p');
+		var newTableTrElement = document.createElement('div');
 		newTableTrElement.setAttribute("class", "calendar_row");
 		newTableElement.appendChild(newTableTrElement);
 
 
 		for ( let k = 0 ; k <= 6 ; k++ ) {
-			var newTableTdElement = document.createElement('p');
+			var newTableTdElement = document.createElement('div');
 			if ( i == 0 ) {
 				newTableTdElement.setAttribute("class", "calendar_weekday");
 				newTableTrElement.appendChild(newTableTdElement);
@@ -131,12 +131,16 @@ function showCurrentMonth(thisMonth = currentMonth) {
 				newTableTrElement.appendChild(newTableTdElement);
 
 
+				
+
+
+
+
 				//紀錄年分
 				var dataYear = thisMonth.getFullYear();
 
 				//紀錄月份
 				if(monthArrIndex <= 6 && (showMonthArrar[monthArrIndex] >= 25 && showMonthArrar[monthArrIndex] <=31 )) {
-					newTableTdElement.style.opacity = '0.5';
 					var dataMonth = thisMonth.getMonth();
 					//如果跨年分，月份和月份要調整
 					if (dataMonth == 0) {
@@ -146,7 +150,6 @@ function showCurrentMonth(thisMonth = currentMonth) {
 
 
 				} else if (monthArrIndex >= 28 && (showMonthArrar[monthArrIndex] >= 1 && showMonthArrar[monthArrIndex] <=7 )) {
-					newTableTdElement.style.opacity = '0.5';
 					var dataMonth = thisMonth.getMonth()+2;
 					//如果跨年分，月份和月份要調整
 					if (dataMonth == 13) {
@@ -155,11 +158,10 @@ function showCurrentMonth(thisMonth = currentMonth) {
 					}
 				} else {
 					var dataMonth = thisMonth.getMonth()+1;
-					newTableTdElement.classList.add('hover_color');
 				}
 				//紀錄日期
 				var dataDate = showMonthArrar[monthArrIndex];
-				newTableTdElement.setAttribute('data-daterecord', `${dataYear}-${dataMonth}-${dataDate}`);
+				newTableTdElement.setAttribute("data-daterecord", `${dataYear}-${dataMonth}-${dataDate}`);
 				newTableTdElement.innerHTML = showMonthArrar[monthArrIndex];
 				monthArrIndex++;
 			}
@@ -178,7 +180,3 @@ function showCurrentMonth(thisMonth = currentMonth) {
 function getClickDate() {
 	console.log(this.getAttribute('data-daterecord'));
 }
-
-$('.cancel_calendar').click(function() {
-	$('.calendar_block').css('display','none');
-})

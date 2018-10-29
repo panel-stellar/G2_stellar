@@ -1,0 +1,49 @@
+* {
+	outline: 1px solid #f00;
+}
+
+body {
+	background-color: #111;
+}
+
+.create_event_sec {
+	padding-bottom: 0;
+}
+
+.create_event_content {
+	text-align:center;
+}
+
+.filter_title {
+	font-size: 20px;
+	color: #fff;
+	margin: 0 0 10px 5px;
+	text-align: center;
+}
+
+.filter_content {
+	background-color: rgba(28,32,77,0.7);
+	border-radius: 3px;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+.filter,
+.create_event {
+	color: #fff;
+	background-color: rgb(28,32,77);
+	border-radius: 3px;
+	box-sizing: border-box;
+	padding: 5px;
+	text-align: center;
+}
+
+.filter + .filter {
+	margin-top: 5px;
+}
+
+.filter_item {
+	margin-bottom: 10px;
+}
+
+
