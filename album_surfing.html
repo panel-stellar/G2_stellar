@@ -115,6 +115,26 @@
                 <div id="particles-js"></div> 
 				<div class="main_content">
                     <!-- 畫面放這裡 -->
+                    <section class="gallery_vice_nav">
+                        <div>
+                            <form action="album_update.html" method="GET">
+                                <div class="interval">
+                                    <label for="interval_selection">選擇期間:</label>
+                                    <select class="interval_selection" id="interval_selection">
+                                        <option value="interval1">三天內</option>
+                                        <option value="interval2">一星期內</option>
+                                        <option value="interval3">一個月內</option>
+                                    </select>
+                                </div>
+                                <div class="search_bar">
+                                    <label for="search_bar">搜尋:</label>
+                                    <input type="text" id="search_bar">
+                                    <button type="submit" class="send_btn">送出</button>
+                                </div>
+                                <button href="#" class="upload_btn">上傳相簿</button>
+                            </form>
+                        </div>
+                    </section>
                     <section class="gallery_sec">
                             <div class="gallery_content clearfix">
                                 <div class="gallery_box">

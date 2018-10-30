@@ -349,6 +349,9 @@ select,textarea{
     padding: 5px;
     color: #fff; }
 
+
+
+
 @media screen and (min-width: 320px) and (max-width: 767px) {
     .dm-1 {
         width: 8.33333%; }
@@ -409,7 +412,7 @@ select,textarea{
         letter-spacing: 1px;
         line-height: 1; }
     .gallery_sec{
-        padding: 100px 0px; }
+        padding: 70px 0px 100px; }
     .gallery_box {
         width: 100%;
         margin-bottom: 10px; }
@@ -435,9 +438,48 @@ select,textarea{
         width: 100%;
         height: 30px;
         margin-top: 10px; }
+    .gallery_vice_nav{
+        position: relative;
+        top:60px;
+        margin-top: 40px;
+        padding:40px 0 10px;
+    }
+    .gallery_vice_nav > div{
+        position: relative;
+    }
+    .gallery_vice_nav a{
+        color:#fff;
+    }
+    .gallery_vice_nav label{
+        font-size: 16px;
+        margin-right: 5px;
+    }
+    .gallery_vice_nav .send_btn{
+        margin-left: 5px;
+    }
+    .gallery_vice_nav button{
+        
+        padding:5px 10px;
+    }
+    .search_bar,.upload_btn{
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .upload_btn{
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .interval,.search_bar,.upload_btn{
+        margin-bottom:10px
+    }
+    .interval select,.search_bar input[type=text]{
+        padding:5px;
+    }
 }
     
-    @media screen and (min-width: 768px) and (max-width: 1920px) {
+    @media screen and (min-width: 768px){
 
     .dl-1 {
         width: 8.33333%; }
@@ -498,7 +540,7 @@ select,textarea{
         letter-spacing: 1px;
         line-height: 1; }
     .gallery_sec {
-        padding: 130px 0px; }
+        padding: 70px 0px 130px; }
     .gallery_box {
         width: 32%;
         float: left;
@@ -530,4 +572,38 @@ select,textarea{
         background-color: #41bffa; }
     .drop_down_menu .edit_btn:hover, .drop_down_menu .report_btn:hover, .drop_down_menu .cancel_btn:hover {
         background-color: #eee; }
+
+    .gallery_vice_nav{
+        position: relative;
+        top:60px;
+        margin-top: 40px;
+        padding:40px 0;
+    }
+    .gallery_vice_nav a{
+        color:#fff;
+    }
+    .gallery_vice_nav label{
+        font-size: 18px;
+        margin-right: 5px;
+    }
+    .gallery_vice_nav .send_btn{
+        margin-left: 5px;
+    }
+    .gallery_vice_nav button{
+        width: 80px;
+        padding:5px;
+    }
+    .interval,.search_bar,.upload_btn{
+        display: inline-block;
+        vertical-align: middle;
+        margin-right:20px;
+    }
+    .interval select,.search_bar input[type=text]{
+        padding:5px;
+    }
 }
+
+
+  .upload_a {
+   color: #111;
+  }

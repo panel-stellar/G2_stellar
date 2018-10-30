@@ -932,7 +932,6 @@
         initRenderer();
         initCamera();
         render();
-        // initFont();
         initParallax();
         ImgDriver();
         showCurrentMonth();

@@ -116,7 +116,7 @@ body::-webkit-scrollbar {display: none;}
 }
 #intro h1{
     color:#fff;
-    font-size: 70px;
+    font-size: 60px;
     letter-spacing: 12px;
     text-shadow: 0 0 30px rgb(124, 181, 255);
     margin:10px 0px;
@@ -255,7 +255,6 @@ body::-webkit-scrollbar {display: none;}
 	position: absolute;
 	right: 10px;
 	top: 10px;
-    transform: rotate(90deg);
 }
 
 .cancel_calendar img {
@@ -459,6 +458,9 @@ font-size: 14px; }
         width: 90%;
     }
     #calendar{display: none;}
+    .cancel_calendar {
+        transform: rotate(90deg);
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width:1439px){
@@ -477,8 +479,8 @@ font-size: 14px; }
         margin:0 auto;
     }
     .act_content_box.map,.act_content_box.calendar_block{
-        display: inline-block;
-        vertical-align: middle;
+        position: absolute;
+        top: 50%;
     }
     .act_content_box.map{
         right:-3999px;  
@@ -489,6 +491,9 @@ font-size: 14px; }
     /* lightbox setting */
     .lightbox_content.act_box {
         width: 45%;  
+    }
+    .cancel_calendar {
+        transform: rotate(-90deg);
     }
 }
 
@@ -504,10 +509,10 @@ font-size: 14px; }
     /* act settings */
     .act_content_box{
         width: 40%;
-        display: inline-block;
-        vertical-align: middle;
+        position: absolute;
         margin:0 calc(20% / 4);
     }
+
     .act_content_box.map{
         right:-3999px;  
     }
@@ -517,5 +522,8 @@ font-size: 14px; }
     /* lightbox setting */
     .lightbox_content.act_box {
         width: 30%;  
+    }
+    .cancel_calendar {
+        transform: rotate(-90deg);
     }
 }

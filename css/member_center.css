@@ -759,7 +759,7 @@ input {
     .sec_open .content:before {
       content: '';
       width: 0;
-      height: 100vh;
+      height: 90vh;
       display: inline-block;
       vertical-align: middle; }
   .content_box div h3 {
