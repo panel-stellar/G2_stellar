@@ -52,7 +52,6 @@ body::-webkit-scrollbar {display: none;}
     position: fixed;
     right: 30px;
     top: 30%;
-  
 }
 .whitedot {
     width: 10px;
@@ -105,6 +104,47 @@ body::-webkit-scrollbar {display: none;}
     position: absolute;
     bottom: -100%;
 }
+#intro{
+    color:#fff;
+    text-shadow: 0 0 30px rgb(124, 181, 255);
+    position: absolute;
+    bottom: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    opacity: 1;
+}
+#intro h1{
+    color:#fff;
+    font-size: 70px;
+    letter-spacing: 12px;
+    text-shadow: 0 0 30px rgb(124, 181, 255);
+    margin:10px 0px;
+    font-weight: 700;
+}
+#intro p{
+    color:#fff;
+    text-shadow: 0 0 30px rgb(124, 181, 255);
+    font-size: 20px;
+}
+.guide_flag{
+    width: 60px;
+    height: 60px;
+    font-size: 14px;
+    line-height: 60px;
+    border:1px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    bottom:0;
+    transform: translate(-50%,150%);
+}
+/* 
+@keyframes jump{
+    0%{bottom:28%;}
+    50%{bottom:30%;}
+    100%{bottom:28%;}
+} */
 
 /* ----------------- Second panel (Cross devices) ----------------- */
 
@@ -217,13 +257,13 @@ body::-webkit-scrollbar {display: none;}
 	top: 10px;
     transform: rotate(90deg);
 }
-/* #calendar{display: none;} */
+
 .cancel_calendar img {
 	width: 100%;
 }
 #calendar_block {
     width: 100%;
-    height:0px;
+
     overflow: hidden;
 }
 .calendar_row {
@@ -404,21 +444,28 @@ font-size: 14px; }
         left:-3999px;
         max-width: 300px;
         margin:auto;
+        position: absolute;
+        left: -3999px;
+        right: 0;
+        z-index: 5;
+        top:-20%;
     }
     .act_content_box.map{
         right:-3999px;
-        transform: translateY(-100%); 
+        transform: translateY(0%); 
     }
     /* lightbox setting */
     .lightbox_content.act_box {
         width: 90%;
     }
+    #calendar{display: none;}
 }
 
 @media screen and (min-width: 768px) and (max-width:1439px){
     /* gallery box */
     #homepage .gallery_box{
         width: 40%;
+        transform: translateY(-40%);
     }
     /* parallax settings */
     .layerBg{

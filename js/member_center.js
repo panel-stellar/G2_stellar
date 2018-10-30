@@ -1,3 +1,11 @@
+//偵測是否為手機版Safari
+$(function(){
+    mobileSafari = (/iPhone/i.test(navigator.platform) || /iPod/i.test(navigator.platform) || /iPad/i.test(navigator.userAgent)) && !!navigator.appVersion.match(/(?:Version\/)([\w\._]+)/);
+    console.log(mobileSafari);
+    if (mobileSafari) {
+        $('.sec4').addClass('margin_Safari');
+    }
+});
 //手風琴
 $('.sec').on('click',function(){
     $(this).removeClass('sec_close');

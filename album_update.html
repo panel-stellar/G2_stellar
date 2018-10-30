@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/stellar_initSet.css">
     <link rel="stylesheet" href="css/stellar_nav_login_signup_box.css">
     <link rel="stylesheet" href="css/album_update.css">
+    <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 <body id="albumUpdate_page">
@@ -108,6 +109,8 @@
 
         <div class="main_content_camera">
             <div class="main_content_space">
+                <!-- particles.js container --> 
+                <div id="particles-js"></div> 
                 <div class="main_content">
                     <!-- 畫面放這裡 -->
                     <section class="albumUpdate_sec">
@@ -136,11 +139,13 @@
                                 <div class="album_form_bottom">
                                     <div class="album_form_desc form_cell">
                                         <label class="album_form_title">相簿描述</label>
-                                        <input type="text" placeholder="幫這本相簿加上一點敘述吧！">
+                                        <!-- <input type="text" placeholder="幫這本相簿加上一點敘述吧！"> -->
+                                        <textarea name="descInput" id="descInput" cols="30" rows="10" placeholder="幫這本相簿加上一點敘述吧！"></textarea>
                                     </div>
                                     <div class="album_form_tags form_cell">
                                         <label class="album_form_title">相簿標籤</label>
-                                        <input type="text" placeholder="幫這本相簿加上一些標籤會讓其他人更容易找到你喔！（每個標籤請用逗點隔開 ex: 九份,基隆）">
+                                        <!-- <input type="text" placeholder="幫這本相簿加上一些標籤會讓其他人更容易找到你喔！（每個標籤請用逗點隔開 ex: 九份,基隆）"> -->
+                                        <textarea name="tagInput" id="tagInput" cols="30" rows="10" placeholder="幫這本相簿加上一些標籤會讓其他人更容易找到你喔！（每個標籤請用逗點隔開 ex: 九份,基隆）"></textarea>
                                         <button class="add_btn">新增標籤</button>
                                         <div class="album_form_tagsArea">
                                             <a href="#" class="album_tag">永久佔位哥<i class="fas fa-times"></i></a>
@@ -269,9 +274,13 @@
     
     <!-- 登入註冊燈箱在這結束 -->
 
-    <!-- Javascript -->
+    <!-- jQuery -->
     <script src="js/jquery_3.3.1_min.js"></script>
+    <!-- nav common settings -->
     <script src="js/nav_login_signup_box.js"></script>
+    <!-- Particle.js -->
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>  
+    <script src="js/app.js"></script> 
 
     <script>
         
@@ -286,7 +295,7 @@
             var getHint = document.querySelector('.hint_form');
 
             
-            console.log(window.getComputedStyle(getUploader,null).getPropertyValue("z-index"));
+            // console.log(window.getComputedStyle(getUploader,null).getPropertyValue("z-index"));
 
             getUploader.onchange = showTime;
 
@@ -305,8 +314,8 @@
                 
                 for(let i=0; i<uploadedImgs.length; i++){
                     var imgReader = new FileReader();
-                    var uploadedImgName = uploadedImgs[i].name;
                     var previewImg = document.createElement('img');
+                    var uploadedImgName = uploadedImgs[i].name;
                     imgReader.readAsDataURL(uploadedImgs[i]);
                     imgReader.onload = function(){
                         // console.log(this.result);
@@ -337,17 +346,19 @@
             // User can click on picture to remove it from board 
             
             function RemoveImg(e){
+                var imgLines = document.querySelectorAll('.album_form_image_line');
                 e.preventDefault();
                 getShowTimeArea.removeChild(this.parentNode);
-                console.log(this.parentNode.length);
-                if(this.parentNode.length === undefined){
+                // console.log(this.parentNode.length);
+                console.log(imgLines.length);
+                if(imgLines.length == 1){
                     getHint.style.display = 'block';
                 }
             }
 
             // Add and delete album tags
             
-            var getTagInput = document.querySelector('.album_form_tags input[type=text]');
+            var getTagInput = document.querySelector('.album_form_tags textarea');
             var getAddBtn = document.querySelector('.add_btn');
             var getTagsArea = document.querySelector('.album_form_tagsArea');
             
@@ -357,8 +368,9 @@
 
                 var initialValue = getTagInput.value;
 
-                if(initialValue == ''){
-                    alert('請好好地填你的標籤，謝謝合作');
+                if(initialValue.indexOf(' ') >= 0 || initialValue == ''){
+                    window.alert('標籤請勿包含任何空白字元喔！');
+                    initialValue = '';
                     return false;
                 }
 

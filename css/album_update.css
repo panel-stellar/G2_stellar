@@ -8,7 +8,7 @@ table {
 img {
     max-width: 100%;
     height: auto;
-    display: block; }
+    vertical-align: bottom; }
 
 ol, ul {
     list-style: none; }
@@ -40,16 +40,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block; }
 
-@font-face {
-    font-family: 'Noto Sans TC', sans-serif;
-    src: url(http://fonts.googleapis.com/earlyaccess/notosanstc.css); }
-
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box; }
-
-body {
-    font-family: 'Noto Sans TC', sans-serif; }
 
 section {
     width: 100%;
@@ -67,14 +60,19 @@ button, input[type=text], input[type=file] {
     border: none;
     background-color: #fff; 
 }
+input[type=file]{
+    opacity: 0;
+}
 
 input[type=text], input[type=file] {
     border-radius: 3px; }
 
-select {
+select,textarea{
     -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none; }
+    appearance: none; 
+    border:none;
+}
 
 section > div{
     width: 90%;
@@ -87,13 +85,6 @@ section > div{
     background-repeat: no-repeat; }
 #albumUpdate_page .albumUpdate_content {
     max-width: 1200px; }
-/* #albumUpdate_page header {
-    width: 90%;
-    color: #fff;
-    text-align: left;
-    background-color: transparent;
-    max-width: 1200px;
-    margin: auto; } */
 #albumUpdate_page .submit_btn, #albumUpdate_page .cancel_btn, #albumUpdate_page .select_btn, #albumUpdate_page .add_btn {
     height: 30px;
     font-size: 14px; }
@@ -109,7 +100,7 @@ section > div{
     display: block;
     font-size: 20px;
     padding-bottom: 3px; }
-#albumUpdate_page input[type=text] {
+#albumUpdate_page textarea,input[type=text] {
     display: block;
     padding: 5px; }
 #albumUpdate_page form {
@@ -129,21 +120,21 @@ section > div{
     position: relative;
     bottom: 15px;
     z-index: 1; }
-#albumUpdate_page .album_form_sub input[type="text"] {
+#albumUpdate_page .album_form_sub input[type=text] {
     height: 35px; }
-#albumUpdate_page .album_form_desc input[type="text"], #albumUpdate_page .album_form_tags input[type="text"] {
+#albumUpdate_page .album_form_desc textarea, #albumUpdate_page .album_form_tags textarea {
     width: 100%;
     height: 35px;
     -webkit-transition: .4s;
     -o-transition: .4s;
     transition: .4s;
     vertical-align: top; }
-#albumUpdate_page .album_form_desc input[type="text"]:focus {
+#albumUpdate_page .album_form_desc textarea:focus {
     height: 100px;
     -webkit-transition: .4s;
     -o-transition: .4s;
     transition: .4s; }
-#albumUpdate_page .album_form_tags input[type="text"]:focus {
+#albumUpdate_page .album_form_tags textarea:focus {
     height: 50px;
     -webkit-transition: .4s;
     -o-transition: .4s;
@@ -263,7 +254,10 @@ section > div{
         font-size: 20px;
         letter-spacing: 1px;
         line-height: 1; }
-    #albumUpdate_page .album_form_sub input[type="text"] {
+    .albumUpdate_sec{
+        padding:100px 0;
+    }
+    #albumUpdate_page .album_form_sub input[type=text] {
         width: 70%; }
     #albumUpdate_page .album_form_images .album_form_image_line {
         width: 46%;
@@ -283,12 +277,12 @@ section > div{
         height: 600px; }
     #albumUpdate_page .album_form_btns button {
         margin: 0 20px; }
-    #albumUpdate_page .album_form_tags input[type="text"], #albumUpdate_page .album_form_tags .add_btn {
+    #albumUpdate_page .album_form_tags textarea, #albumUpdate_page .album_form_tags .add_btn {
         display: block;
         width: 100%; }
-    #albumUpdate_page .album_form_tags input[type="text"] {
+    #albumUpdate_page .album_form_tags textarea {
         height: 40px; }
-        #albumUpdate_page .album_form_tags input[type="text"]:focus {
+        #albumUpdate_page .album_form_tags textarea:focus {
         height: 50px;
         -webkit-transition: .4s;
         -o-transition: .4s;
@@ -356,7 +350,10 @@ section > div{
         font-size: 20px;
         letter-spacing: 1px;
         line-height: 1; }
-    #albumUpdate_page .album_form_sub input[type="text"] {
+    .albumUpdate_sec{
+        padding:130px 0;
+    }
+    #albumUpdate_page .album_form_sub input[type=text] {
         width: 50%; }
     #albumUpdate_page .album_form_images .album_form_image_line {
         width: 30%;
@@ -374,10 +371,10 @@ section > div{
         margin: 8px 0px; }
     #albumUpdate_page .album_form_tags {
         font-size: 0; }
-        #albumUpdate_page .album_form_tags input[type="text"], #albumUpdate_page .album_form_tags .add_btn {
+        #albumUpdate_page .album_form_tags textarea, #albumUpdate_page .album_form_tags .add_btn {
         display: inline-block;
         vertical-align: middle; }
-        #albumUpdate_page .album_form_tags input[type="text"] {
+        #albumUpdate_page .album_form_tags textarea {
         width: calc(100% - 110px); }
         #albumUpdate_page .album_form_tags .add_btn {
         width: 100px;

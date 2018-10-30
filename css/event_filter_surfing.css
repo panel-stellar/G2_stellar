@@ -107,16 +107,13 @@ a {
 
 .form_submit_btn {
   font-size: 16px;
-  border: 1px solid transparent;
+  /*border: 1px solid transparent;*/
   background: linear-gradient(67deg, #44227A 0%, #FF5E6A 81%);
   color: #ffffff;
   box-sizing: border-box;
   padding: 8px;
   border-radius: 3px; }
-  .form_submit_btn:hover {
-    border: 1px solid #ff5e6a;
-    background: linear-gradient(0deg, transparent 0%, transparent 100%);
-    color: #ff5e6a; }
+
 
 .input1 {
   border: 0px transparent;
@@ -276,7 +273,8 @@ label {
     letter-spacing: 1px;
     line-height: 1; }
   .web_display {
-    display: block; }
+    /*display: block;*/
+  }
   .mobile_display {
     display: none; }
   .img_d img {
@@ -310,15 +308,11 @@ label {
     padding: 30px 0; }
   .filter_content .group_create {
     margin-top: 40px; }
-    .filter_content .group_create a {
-      color: #FFF;
-      border: 1px solid #FFF;
-      border-radius: 5px;
-      padding: 5px 15px; }
-      .filter_content .group_create a:hover {
+
+/*      .filter_content .group_create a:hover {
         transition: .5s;
         color: #FF5E6A;
-        border: 1px solid #FF5E6A; }
+        border: 1px solid #FF5E6A; }*/
   .filter_content .date_bar {
     font-size: 0;
     border-radius: 3px;
@@ -363,10 +357,10 @@ label {
         border: 1px solid #FFF;
         border-radius: 5px;
         padding: 0 10px; }
-        .filter_content .filter_search .wrap_btn a:hover {
+   /*     .filter_content .filter_search .wrap_btn a:hover {
           transition: .5s;
           color: #FF5E6A;
-          border: 1px solid #FF5E6A; }
+          border: 1px solid #FF5E6A; }*/
   .filter_content .filter_search > div {
     display: inline-block;
     vertical-align: middle; }
@@ -519,10 +513,10 @@ label {
     border-radius: 5px;
     padding: 5px 15px;
     margin: 0 10px 0 0; }
-    .choose_sec a:hover {
+/*    .choose_sec a:hover {
       transition: .5s;
       color: #FF5E6A;
-      border: 1px solid #FF5E6A; }
+      border: 1px solid #FF5E6A; }*/
 
 /*lightbox*/
 .lightbox .event_info_box {
@@ -622,7 +616,8 @@ label {
     letter-spacing: 1px;
     line-height: 1; }
   .web_display {
-    display: block; }
+    /*display: block;*/
+  }
   .mobile_display {
     display: none; }
   .img_d img {

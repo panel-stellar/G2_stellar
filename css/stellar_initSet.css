@@ -32,22 +32,18 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
   text-decoration: none; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block; }
 
-@font-face {
-  font-family: 'Noto Sans TC', sans-serif;
-  src: url(http://fonts.googleapis.com/earlyaccess/notosanstc.css); }
 
 * {
   box-sizing: border-box; }
 
 body, button {
-  font-family: '微軟正黑體','Noto Sans TC', sans-serif; }
+  font-family: '微軟正黑體', sans-serif; }
 
 section {
   width: 100%;

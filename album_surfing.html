@@ -7,7 +7,7 @@
     <title>stellar_photoWall</title>
     <link rel="stylesheet" href="css/stellar_initSet.css">
     <link rel="stylesheet" href="css/stellar_nav_login_signup_box.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/album_surfing.css">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/tiny-slider.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
@@ -106,10 +106,6 @@
 				</div>
 
 			</header>
-
-			
-
-
 		</div>
 
 
@@ -552,7 +548,8 @@
                                 <li><a href="#" class="gallery_mark"> <i class="fas fa-angle-right"></i> </a></li>
                             </ul>
                     </section>
-                    <section class="lightbox_sec">
+                </div>	
+                <section class="lightbox_sec">
                         <div class="lightbox_bg">
                             <button class="lightbox_close_btn"><i class="fas fa-times"></i></button>
                         </div>
@@ -606,7 +603,8 @@
                                     </div>
                                     <form action="#" method="POST" class="album_msg_box">
                                         <img class="album_userpic" src="img/album_surfing/sample_8.jpeg" alt="picLost">
-                                        <input type="text" id="msg_input" class="msg_box" placeholder="在這裡回覆此相簿吧！">
+                                        <!-- <input type="text" id="msg_input" class="msg_box" placeholder="在這裡回覆此相簿吧！"> -->
+                                        <textarea name="msgBoard" id="msg_input" class="msg_box" cols="30" rows="10" placeholder="在這裡回覆此相簿吧！"></textarea>
                                         <button id="msg_send" class="send_btn">SEND</button>
                                     </form>
                                 </div>
@@ -637,7 +635,6 @@
                             </div>
                         </div>
                     </section>
-				</div>	
 			</div>
 		</div>
 
@@ -748,15 +745,16 @@
 
     <!-- jQuery -->
     <script src="js/jquery_3.3.1_min.js"></script>
+    <!-- nav common settings -->
+    <script src="js/nav_login_signup_box.js"></script>
     <!-- Particle.js -->
-    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script type="text/javascript" src="js/stellar_nav_login_signup_box.js"></script>  
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>  
     <script src="js/app.js"></script> 
     <!-- Masonry.js -->
     <script src="js/Masonry.js"></script>
     <!-- Tiny slider.js -->
     <script src="js/tiny-slider.js"></script>
-	
+
    
    <script>
        
@@ -806,6 +804,12 @@
             var getLightBox = document.querySelector('.lightbox_sec');
             var getlightBoxBg = document.querySelector('.lightbox_bg');
             var getLightBoxCloseBtn = document.querySelector('.lightbox_close_btn');
+            var getNavBar = document.querySelector('.header_content');
+            var getHeaderContent = document.querySelector('.header_content');
+
+            function shutTheNavDown(){
+               getHeaderContent.style.zIndex = window.getComputedStyle(getLightBox,null).display == 'none'?  30 : 1;
+            }
 
             // Drop down menu
             
@@ -854,11 +858,13 @@
                     if(getGalleryBox[i].contains(e.target)){
                         getLightBox.style.display = 'block';
                         slider.updateSliderHeight();
+                        shutTheNavDown();
                     }
                 }
 
                 if(getlightBoxBg.contains(e.target)){
                     getLightBox.style.display = 'none';
+                    shutTheNavDown();
                 }
             }
 
@@ -875,10 +881,13 @@
 
                 e.preventDefault();
 
-                if(getLovelyMsgBox.value == ''){
-                    alert('填字啦');
+                if(/^\s+$/.test(getLovelyMsgBox.value)){
+                    alert('不能發送空白留言喔');
+                    getLovelyMsgBox.value = '';
                     return false;
                 }
+
+                console.log(getLovelyMsgBox.value.indexOf(' '));
                 
                 var boxCurIndex = document.querySelectorAll('.response_box').length + 1;
                 var secondClassArr = ['response_userinfo','response_msg','response_menu'];

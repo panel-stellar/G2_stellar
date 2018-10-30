@@ -239,25 +239,25 @@
          
     }
 
-    // Initialize text 
+    // // Initialize text 
 
-    function initFont(){
-        var loader = new THREE.FontLoader();
-        loader.load("./font/testFont.json",function(font){
-            var material = new THREE.MeshDepthMaterial();
-            var geometry = new THREE.TextGeometry( 'STELLAR', {
-                font: font,
-                size: 70,
-                height: 10,
-                curveSegments: 12,
-            } );
+    // function initFont(){
+    //     var loader = new THREE.FontLoader();
+    //     loader.load("./font/testFont.json",function(font){
+    //         var material = new THREE.MeshDepthMaterial();
+    //         var geometry = new THREE.TextGeometry( 'STELLAR', {
+    //             font: font,
+    //             size: 70,
+    //             height: 10,
+    //             curveSegments: 12,
+    //         } );
 
-            var text = new THREE.Mesh(geometry,material);
-            scene.add(text);
-            text.position.set(-175,200,16000);
+    //         var text = new THREE.Mesh(geometry,material);
+    //         scene.add(text);
+    //         text.position.set(-175,200,16000);
             
-        })
-    }
+    //     })
+    // }
 
     // Start render
 
@@ -494,6 +494,7 @@
             relativeInput: true,
         });
     }
+   
 
     // Call images
 
@@ -501,9 +502,13 @@
         var galleryBox = document.querySelectorAll('.gallery_box');
         // console.log('The positionZ from ImgDriver: '+positionZ);
         if(esignal === true){
-            if(screen.width <768){
+            if(screen.width < 768){
                 switch(positionZ){
+                    case 15000:
+                        $('#intro').animate({opacity:'0'},800);
+                        break;
                     case 14000:
+                        $('#intro').animate({display:'none'},800);
                         $('.layerBg').animate({bottom:'-200%'},800);
                         break;
                     case 13100:
@@ -549,7 +554,11 @@
                 }
             }else{
                 switch(positionZ){
+                    case 15000:
+                        $('#intro').animate({opacity:'0'},800);
+                        break;
                     case 14000:
+                        $('#intro').animate({display:'none'},800);
                         $('.layerBg').animate({bottom:'-200%'},800);
                         break;
                     case 13100:
@@ -597,7 +606,11 @@
         }else{
             if(screen.width < 768){
                 switch(positionZ){
+                    case 15000:
+                        $('#intro').animate({opacity:'1'},800);
+                        break;
                     case 14000:
+                        $('#intro').animate({display:'block'},800);
                         $('.layerBg').animate({bottom:'-100%'},800);
                         break;
                     case 13100:
@@ -607,11 +620,12 @@
                         break;
                     case 12980:
                         $('.act_sec').css('z-index',5);
+                        $('.gallery_sec').css('z-index',0);
                         $('.act_content_box.map').animate({right:'0'},1000);
                         $('.act_content_box.calendar_block').animate({left:'0'},1000);
                         break;
                     case 10000:
-                        $('.gallery_sec').css('z-index',0);
+                        $('.gallery_sec').css('z-index',5);
                         $('.gb1').animate({right:'-105%'},1000);
                         break;
                     case 7600:
@@ -641,7 +655,11 @@
                 }
             }else{
                 switch(positionZ){
+                    case 15000:
+                        $('#intro').animate({opacity:'1'},800);
+                        break;
                     case 14000:
+                        $('#intro').animate({display:'block'},800);
                         $('.layerBg').animate({bottom:'-100%'},800);
                         break;
                     case 13100:
@@ -651,6 +669,7 @@
                         break;
                     case 12980:
                         $('.act_sec').css('z-index',5);
+                        $('.gallery_sec').css('z-index',0);
                         $('.act_content_box.map').animate({right:'0'},1000);
                         $('.act_content_box.calendar_block').animate({left:'0'},1000);
                         break;
@@ -887,23 +906,11 @@
         if(getLightBox.contains(e.target) && !getActInfoHolder.contains(e.target)){
             getLightBox.style.display = 'none';
         }else if(getCancelBtn.contains(e.target)){
-            // if(window.getComputedStyle(getCalendar,null).display == 'block'){
-            //     getCalendar.style.display = 'none';
-            //     getCancelBtn.style.transform = 'rotate(90deg)';
-            // }else if(window.getComputedStyle(getCalendar,null).display == 'none'){
-            //     getCalendar.style.display = 'block';
-            //     getCancelBtn.style.transform = 'rotate(-90deg)';
-            // }
-            
-            if(window.getComputedStyle(getCalendarBlock,null).height == '0px'){
-                // getCalendar.style.display = 'none';
-                getCalendarBlock.style.height = '271px';
-                getCalendarBlock.style.overflow = 'auto';
+            if(window.getComputedStyle(getCalendar,null).display == 'block'){
+                getCalendar.style.display = 'none';
                 getCancelBtn.style.transform = 'rotate(90deg)';
-            }else if(!window.getComputedStyle(getCalendarBlock,null).height == '0px'){
-                // getCalendar.style.display = 'block';
-                getCalendarBlock.style.height = '0px';
-                getCalendarBlock.style.overflow = 'hidden';
+            }else if(window.getComputedStyle(getCalendar,null).display == 'none'){
+                getCalendar.style.display = 'block';
                 getCancelBtn.style.transform = 'rotate(-90deg)';
             }
         }
@@ -925,7 +932,7 @@
         initRenderer();
         initCamera();
         render();
-        initFont();
+        // initFont();
         initParallax();
         ImgDriver();
         showCurrentMonth();

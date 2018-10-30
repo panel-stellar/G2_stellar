@@ -395,7 +395,9 @@ input {
     max-width: 1200px;
     margin: 0 auto; }
   .main_content_camera .main_content_space .main_content {
-    display: block; }
+    display: block;
+    overflow: auto;
+    overflow-y: auto; }
   .sec {
     width: 100%;
     height: 10vh;
@@ -433,6 +435,8 @@ input {
       padding: 0 15px; }
   .sec_close {
     height: 10vh; }
+  .margin_Safari {
+    margin-bottom: 115px; }
   .content_box div h3 {
     box-sizing: border-box;
     color: #FFF;
@@ -524,7 +528,6 @@ input {
         flex-direction: column;
         color: #FFF; }
         #act_box .act_content .act_model .act_text_box .div_th {
-          font-weight: bold;
           text-shadow: 0px 0px 5px #FFF; }
         #act_box .act_content .act_model .act_text_box .div_td input {
           margin: 10px; }
@@ -580,7 +583,6 @@ input {
         flex-direction: column;
         color: #FFF; }
         #join_box .join_content .join_model .join_text_box .div_th {
-          font-weight: bold;
           text-shadow: 0px 0px 5px #FFF; }
         #join_box .join_content .join_model .join_text_box .div_td input {
           margin: 10px; }
@@ -609,7 +611,6 @@ input {
         color: #FFF; }
         #album_manage_box #album_box .album_model .album_title_box p {
           text-align: left;
-          font-weight: bold;
           padding: 5px 0 10px;
           text-shadow: 0px 0px 5px #FFF; }
           #album_manage_box #album_box .album_model .album_title_box p span {
@@ -769,14 +770,16 @@ input {
     padding: 10px;
     margin: 10px;
     border-bottom: 3px solid #FFF; }
+  .margin_Safari {
+    margin-bottom: 0; }
   .member_info_open {
     display: block; }
   #member_info_box .div_table {
     margin: 0 auto;
     width: 400px;
     border: 1px solid #FFF;
-    border-radius: 15px;
-    background-color: purple; }
+    box-shadow: 0px 0px 5px #FFF;
+    border-radius: 15px; }
     #member_info_box .div_table .head_content {
       width: 150px;
       height: 150px;
@@ -795,8 +798,7 @@ input {
         max-width: 50%;
         flex-grow: 1; }
         #member_info_box .div_table .div_tr .div_th span {
-          text-shadow: 0px 0px 5px #FFF;
-          font-weight: bold; }
+          text-shadow: 0px 0px 5px #FFF; }
       #member_info_box .div_table .div_tr .div_td {
         max-width: 50%;
         flex-grow: 1; }
@@ -858,7 +860,6 @@ input {
         flex-direction: column;
         color: #FFF; }
         #act_box .act_content .act_model .act_text_box .div_th {
-          font-weight: bold;
           text-shadow: 0px 0px 5px #FFF; }
         #act_box .act_content .act_model .act_text_box .div_td input {
           margin: 10px; }
@@ -914,7 +915,6 @@ input {
         flex-direction: column;
         color: #FFF; }
         #join_box .join_content .join_model .join_text_box .div_th {
-          font-weight: bold;
           text-shadow: 0px 0px 5px #FFF; }
         #join_box .join_content .join_model .join_text_box .div_td input {
           margin: 10px; }
@@ -944,7 +944,6 @@ input {
         color: #FFF; }
         #album_manage_box #album_box .album_model .album_title_box p {
           text-align: left;
-          font-weight: bold;
           padding: 5px 0 10px;
           text-shadow: 0px 0px 5px #FFF; }
           #album_manage_box #album_box .album_model .album_title_box p span {
