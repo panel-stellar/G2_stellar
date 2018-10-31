@@ -16,20 +16,48 @@ p {
 }
 
 .calendar_block {
-	width: 300px;
+	width: 700px;
 	box-sizing: border-box;
 	padding: 10px;
 	background-color: #44227a;
 	border-radius: 5px;
 	position: relative;
+	font-size: 0;
+}
+
+.calendar_block > div {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.show_date {
+	width: 30%;
+}
+
+.show_calendar {
+	width: 70%;
+}
+
+.date_row > label {
+	color: #fff;
+	font-size: 16px;
+}
+
+.input1 {
+	margin: 5px 0;
+}
+
+.show_start_date,
+.show_end_date {
+	color: #fff;
+	background-color: #47b8fa;
+	border-radius: 3px;
+	margin: 10px 0;
+	box-sizing: border-box;
+	padding: 0 10px;
 }
 
 
-
-#calendar_block {
-	width: 100%;
-
-}
 
 .calendar_row {
 	display: flex;

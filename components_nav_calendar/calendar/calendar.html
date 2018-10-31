@@ -3,31 +3,46 @@
 <head>
 	<meta charset="utf-8">
 	<title>calendar</title>
+	<link rel="stylesheet" href="css/stellar_initSet.css">
 	<link rel="stylesheet" type="text/css" href="css/calendar.css">
 	
 </head>
 <body>
 
 	<div class="calendar_block">
-		
-		<div class="cancel_calendar">
-			<img src="img/icon_white_X.png">
-		</div>
-		<div class="show_month_controll">
-			<div class="pre_next_month_btn">
-				<img id="lastMonth" src="img/icon_white_leftarrow.png">
+		<div class="show_date">
+			<div class="show_month_controll">
+				<div class="pre_next_month_btn">
+					<img id="lastMonth" src="img/icon_white_leftarrow.png">
+				</div>
+				<h2 id="showCurrentMonth"></h2>
+				<div class="pre_next_month_btn">
+					<img id="nextMonth" src="img/icon_white_rightarrow.png">
+				</div>
 			</div>
-			<h2 id="showCurrentMonth"></h2>
-			<div class="pre_next_month_btn">
-				<img id="nextMonth" src="img/icon_white_rightarrow.png">
+			<div class="date_row">
+				<label id="start_date">開始日期</label>
+				<!-- <p class="show_start_date" id="show_start_date">t</p> -->
+				<input class="input1" id="show_start_date">
 			</div>
-		</div>
-			<div id="calendar">
+			<div class="date_row">
+				<label id="end_date">結束日期</label>
+				<!-- <p class="show_end_date" id="show_end_date">t</p> -->
+				<input class="input1" id="show_end_date">
+			</div>
 			
+		</div>
+		
+		<div class="show_calendar">
+			<div class="cancel_calendar">
+				<img src="img/icon_white_X.png">
+			</div>
+				
+				<div id="calendar">
+				
+				</div>
 			</div>
 		</div>
-
-		
 
 	</div>
 

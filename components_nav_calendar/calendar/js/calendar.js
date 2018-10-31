@@ -5,8 +5,6 @@ var getLastMonthBtn = document.getElementById('lastMonth');
 var getNextMonthBtn = document.getElementById('nextMonth');
 
 
-alert('!');
-
 //建立table
 var newTableElement = document.createElement('div');
 var newTableTdElement = document.createElement('div');
@@ -167,18 +165,56 @@ function showCurrentMonth(thisMonth = currentMonth) {
 		}
 	}
 
-	var getCalendarTd = document.getElementsByClassName('calendar_td');
-
-
+	var getCalendarTd = document.getElementsByClassName('calendar_data');
 	for( let i = 0 ; i < getCalendarTd.length ; i++) {
 		getCalendarTd[i].addEventListener('click', getClickDate);
 	}
+
+
 }
 
+// $('.cancel_calendar').click(function() {
+// 	$('.calendar_block').css('display','none');
+// })
+
+//填寫預設日期
+var getStartDateBar = document.getElementById('show_start_date');
+var getEndDateBar = document.getElementById('show_end_date');
+function setStartDate() {
+	getStartDateBar.value = `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`;
+	getEndDateBar.value = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDay()}`;
+}
+
+setStartDate();
+
+//點選月曆即出現在日期欄中
+
+var setDateFlag = 0;
 function getClickDate() {
-	console.log(this.getAttribute('data-daterecord'));
+	//0為start date
+	//1為end date
+	if(setDateFlag == 0) {
+		getStartDateBar.value = this.getAttribute('data-daterecord');
+		setDateFlag = 1;
+	} else {
+		getEndDateBar.value = this.getAttribute('data-daterecord');
+		setDateFlag = 0;
+	}
 }
 
-$('.cancel_calendar').click(function() {
-	$('.calendar_block').css('display','none');
-})
+
+//點選日期欄後選擇日期
+getStartDateBar.addEventListener('focus', focusDateBar)
+getEndDateBar.addEventListener('focus', focusDateBar)
+
+function focusDateBar() {
+	if(this.getAttribute('id') == 'show_start_date' ) {
+		setDateFlag = 0;
+	} else if(this.getAttribute('id') == 'show_end_date' ){
+		setDateFlag = 1;
+	}
+}
+
+
+
+
