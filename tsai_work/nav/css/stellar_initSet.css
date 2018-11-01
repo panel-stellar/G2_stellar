@@ -8,7 +8,8 @@ table {
 
 img {
   max-width: 100%;
-  height: auto; }
+  height: auto;
+}
 
 ol, ul {
   list-style: none; }
@@ -101,18 +102,76 @@ a {
   letter-spacing: 1px;
   line-height: 1; }
 
+
+/*修改*/
 .form_submit_btn {
   font-size: 16px;
-  border: 1px solid transparent;
+  /*0px > 1px*/
+  border: 0px solid transparent;
+  /*新增*/
   background: linear-gradient(67deg, #44227A 0%, #FF5E6A 81%);
   color: #ffffff;
   box-sizing: border-box;
   padding: 8px;
-  border-radius: 3px; }
+  border-radius: 3px;
+  outline: 0px;
+  box-shadow: 0 0 0 transparent;
+  cursor: pointer;
+  transition: 1s }
   .form_submit_btn:hover {
-    border: 1px solid #ff5e6a;
-    background: linear-gradient(0deg, transparent 0%, transparent 100%);
-    color: #ff5e6a; }
+    /*0px > 1px*/
+    /*border: 0px solid #ff5e6a;*/
+    /*新增*/
+    background: linear-gradient(67deg, #FF5E6A 0%, #44227A 81%);
+    /*color: #ff5e6a;*/
+    animation: btn_change 0.2s }
+
+/*新增*/
+@keyframes btn_change {
+  0% {
+    background: linear-gradient(67deg, #44227A 10%, #FF5E6A 90%);
+  }
+
+  10% {
+    background: linear-gradient(67deg,#FF5E6A 10%,#44227A 20%, #44227A 30%, #FF5E6A 90%);
+  }
+  
+  20% {
+    background: linear-gradient(67deg,#FF5E6A 10%,#44227A 30%, #44227A 40%, #FF5E6A 50%);
+  }
+  
+  30% {
+    background: linear-gradient(67deg,#FF5E6A 10%,#44227A 40%, #44227A 50%, #FF5E6A 60%);
+  }
+  
+  40% {
+    background: linear-gradient(67deg,#FF5E6A 10%,#44227A 50%, #44227A 60%, #FF5E6A 70%);
+  }
+  
+  50% {
+    background: linear-gradient(67deg,#FF5E6A 10%,#44227A 60%, #44227A 70%, #FF5E6A 80%);
+  }
+
+  60% {
+    background: linear-gradient(67deg,#FF5E6A 10%,#44227A 70%, #44227A 80%, #FF5E6A 90%);
+  }
+
+  70% {
+    background: linear-gradient(67deg,#FF5E6A 10%,#44227A 80%, #44227A 90%);
+  }
+
+  80% {
+    background: linear-gradient(67deg,#FF5E6A 10%,#44227A 90%, #44227A 100%);
+  }
+
+  90% {
+    background: linear-gradient(67deg,#FF5E6A 10%,#44227A 90%, #44227A 100%);
+  }
+
+  100% {
+    background: linear-gradient(67deg, #FF5E6A 0%, #44227A 100%);
+  }
+}
 
 .input1 {
   border: 0px transparent;
@@ -136,7 +195,7 @@ a {
 label {
   color: #fff; }
 
-@media screen and (min-width: 320px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .dm-1 {
     width: 8.33333%; }
   .dm-2 {
