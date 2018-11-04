@@ -1,0 +1,1514 @@
+// RESET COMBINE WITH PERSONAL STYLING SASS SHEET
+// AUTHOR: HUANG MAO JING
+// LAST UPDATE: 1st Nov. 2018
+
+
+
+// ------------- function improvement -------------
+
+
+	// #1. get text-color from map:
+
+	// 		ex: h1{ color: color('purple');}
+	
+	// #2. get background-color from map:
+		
+	// 		ex: div{ background-color: background('purple');}
+
+	// #3. get button-color from map:
+
+	//      ex: button{ background-color: btn('sexy-purple');}
+
+	// #4. call vertical-align()
+
+	// 		ex: @include vertical-align(top);
+
+	// #5. It's no need to delete max-height:1920px manually now
+
+
+
+// -------------Var-------------
+
+// Set tag which you would like to reset
+
+$tags:(html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video);
+
+$block-level:(article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav,section);
+
+// Set each heading text
+//seq:(tag name / font-size / letter spacing / line-height)
+
+$all:(
+    h1 35px 1px 1,
+    h2 24px 1px 1,
+    h3 18px 1px 1,
+    h4 18px 1px 1,
+    h5 18px 1px 1,
+	h6 18px 1px 1,
+	a 16px 1px 1,
+    p  16px 1.2px 22px,
+	label 16px 1px 1,
+	span 14px 1px 1  
+);
+
+// Color
+
+$text-color:(
+	black: #333,
+	white: #dfdfdf, 
+	pure-white:#fff,
+	pure-black:#000,
+);
+
+$background-color:(
+	white: #f0f5f5,
+	black: #111111,
+);
+
+$btn-color:(
+	light-red:#fa0006,
+	grape-purple:#5f0050,
+	dark-purple:#2b0035,
+	sexy-purple:#28005f,
+	navy-blue:#000a4a,
+	pure-white:#fff,
+);
+
+// Responsive settings
+
+$breakpoint:(
+	mobile 320px 767px 12 dm none block,
+	medium 768px 1920px 12 dl block none,
+	// desktop 1920px 12 dl
+);
+ 
+// -------------Reset-------------
+
+// Reset the font-face
+
+body{line-height:1;};
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+ol, ul {list-style: none;}
+
+blockquote, q {quotes: none;}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+.clearfix:after{
+    content:'';
+    display:block;
+	width:0;
+	height:0;
+	clear:both;
+}
+
+%reset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
+}
+
+%display-block{display:block;}
+
+@each $tag in $tags{#{$tag}{@extend %reset;}}
+
+@each $tag in $block-level{#{$tag}{@extend %display-block;}}
+
+
+// ------------- @mixin groups -------------
+
+// Set head (h1~h6) - one for all devices (enabled)
+
+@mixin head-setting(){
+    @each $header,$size,$letter-spacing,$line-height in $all{
+        #{$header}{
+            font-size: $size;
+            letter-spacing: $letter-spacing;
+            line-height: $line-height;
+        }
+    }
+}
+
+// Create grid system
+
+@mixin create-grid-system($col,$device){
+	@for $i from 1 through $col{
+		.#{$device}-#{$i}{
+			width:100% * $i / 12;
+		};
+    }
+    .#{$device}-#{1},.#{$device}-#{2},.#{$device}-#{3},.#{$device}-#{4},.#{$device}-#{5},.#{$device}-#{6},.#{$device}-#{7},.#{$device}-#{8},.#{$device}-#{9},.#{$device}-#{10},.#{$device}-#{11},.#{$device}-#{12}{
+        float:left;
+    }
+}
+
+// Create responsive device setting
+
+@mixin rwd($rwd){
+	@each $viewpoint,$minW,$maxW,$col,$device,$class_web_display,$class_mob_display in $breakpoint{
+		@if ($rwd == 'mobile' and $viewpoint == 'mobile'){
+			@media screen and (min-width:$minW) and (max-width:$maxW){
+				@include create-grid-system($col,$device);
+				@include display_setting($class_web_display,$class_mob_display);
+                // @include head-setting($viewpoint);
+				@content;
+			}
+		}@else if($rwd == 'medium' and $viewpoint == 'medium'){
+			@media screen and (min-width:$minW){
+				@include create-grid-system($col,$device);
+				@include display_setting($class_web_display,$class_mob_display);
+                // @include head-setting($viewpoint);
+				@content;
+			}
+		}
+	}
+}
+
+// Vertical align setting
+
+@mixin vertical-align($align-mode:middle){
+    display: inline-block;
+    vertical-align: $align-mode;
+}
+
+// button setting
+
+@mixin btn-set($device:medium){
+    font-size: 16px;
+    border: 1px solid transparent;
+    background: linear-gradient(67deg, #44227A 0%, btn(light-red) 81%); 
+    color: btn(pure-white);
+    box-sizing: border-box;
+    padding: 8px;
+	border-radius: 3px;
+	cursor: pointer;
+    transition: 1s;
+	@if($device == 'medium'){
+		&:hover{
+			background: linear-gradient(67deg, btn(light-red) 0%, #44227A 81%);
+    		animation: btn_change 0.2s;
+		}
+	}
+}
+
+//  define display class setting
+
+@mixin display_setting($class_web_display,$class_mob_display){
+    .web_display{
+        display: $class_web_display;
+    }
+    .mobile_display{
+        display: $class_mob_display;
+    }
+}
+
+// ------------- @function groups -------------
+
+@function color($color-mode){
+	@return map-get($text-color,$color-mode);
+}
+
+@function background($bgc-mode){
+	@return map-get($background-color,$bgc-mode);
+}
+
+@function btn($bgc-mode){
+	@return map-get($btn-color,$bgc-mode);
+}
+
+// ------------ Page styling ------------
+
+// Global setting for all pages
+
+// *{box-sizing: border-box;}
+
+@include head-setting();
+
+body,button {
+    font-family: 'Microsoft JhengHei', sans-serif;
+}
+section{
+    width: 100%;
+    padding:50px 0;
+}
+section > div{
+    width:90%;
+    max-width: 1200px;
+    margin:auto;
+}
+button,input[type=text],input[type=file],input[type=password],textarea,select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    border:none;
+    background-color:#fff;
+}
+input[type=text],input[type=file],input[type=password],textarea{
+    border-radius:3px;
+}
+
+label{font-weight: 700;}
+
+textarea{
+	background-color: #d8e2e2;
+	box-shadow: 0px 0px 5px #333 inset;
+	border-radius: 3px;
+}
+input[type=text],input[type=password]{
+	border: 0px transparent;
+    display: inline-block;
+    height: 25px;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.img_d img {width: 100%;}
+
+.box_inner_padding {
+	box-sizing: border-box;
+	padding: 15px;
+}
+.set_w1200px {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+// Animation
+
+@keyframes btn_change {
+    0% {background: linear-gradient(67deg, #44227A 10%, btn(light-red) 90%);}
+    10% {background: linear-gradient(67deg,btn(light-red) 10%,#44227A 20%, #44227A 30%, btn(light-red) 90%);}
+    20% {background: linear-gradient(67deg,btn(light-red) 10%,#44227A 30%, #44227A 40%, btn(light-red) 50%);}
+    30% {background: linear-gradient(67deg,btn(light-red) 10%,#44227A 40%, #44227A 50%, btn(light-red) 60%);}
+    40% {background: linear-gradient(67deg,btn(light-red) 10%,#44227A 50%, #44227A 60%, btn(light-red) 70%);}
+    50% {background: linear-gradient(67deg,btn(light-red) 10%,#44227A 60%, #44227A 70%, btn(light-red) 80%);}
+    60% {background: linear-gradient(67deg,btn(light-red) 10%,#44227A 70%, #44227A 80%, btn(light-red) 90%);}
+    70% {background: linear-gradient(67deg,btn(light-red) 10%,#44227A 80%, #44227A 90%);}
+    80% {background: linear-gradient(67deg,btn(light-red) 10%,#44227A 90%, #44227A 100%);}
+    90% {background: linear-gradient(67deg,btn(light-red) 10%,#44227A 90%, #44227A 100%);}
+    100% {background: linear-gradient(67deg, btn(light-red) 0%, #44227A 100%);}
+}
+
+// ------------ Global setting for homepage -----------
+
+#homepage{
+	&:-webkit-scrollbar {display: none;}
+	.act_sec,.gallery_sec{
+		position: fixed;
+		top: 50%;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		width: 90%;
+		margin:auto;
+		max-width: 1200px;
+		transform:translate(0,-50%);
+	}
+	.set_bgImage {
+		width: 100%;
+		height: 100%;
+		background-image: url('../img/index/homepage_bg.png');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: fixed;
+		left:0;
+		top:0;
+		right: 0;
+		bottom: 0;
+	}
+	#three_canvas {
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		z-index: 1;
+	}
+	#whitebox {
+		width: 500px;
+		height: 300px;
+		background-color: #fff;
+		position: fixed;
+		left: -400px;
+		top: 200px;
+	}
+	.wrap_progressbar {
+		position: fixed;
+		right: 30px;
+		top: 30%;
+	}
+	.whitedot {
+		width: 10px;
+		height: 10px;
+		border-radius: 5px;
+		background-color: #aaa;
+	}
+	.whitedot + .whitedot {
+		margin-top: 50px;
+		position: relative;
+	}
+	.whitedot + .whitedot::after {
+		content: '';
+		width: 0px;
+		height: 40px;
+		position: absolute;
+		border-left: 1px dotted #aaa;
+		left: 49%;
+		bottom: 15px;
+	}
+	.bigdot {
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		border: 3px solid rgba(255, 0, 0, 0.5);
+		position: absolute;
+		top: -5px;
+		left: -5px;  /*每次+60 就會往下一個點*/
+		z-index: 10;
+	}
+	
+	// First panel
+
+	#scene{
+		width: 100%;
+		height: 100%;
+		position: relative;
+		bottom: 0;
+		overflow: hidden;
+	}
+	.mountain{
+		position: relative;
+		width: 100%;
+		height:50%;
+		transform: translateY(100%);
+	}
+	.layerBg{
+		position: absolute;
+		bottom: -100%;
+	}
+	#intro{
+		color:color(white);
+		text-shadow: 0 0 30px rgb(124, 181, 255);
+		position: absolute;
+		bottom: 45%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		text-align: center;
+		opacity: 1;
+	}
+	#intro h1,#intro p{
+		color:color(white);
+		text-shadow: 0 0 30px rgb(124, 181, 255);
+	}
+	#intro h1{
+		font-size: 60px;
+		letter-spacing: 12px;
+		margin:10px 0px;
+		font-weight: 700;
+	}
+	#intro p{
+		font-size: 20px;
+	}
+	.guide_flag{
+		width: 60px;
+		height: 60px;
+		font-size: 14px;
+		line-height: 60px;
+		border:1px solid #fff;
+		border-radius: 50%;
+		position: absolute;
+		left: 50%;
+		bottom:0;
+		transform: translate(-50%,150%);
+	}
+
+	// Second panel
+
+	.lightbox_sec{
+		background-color:rgba(0,0,0,.8);
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: none;
+		z-index: 6;
+	}
+	.lightbox_content.act_box {
+		background-color: #12377c;
+		box-sizing: border-box;
+		padding: 15px;
+		box-shadow: 0 0 30px rgb(124, 181, 255);
+		border-radius: 3px;
+		position: absolute;
+		top: 50%;
+		right: 0;
+		left: 0;
+		transform: translateY(-50%);
+	}
+	.event_img {
+		width: 100%;
+	}
+	.sign_up_number span {
+		font-size: 16px;
+		line-height: 40px;
+	}
+	.event_name_hoster {
+		font-size: 0;
+		box-sizing: border-box;
+		padding: 15px 0;
+	}
+	.event_name_hoster > * {
+		@include vertical-align();
+	}
+	.event_name_hoster > h4 {
+		padding-right: 15px;
+	}
+	.event_name_hoster > p{
+		padding-left: 15px;
+	}
+	.event_location_time {
+		font-size: 0;
+		box-sizing: border-box;
+		padding: 0px 0px 10px 0;
+	}
+	.event_location_time img {
+		@include vertical-align();
+		width: 20px;
+		height: 20px;
+		margin-left: 5px;
+	}
+	.event_location_time > p {
+		@include vertical-align();
+	}
+	.event_location_time > p:first-child {
+		padding-right: 15px;
+	}
+	.event_row > div {
+		box-sizing: border-box;
+		width: 32%;
+	}
+	.event_row:nth-child(2) {
+		margin: auto 2%;
+	}
+	.act_content{
+		font-size:0;
+		position: relative;
+	}
+	.act_content_box{
+		color:color(white);
+		text-align: center;
+		position: relative;
+	}	
+	.act_content_box.calendar_block{
+		padding: 10px;
+		box-sizing: border-box;
+		padding: 10px;
+		background-color: #12377c;
+		border-radius: 5px;
+		box-shadow: 0 0 30px rgb(124, 181, 255);
+	}
+	.cancel_calendar {
+		width: 20px;
+		position: absolute;
+		right: 10px;
+		top: 10px;
+	}
+	.cancel_calendar img {
+		width: 100%;
+	}
+	#calendar_block {
+		width: 100%;
+		overflow: hidden;
+	}
+	.calendar_row {
+		display: flex;
+		justify-content: space-around;
+	}
+	.calendar_row p {
+		font-size: 14px;
+	}
+	#calendar_block .calendar_row:first-child {
+		box-sizing: border-box;
+		padding-bottom: 10px;
+		border-bottom: 1px solid #fff;
+		margin: 0;
+	}
+	#calendar_block .calendar_row:first-child > div {
+		font-size: 14px;
+	}
+	#calendar_block .calendar_row + .calendar_row {
+		margin: 10px 0 0 0;
+	}
+	.calendar_weekday,.calendar_data {
+		text-align: center;
+		color: #fff;
+		line-height: 35px;
+		width: 35px;
+		height: 35px;
+		border-radius: 17.5px;	
+		transition: 0.5s;
+	}
+	.hover_color {
+		cursor: pointer;
+	}
+	.hover_color:hover {
+		background-color: #ff5e6a;
+	}
+	.show_month_controll {
+		width: 100%;
+		font-size: 0;
+		text-align: center;
+		font-size: 0;
+	}
+	.show_month_controll > * {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.pre_next_month_btn {
+		width: 15px;
+		margin: 0 15px;
+	}
+	.pre_next_month_btn img {
+		width: 100%;
+	}
+	#showCurrentMonth {
+		font-size: 18px;
+		color: #fff;
+		margin: 10px 0;
+	}	
+	.act_content_box.map img{
+		width: 100%;
+		height: 100%;
+	}
+	.gallery_box{
+		position: absolute;
+		top:50%;
+		transform: translateY(-50%);
+	}
+	.gallery_box:nth-child(2n){
+		left: -105%;     
+	}
+	.gallery_box:nth-child(2n+1){
+		right: -105%;
+	}
+	.gallery_box {
+		-webkit-box-shadow: 0px 0px 5px #fff;
+		box-shadow: 0px 0px 5px #fff; 
+	}
+	.gallery_box a {
+		color: color(white); 
+	}	
+	.album_p {
+		margin-left: 10px; 
+	}
+	.album_username a {
+		font-size: 18px;
+		font-weight: 700; 
+	}
+	.album_username, .album_loc, .album_date {
+		padding: 3px 0; 
+	}
+	.album_loc, .album_date {
+		display: inline-block; 
+	}
+	.album_date {
+		font-size: 14px;
+		vertical-align: top; 
+	}
+	.album_date.gallery {
+		color: #fff; 
+	}
+	.album_statistics {
+		font-size: 0; 
+	}
+	.album_statistics span, .album_statistics i {
+		font-size: 18px;
+		margin: 0 3px; 
+	}
+	.album_statistics.gallery {
+		padding: 10px;
+		position: absolute;
+		left: 0;
+		bottom: 0; 
+	}
+	.album_view, .album_comment {
+		@include vertical-align();
+		margin: 0 5px; 
+	}
+	.album_view.gallery, .album_comment.gallery {
+		color: color(white); 
+	}
+	.album_mul_icon {
+		color: color(white);
+		position: absolute;
+		right: 0;
+		top: 0;
+		font-size: 22px;
+		padding: 10px; 
+	}
+	.album_userpic, .album_p {
+		@include vertical-align();
+	}
+	.album_userinfo {
+		font-size: 0; 
+	}
+	.album_userinfo.gallery {
+		position: absolute;
+		padding: 10px;
+		left: 0;
+		top: 0; 
+	}
+	.album_userpic {
+		width: 40px;
+		height: 40px;
+		overflow: hidden;
+		border-radius: 50%; 
+	}
+	.album_loc {
+		font-size: 14px; 
+	}
+	.album_loc:after {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		width: 1px;
+		height: 0;
+		padding-bottom: 15%;
+		margin: 0 10px; 
+	}
+	.album_loc.gallery:after {
+		background-color: #fff; 
+	}
+}
+
+// ------------ Global setting for album surfing -----------
+
+#album_surfing{
+
+	.gallery_box {
+		position: relative;
+		-webkit-box-shadow: 0px 0px 5px #fff;
+		box-shadow: 0px 0px 5px #fff; 
+	}
+	.gallery_box a {
+		color: color(white); 
+	}
+	.album_p {
+		margin-left: 10px; 
+	}
+	.album_username a {
+		font-size: 18px;
+		font-weight: 700; 
+	}
+	.album_username, .album_loc, .album_date {
+		padding: 3px 0; 
+	}
+	.album_loc, .album_date {
+		display: inline-block;
+	}
+	.album_date {
+		font-size: 14px;
+		vertical-align: top; 
+	}
+	.album_date.gallery {
+		color: color(white); 
+	}
+	.album_statistics {
+		font-size: 0; 
+	}
+	.album_statistics span, .album_statistics i {
+		font-size: 18px;
+		margin: 0 3px; 
+	}
+	.album_statistics.gallery {
+		padding: 10px;
+		position: absolute;
+		left: 0;
+		bottom: 0; 
+	}
+	.album_statistics.lightbox {
+		padding: 10px 0px; 
+	}
+	.album_view, .album_comment {
+		@include vertical-align();
+		margin: 0 5px; 
+	}
+	.album_view.gallery, .album_comment.gallery {
+		color: color(white); 
+	}
+	.album_view.lightbox, .album_comment.lightbox {
+		color: color(black); 
+	}
+	.album_mul_icon {
+		color: color(white);
+		position: absolute;
+		right: 0;
+		top: 0;
+		font-size: 22px;
+		padding: 10px; 
+	}
+	.album_userpic, .album_p {
+		@include vertical-align();
+	}
+	.album_userinfo {
+		font-size: 0; 
+	}
+	.album_userinfo.gallery {
+		position: absolute;
+		padding: 10px;
+		left: 0;
+		top: 0; 
+	}
+	.album_userinfo.lightbox {
+		color: color(black);
+		padding: 10px 0px; 
+	}
+	.album_userpic {
+		width: 40px;
+		height: 40px;
+		overflow: hidden;
+		border-radius: 50%; 
+	}
+	.album_loc {
+		font-size: 14px; 
+	}
+	.album_loc:after {
+		content: '';
+		@include vertical-align();
+		width: 1px;
+		height: 0;
+		padding-bottom: 15%;
+		margin: 0 10px; 
+	}
+	// edit
+	.album_loc.gallery:after {
+		background-color: #fff; 
+	}
+	.album_loc.lightbox:after {
+		background-color: #111; 
+	}
+	.lightbox_sec {
+		display: none; 
+	}
+	.lightbox_content {
+		position: relative; 
+	}
+	.lightbox_box {
+		background-color: #fff;
+		position: fixed;
+		top: 8%;
+		left: 0;
+		right: 0;
+		bottom: 5%;
+		margin: auto;
+		z-index: 2;
+		padding: 25px;
+		max-height: 100%;
+		overflow: auto;
+		border-radius: 5px; 
+	}
+	.lightbox_bg {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		max-width: none;
+		background-color: rgba(0, 0, 0, 0.8); 
+	}
+	.lightbox_sec a {
+		color: #111; 
+	}
+	.lightbox_box_upper, .lightbox_box_lower {
+		position: relative; 
+	}
+	.lightbox_sec .album_carousel {
+		position: relative; 
+	}
+	.album_carousel{
+		text-align: center; 
+	}
+	.album_carousel .prev, .album_carousel .next {
+		color: rgba(200, 200, 200, 0.9);
+		position: absolute;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+		font-size: 36px;
+	}
+	.album_carousel .prev {
+		left: 5px; 
+	}
+	.album_carousel .next {
+		right: 5px; 
+	}
+	.album_tag {
+		padding: 5px;
+		margin: 5px 10px 5px 0px;
+		border: 1px solid #111; 
+		@include vertical-align();
+	}
+	.album_tags {
+		font-size: 0;
+		margin: 15px 0px; 
+	}
+	.response_box {
+		position: relative;
+		padding: 15px 10px; 
+	}
+	.response_userpic, .response_p {
+		@include vertical-align();
+	}
+	.response_p {
+		margin-left: 10px; 
+	}
+	.response_userinfo {
+		font-size: 0;
+		color: #111;
+		padding: 10px 0px; 
+	}
+	.response_userpic {
+		width: 40px;
+		height: 40px;
+		overflow: hidden;
+		border-radius: 50%; 
+	}
+	.response_username a {
+		font-size: 18px;
+		font-weight: 700; 
+	}
+	.response_username, .response_floor, .response_date, .response_time {
+		padding: 3px 0; 
+	}
+	.response_floor, .response_date, .response_time {
+		@include vertical-align();
+		font-size: 14px; 
+	}
+	.response_floor:after, .response_date:after {
+		content: '';
+		@include vertical-align();
+		width: 1px;
+		height: 15px;
+		margin: 0 8px;
+		background-color: #111; 
+	}
+	.album_msg_box {
+		padding: 10px;
+		margin: 10px 0;
+		font-size: 0;
+		background-color: #a4d9f9; 
+	}
+	.album_msg_box img{
+		display: inline-block;
+	}
+	.album_msg_box .msg_box {
+		height: 35px;
+		border-radius: 3px;
+		padding: 5px;
+		resize: none;
+		box-shadow: none;
+		background-color: #fff;
+		-webkit-transition: .4s;
+		-o-transition: .4s;
+		transition: .4s;
+		&:focus{
+			height: 100px;
+			-webkit-transition: .4s;
+			-o-transition: .4s;
+			transition: .4s; 
+		} 
+	}
+	.album_msg_box .send_btn {
+		color: #41bffa;
+		font-weight: 700;
+		border-radius: 3px; 
+	}
+	.response_msg {
+		padding: 15px 0px; 
+	}
+	.album_date {
+		font-size: 14px;
+		vertical-align: top; 
+	}
+	.album_date.gallery {
+		color: #fff; 
+	}
+	#album_menu, .response_menu {
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		text-align: right; 
+	}
+	.menu_btn{
+		font-size: 26px; 
+		width: 25px;
+		height: 25px;
+		background-color: transparent;
+	}
+	.drop_down_menu {
+		display: none;
+		position: absolute;
+		right: 0;
+		top: 0%;
+		z-index: 1;
+		background-color: #ccc;
+		-webkit-box-shadow: 1px 5px 5px #888;
+		box-shadow: 1px 5px 5px #888; 
+	}
+	.drop_down_menu .edit_btn, .drop_down_menu .report_btn, .drop_down_menu .cancel_btn {
+		width: 120px;
+		height: 45px;
+		font-size: 16px; 
+	}
+	.drop_down_menu .cancel_btn {
+		color: #f00; 
+	}
+	.lightbox_close_btn {
+		font-size: 20px;
+		color: #fff;
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 45px;
+		height: 40px;
+		border-radius: 0 0 0 50%;
+		background-color: #aaa;
+		text-align: center;
+		line-height: 40px; 
+	}
+	.gallery_marks {
+		font-size: 0;
+		text-align: center;
+		padding: 20px 0px; 
+	}
+	.gallery_marks li {
+		@include vertical-align();
+		margin: 0 5px; 
+	}
+	.gallery_mark {
+		font-size: 22px;
+		padding: 5px;
+		color: #fff; 
+	}
+	.lightbox_report_popup{
+		display: none;
+		background-color:background(white);
+		box-shadow: 0px 0px 10px #111;
+		position: absolute;
+		top: 55%;
+		right: 0;
+		left: 0;
+		margin:auto;
+		width: 450px;
+		border-radius: 5px;
+		padding:20px;
+		transform: translateY(-50%);
+		button{
+			width: 80px;
+			height: 35px;
+			color:color(black);
+			border:1px solid #aaa;
+			background-color: transparent;
+			border-radius: 3px;
+			transition:.4s;
+		}
+	}
+	.report_head{
+		font-size: 24px;
+		text-align: center;
+		font-weight: 700;
+		padding:15px 0px;
+	}
+	.report_sort_group{
+		font-size: 0;
+		padding: 10px 0px 12px;
+	}
+	.report_sort{
+		@include vertical-align();
+		margin-right: 8px;
+	}
+	.report_sort_btn{
+		&.target{
+			color:color(white);
+			background-color: background(black);
+		}
+	}
+	#report_supplement{
+		width: calc(100% - 10px);
+		background-color:background(white);
+		padding:5px;
+	}
+	.report_function_btn_groups{
+		text-align: center;
+		padding-top: 12px;
+		.send_btn,.cancel_btn{
+			margin:0 10px;
+		}
+	}
+}
+
+// ------------ Global setting for album surfing -----------
+
+#album_update{
+
+	a {
+		color: color(white); 
+	}
+	option {
+		text-align: center; 
+	}
+	.albumUpdate_content {
+		max-width: 1200px; 
+	}
+	.submit_btn, .cancel_btn, .select_btn, .add_btn {
+		height: 30px;
+		font-size: 14px; 
+	}
+	.submit_btn, .cancel_btn {
+		width: 100px; 
+	}
+	.select_btn {
+		width: 120px; 
+	}
+	.form_cell {
+		padding: 20px 0px; 
+	}
+	.albumUpdate_content label {
+		display: block;
+		font-size: 20px;
+		padding-bottom: 6px; 
+	}
+	textarea,input[type=text] {
+		display: block;
+		padding: 5px; 
+	}
+	.albumUpdate_form {
+		position: relative; 
+	}
+	.albumUpdate_content {
+		color: color(white); 
+	}
+	.album_form_dragArea {
+		position: relative;
+		background-color: #fff;
+		border-radius: 3px; 
+	}
+	.album_form_uploader {
+		width: 100%;
+		font-size: 0;
+		border: none;
+		background-color: rgba(255, 255, 255, 0);
+		height: 100%;
+		position: relative;
+		bottom: 15px;
+		z-index: 1; 
+	}
+	.album_form_sub input[type=text] {
+		height: 35px; 
+	}
+	.album_form_desc textarea, .album_form_tags textarea{
+		height: 35px;
+		-webkit-transition: .4s;
+		-o-transition: .4s;
+		transition: .4s;
+		vertical-align: top; 
+		background-color: #fff;
+	}
+	.album_form_desc textarea{
+		width: calc(100% - 10px);
+	}
+	.album_form_desc textarea:focus {
+		height: 100px;
+		-webkit-transition: .4s;
+		-o-transition: .4s;
+		transition: .4s; 
+	}
+	.album_form_tags textarea:focus {
+		height: 50px;
+		-webkit-transition: .4s;
+		-o-transition: .4s;
+		transition: .4s; 
+	}
+	.hint_form {
+		color: #aaa;
+		text-align: center;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%); 
+	}
+	.hint_form i {
+		font-size: 60px; 
+	}
+	.album_tag {
+		@include vertical-align();
+		padding: 8px;
+		border: 1px solid #fff;
+		font-size: 16px;
+		margin: 5px 5px 5px 0; 
+	}
+	.album_tag i {
+		margin-left: 5px; 
+	}
+	.album_form_tagsArea {
+		padding: 20px 0; 
+	}
+	.album_form_selection {
+		padding: 10px;
+		background-color: #fff; 
+	}
+	.album_form_btns {
+		padding: 30px 0 10px;
+		text-align: center;
+	}
+	.album_form_images {
+		font-size: 0;
+		height: 0;
+		border-radius: 3px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0; 
+	}
+	.album_form_images img {
+		height: 100%;
+		margin: auto; 
+	}
+	.delete_btn {
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		position: absolute;
+		top: 0;
+		right: 0;
+		-webkit-transform: translate(20%, -20%);
+		-ms-transform: translate(20%, -20%);
+		transform: translate(20%, -20%);
+		background-color: #aaa; 
+	}
+}
+
+@include rwd(mobile){
+	
+	// ------------ album surfing -----------
+
+	#album_surfing{
+		.gallery_sec{
+			padding: 70px 0px 100px; 
+		}
+		.gallery_box {
+			width: 100%;
+			margin-bottom: 10px; 
+		}
+		.lightbox_sec{
+			position: relative;  
+		}
+		.lightbox_box {
+			width: 80%; 
+			margin-top: 30px;
+		}
+		.album_tag {
+			font-size: 14px; 
+		}
+		.album_carousel img {
+			max-height: 400px; 
+		}
+		.album_msg_box {
+			text-align: center; 
+		}
+		.album_msg_box .msg_box {
+			width: calc(100% - 10px);
+			display: block; 
+		}
+		.album_msg_box .album_userpic {
+			margin: 0 5px 10px 0; 
+		}
+		.album_msg_box .send_btn {
+			width: 100%;
+			height: 30px;
+			margin-top: 10px; 
+		}
+		.gallery_vice_nav{
+			position: relative;
+			top:60px;
+			margin-top: 40px;
+			padding:40px 0 10px;
+		}
+		.gallery_vice_nav > div{
+			position: relative;
+		}
+		.gallery_vice_nav a{
+			color:#fff;
+		}
+		.gallery_vice_nav label{
+			font-size: 16px;
+			margin-right: 5px;
+		}
+		.gallery_vice_nav .send_btn{
+			margin-left: 5px;
+		}
+		.gallery_vice_nav button{
+			padding:5px 10px;
+		}
+		.search_bar,.upload_btn{
+			@include vertical-align();
+		}
+		.upload_btn{
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		.interval,.search_bar,.upload_btn{
+			margin-bottom:10px
+		}
+		.interval select,.search_bar input[type=text]{
+			padding:5px;
+		}
+	}
+
+	// ------------ album update ----------- 
+
+	#album_update{
+
+		.albumUpdate_sec{
+			padding:100px 0;
+		}
+		.album_form_sub input[type=text] {
+			width: 70%; 
+		}
+		.album_form_image_line {
+			width: 46%;
+			color: #111;
+			height: 150px;
+			position: relative;
+			@include vertical-align(top);
+			margin: 25px 2%;
+			text-align: center;
+			padding: 5px;
+			border: 2px solid #aaa; 
+		}
+		.album_form_images .image_name {
+			font-size: 14px;
+			margin: 8px 0px; 
+		}
+		.album_form_dragArea {
+			height: 600px; 
+		}
+		.album_form_btns button {
+			margin: 0 20px; 
+		}
+		.album_form_tags textarea, .album_form_tags .add_btn {
+			display: block;
+		}
+		.album_form_tags textarea{
+			width: calc(100% - 10px);
+		}
+		.album_form_tags .add_btn{
+			width: 100%;
+		}
+		.album_form_tags textarea {
+			height: 40px; 
+			&:foucs{
+				height: 50px;
+				-webkit-transition: .4s;
+				-o-transition: .4s;
+				transition: .4s;
+			}
+		}
+		.album_form_tags .add_btn {
+			height: 30px;
+			margin-top: 10px; 
+		} 
+	}
+}
+
+@include rwd(medium){
+
+	// ------------ album surfing -----------
+
+	#album_surfing{
+		.gallery_sec {
+			padding: 70px 0px 130px; 
+		}
+		.gallery_box {
+			width: 32%;
+			float: left;
+			margin: 20px 0.666667%; 
+		}
+		.gallery_box .album_username a:hover {
+			color: #fc0; 
+		}
+		.gallery_box .album_loc:hover {
+			color: #fc0; 
+		}
+		.gallery_mark:hover {
+			color: #fc0; 
+		}
+		.lightbox_box {
+			width: 70%; 
+		}
+		.album_tag {
+			font-size: 16px; 
+		}
+		.album_carousel img {
+			max-height: 500px; 
+		}
+		.album_msg_box .album_user_pic, .album_msg_box .msg_box, .album_msg_box .send_btn {
+			@include vertical-align(top);
+		}
+		.album_msg_box .album_userpic, .album_msg_box .msg_box {
+			margin-right: 5px; 
+		}
+		.album_msg_box .msg_box {
+			width: calc(100% - 120px); 
+		}
+		.album_msg_box .send_btn {
+			width: 60px;
+			height: 45px; 
+		}
+		.album_msg_box .send_btn:hover {
+			color: #fff;
+			background-color: #41bffa; 
+		}
+		.drop_down_menu .edit_btn:hover, .drop_down_menu .report_btn:hover, .drop_down_menu .cancel_btn:hover {
+			background-color: #eee; 
+		}
+		.gallery_vice_nav{
+			position: relative;
+			top:60px;
+			margin-top: 40px;
+			padding:40px 0;
+		}
+		.gallery_vice_nav a{
+			color:#fff;
+		}
+		.gallery_vice_nav label{
+			font-size: 18px;
+			margin-right: 5px;
+		}
+		.gallery_vice_nav .send_btn{
+			margin-left: 5px;
+		}
+		.gallery_vice_nav button{
+			width: 80px;
+			padding:5px;
+		}
+		.interval,.search_bar,.upload_btn{
+			@include vertical-align();
+			margin-right:20px;
+		}
+		.interval select,.search_bar input[type=text]{
+			padding:5px;
+		}
+	}
+
+	// ------------ album update ----------- 
+
+	#album_update{
+
+		.albumUpdate_sec{
+			padding:130px 0;
+		}
+		.album_form_sub input[type=text] {
+			width: 50%; 
+		}
+		.album_form_image_line {
+			width: 30%;
+			color: #111;
+			height: 150px;
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			margin: 25px calc(10% / 6);
+			text-align: center;
+			padding: 5px;
+			border: 2px solid #aaa; 
+		}
+		.album_form_images .image_name {
+			font-size: 16px;
+			margin: 8px 0px; 
+		}
+		.album_form_tags {
+			font-size: 0; 
+		}
+		.album_form_tags textarea, .album_form_tags .add_btn {
+			@include vertical-align();
+		}
+		.album_form_tags textarea {
+			width: calc(100% - 120px); 
+		}
+		.album_form_tags .add_btn {
+			width: 100px;
+			height: 45px;
+			margin-left: 10px; 
+		}
+		.album_form_btns button {
+			margin: 0 50px; 
+		}
+		.album_form_dragArea {
+			height: 420px; 
+		}
+	}
+
+}
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
