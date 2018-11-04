@@ -9,7 +9,6 @@ function setMainContent() {
 }
 
 
-
 $(window).ready(function() {
 
 
@@ -18,7 +17,9 @@ $(window).ready(function() {
 	$('.bell').click(function(){
 		if (bellFlag == 0 ) {
 			$('#show_info_detail').css('display', 'block');
-			bellFlag = 1;
+			bellFlag = 1;	
+			$('.member_list').css('display', 'none');
+			memberListFlag = 0;
 		} else {
 			$('#show_info_detail').css('display', 'none');
 			bellFlag = 0;
@@ -43,9 +44,9 @@ $(window).ready(function() {
 			$('.member_list').css('display', 'none');
 		} else if (memberListFlag == 0 ) {
 			$('.member_list').css('display', 'block');
-			console.log(memberListFlag);
 			memberListFlag = 1;
-			console.log(memberListFlag);
+			$('#show_info_detail').css('display', 'none');
+			bellFlag = 0;
 		} else {
 			$('.member_list').css('display', 'none');
 			memberListFlag = 0;
@@ -112,8 +113,8 @@ $(window).ready(function() {
 		$(this).css('color','#ff5e6a');
 		$('.login_display').css('display','block');
 		$('.signup_display').css('display','none');
-		$('.switch_light').css('left','38px');
-		$('.login_signup_sec').css('height','380px');
+		$('.switch_light').css('left','29px');
+		$('.login_signup_sec').css('height','38px');
 		$('.error_forgot_submit_bar').css({
 			'text-align': 'left',
 			'margin-top': '30px',
@@ -136,7 +137,7 @@ $(window).ready(function() {
 		$(this).css('color','#ff5e6a');
 		$('.login_display').css('display','none');
 		$('.signup_display').css('display','block');
-		$('.switch_light').css('left','111px');
+		$('.switch_light').css('left','92px');
 
 		$('.login_signup_sec').css('height','500px');
 		$('.error_forgot_submit_bar').css({

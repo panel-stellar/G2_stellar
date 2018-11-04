@@ -8,6 +8,7 @@ function setMainContent() {
 	}
 }
 
+alert('!');
 
 
 $(window).ready(function() {
