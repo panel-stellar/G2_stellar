@@ -57,9 +57,11 @@ $all:(
     h3 18px 1px 1,
     h4 18px 1px 1,
     h5 18px 1px 1,
-    h6 18px 1px 1,
+	h6 18px 1px 1,
+	a 16px 1px 1,
     p  16px 1.2px 22px,
-    label 16px 1px 1  
+	label 16px 1px 1,
+	span 14px 1px 1  
 );
 
 // Color
@@ -209,11 +211,12 @@ q:before, q:after {
     box-sizing: border-box;
     padding: 8px;
 	border-radius: 3px;
+	cursor: pointer;
+    transition: 1s;
 	@if($device == 'medium'){
 		&:hover{
-			border: 1px solid btn(light-red);
-			background: linear-gradient(0deg, transparent 0%,transparent 100%); 
-			color: btn(light-red); 
+			background: linear-gradient(67deg, btn(light-red) 0%, #44227A 81%);
+    		animation: btn_change 0.2s;
 		}
 	}
 }
@@ -263,7 +266,7 @@ section > div{
     max-width: 1200px;
     margin:auto;
 }
-button,input[type=text],input[type=file],textarea,select{
+button,input[type=text],input[type=file],input[type=password],textarea,select{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -271,7 +274,7 @@ button,input[type=text],input[type=file],textarea,select{
     border:none;
     background-color:#fff;
 }
-input[type=text],input[type=file],textarea{
+input[type=text],input[type=file],input[type=password],textarea{
     border-radius:3px;
 }
 
@@ -282,7 +285,7 @@ textarea{
 	box-shadow: 0px 0px 5px #333 inset;
 	border-radius: 3px;
 }
-input[type=text]{
+input[type=text],input[type=password]{
 	border: 0px transparent;
     display: inline-block;
     height: 25px;
@@ -302,9 +305,25 @@ input[type=text]{
 	margin: 0 auto;
 }
 
+// Animation
+
+@keyframes btn_change {
+    0% {background: linear-gradient(67deg, #44227A 10%, btn(light-red) 90%);}
+    10% {background: linear-gradient(67deg,btn(light-red) 10%,#44227A 20%, #44227A 30%, btn(light-red) 90%);}
+    20% {background: linear-gradient(67deg,btn(light-red) 10%,#44227A 30%, #44227A 40%, btn(light-red) 50%);}
+    30% {background: linear-gradient(67deg,btn(light-red) 10%,#44227A 40%, #44227A 50%, btn(light-red) 60%);}
+    40% {background: linear-gradient(67deg,btn(light-red) 10%,#44227A 50%, #44227A 60%, btn(light-red) 70%);}
+    50% {background: linear-gradient(67deg,btn(light-red) 10%,#44227A 60%, #44227A 70%, btn(light-red) 80%);}
+    60% {background: linear-gradient(67deg,btn(light-red) 10%,#44227A 70%, #44227A 80%, btn(light-red) 90%);}
+    70% {background: linear-gradient(67deg,btn(light-red) 10%,#44227A 80%, #44227A 90%);}
+    80% {background: linear-gradient(67deg,btn(light-red) 10%,#44227A 90%, #44227A 100%);}
+    90% {background: linear-gradient(67deg,btn(light-red) 10%,#44227A 90%, #44227A 100%);}
+    100% {background: linear-gradient(67deg, btn(light-red) 0%, #44227A 100%);}
+}
+
 
 @include rwd(mobile){
-
+	
 }
 
 @include rwd(medium){
