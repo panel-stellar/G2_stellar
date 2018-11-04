@@ -71,6 +71,11 @@ h6 {
   letter-spacing: 1px;
   line-height: 1; }
 
+a {
+  font-size: 16px;
+  letter-spacing: 1px;
+  line-height: 1; }
+
 p {
   font-size: 16px;
   letter-spacing: 1.2px;
@@ -78,6 +83,11 @@ p {
 
 label {
   font-size: 16px;
+  letter-spacing: 1px;
+  line-height: 1; }
+
+span {
+  font-size: 14px;
   letter-spacing: 1px;
   line-height: 1; }
 
@@ -93,7 +103,7 @@ section > div {
   max-width: 1200px;
   margin: auto; }
 
-button, input[type=text], input[type=file], textarea, select {
+button, input[type=text], input[type=file], input[type=password], textarea, select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -102,7 +112,7 @@ button, input[type=text], input[type=file], textarea, select {
   border: none;
   background-color: #fff; }
 
-input[type=text], input[type=file], textarea {
+input[type=text], input[type=file], input[type=password], textarea {
   border-radius: 3px; }
 
 label {
@@ -114,7 +124,7 @@ textarea {
   box-shadow: 0px 0px 5px #333 inset;
   border-radius: 3px; }
 
-input[type=text] {
+input[type=text], input[type=password] {
   border: 0px transparent;
   display: inline-block;
   height: 25px;
@@ -134,6 +144,87 @@ input[type=text] {
 .set_w1200px {
   width: 1200px;
   margin: 0 auto; }
+
+@-webkit-keyframes btn_change {
+  0% {
+    background: -webkit-linear-gradient(23deg, #44227A 10%, #fa0006 90%);
+    background: linear-gradient(67deg, #44227A 10%, #fa0006 90%); }
+  10% {
+    background: -webkit-linear-gradient(23deg, #fa0006 10%, #44227A 20%, #44227A 30%, #fa0006 90%);
+    background: linear-gradient(67deg, #fa0006 10%, #44227A 20%, #44227A 30%, #fa0006 90%); }
+  20% {
+    background: -webkit-linear-gradient(23deg, #fa0006 10%, #44227A 30%, #44227A 40%, #fa0006 50%);
+    background: linear-gradient(67deg, #fa0006 10%, #44227A 30%, #44227A 40%, #fa0006 50%); }
+  30% {
+    background: -webkit-linear-gradient(23deg, #fa0006 10%, #44227A 40%, #44227A 50%, #fa0006 60%);
+    background: linear-gradient(67deg, #fa0006 10%, #44227A 40%, #44227A 50%, #fa0006 60%); }
+  40% {
+    background: -webkit-linear-gradient(23deg, #fa0006 10%, #44227A 50%, #44227A 60%, #fa0006 70%);
+    background: linear-gradient(67deg, #fa0006 10%, #44227A 50%, #44227A 60%, #fa0006 70%); }
+  50% {
+    background: -webkit-linear-gradient(23deg, #fa0006 10%, #44227A 60%, #44227A 70%, #fa0006 80%);
+    background: linear-gradient(67deg, #fa0006 10%, #44227A 60%, #44227A 70%, #fa0006 80%); }
+  60% {
+    background: -webkit-linear-gradient(23deg, #fa0006 10%, #44227A 70%, #44227A 80%, #fa0006 90%);
+    background: linear-gradient(67deg, #fa0006 10%, #44227A 70%, #44227A 80%, #fa0006 90%); }
+  70% {
+    background: -webkit-linear-gradient(23deg, #fa0006 10%, #44227A 80%, #44227A 90%);
+    background: linear-gradient(67deg, #fa0006 10%, #44227A 80%, #44227A 90%); }
+  80% {
+    background: -webkit-linear-gradient(23deg, #fa0006 10%, #44227A 90%, #44227A 100%);
+    background: linear-gradient(67deg, #fa0006 10%, #44227A 90%, #44227A 100%); }
+  90% {
+    background: -webkit-linear-gradient(23deg, #fa0006 10%, #44227A 90%, #44227A 100%);
+    background: linear-gradient(67deg, #fa0006 10%, #44227A 90%, #44227A 100%); }
+  100% {
+    background: -webkit-linear-gradient(23deg, #fa0006 0%, #44227A 100%);
+    background: linear-gradient(67deg, #fa0006 0%, #44227A 100%); } }
+
+@keyframes btn_change {
+  0% {
+    background: -webkit-linear-gradient(23deg, #44227A 10%, #fa0006 90%);
+    background: -o-linear-gradient(23deg, #44227A 10%, #fa0006 90%);
+    background: linear-gradient(67deg, #44227A 10%, #fa0006 90%); }
+  10% {
+    background: -webkit-linear-gradient(23deg, #fa0006 10%, #44227A 20%, #44227A 30%, #fa0006 90%);
+    background: -o-linear-gradient(23deg, #fa0006 10%, #44227A 20%, #44227A 30%, #fa0006 90%);
+    background: linear-gradient(67deg, #fa0006 10%, #44227A 20%, #44227A 30%, #fa0006 90%); }
+  20% {
+    background: -webkit-linear-gradient(23deg, #fa0006 10%, #44227A 30%, #44227A 40%, #fa0006 50%);
+    background: -o-linear-gradient(23deg, #fa0006 10%, #44227A 30%, #44227A 40%, #fa0006 50%);
+    background: linear-gradient(67deg, #fa0006 10%, #44227A 30%, #44227A 40%, #fa0006 50%); }
+  30% {
+    background: -webkit-linear-gradient(23deg, #fa0006 10%, #44227A 40%, #44227A 50%, #fa0006 60%);
+    background: -o-linear-gradient(23deg, #fa0006 10%, #44227A 40%, #44227A 50%, #fa0006 60%);
+    background: linear-gradient(67deg, #fa0006 10%, #44227A 40%, #44227A 50%, #fa0006 60%); }
+  40% {
+    background: -webkit-linear-gradient(23deg, #fa0006 10%, #44227A 50%, #44227A 60%, #fa0006 70%);
+    background: -o-linear-gradient(23deg, #fa0006 10%, #44227A 50%, #44227A 60%, #fa0006 70%);
+    background: linear-gradient(67deg, #fa0006 10%, #44227A 50%, #44227A 60%, #fa0006 70%); }
+  50% {
+    background: -webkit-linear-gradient(23deg, #fa0006 10%, #44227A 60%, #44227A 70%, #fa0006 80%);
+    background: -o-linear-gradient(23deg, #fa0006 10%, #44227A 60%, #44227A 70%, #fa0006 80%);
+    background: linear-gradient(67deg, #fa0006 10%, #44227A 60%, #44227A 70%, #fa0006 80%); }
+  60% {
+    background: -webkit-linear-gradient(23deg, #fa0006 10%, #44227A 70%, #44227A 80%, #fa0006 90%);
+    background: -o-linear-gradient(23deg, #fa0006 10%, #44227A 70%, #44227A 80%, #fa0006 90%);
+    background: linear-gradient(67deg, #fa0006 10%, #44227A 70%, #44227A 80%, #fa0006 90%); }
+  70% {
+    background: -webkit-linear-gradient(23deg, #fa0006 10%, #44227A 80%, #44227A 90%);
+    background: -o-linear-gradient(23deg, #fa0006 10%, #44227A 80%, #44227A 90%);
+    background: linear-gradient(67deg, #fa0006 10%, #44227A 80%, #44227A 90%); }
+  80% {
+    background: -webkit-linear-gradient(23deg, #fa0006 10%, #44227A 90%, #44227A 100%);
+    background: -o-linear-gradient(23deg, #fa0006 10%, #44227A 90%, #44227A 100%);
+    background: linear-gradient(67deg, #fa0006 10%, #44227A 90%, #44227A 100%); }
+  90% {
+    background: -webkit-linear-gradient(23deg, #fa0006 10%, #44227A 90%, #44227A 100%);
+    background: -o-linear-gradient(23deg, #fa0006 10%, #44227A 90%, #44227A 100%);
+    background: linear-gradient(67deg, #fa0006 10%, #44227A 90%, #44227A 100%); }
+  100% {
+    background: -webkit-linear-gradient(23deg, #fa0006 0%, #44227A 100%);
+    background: -o-linear-gradient(23deg, #fa0006 0%, #44227A 100%);
+    background: linear-gradient(67deg, #fa0006 0%, #44227A 100%); } }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .dm-1 {
