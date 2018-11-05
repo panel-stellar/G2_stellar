@@ -1,10 +1,7 @@
-    var canvasEnv = document.getElementById('three_canvas');
-    canvasEnv.style.width = window.innerWidth + 'px';
-    canvasEnv.style.height = window.innerHeight + 'px';
-
 
     // declare
 
+    var canvasEnv = document.getElementById('three_canvas');
     var renderer, camera, scene, light, object;
     var width, height;
     positionZ = 17000;
@@ -12,30 +9,38 @@
 
     var bigDot = document.getElementById('bigdot');
 
+    // Resizing render when the window was resized
+
+    function resizeCanvas(canvas){
+        canvas.style.width = window.innerWidth + 'px';
+        canvas.style.height = window.innerHeight + 'px';
+        var w = parseInt(getComputedStyle(canvasEnv,null).width);
+        var h = parseInt(getComputedStyle(canvasEnv,null).height);
+        console.log(w,h);
+        return initRenderer(w,h);
+    }
+
     // Initialize renderer
     
-    function initRenderer() {
-        width = document.getElementById('three_canvas').clientWidth;
-        height = document.getElementById('three_canvas').clientHeight;
+    function initRenderer(w,h) {
         renderer = new THREE.WebGLRenderer({
             canvas: document.getElementById('three_canvas'),
             alpha:true,
-            // antialias: true,  <------  Set it as true if you want ur latop start burnning...
         });
-        renderer.setSize(width, height);
+        renderer.setSize(w,h);
+        return initCamera(w,h);
     }
 
     // Initialize camera
 
-    function initCamera() {
-        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 2300);
+    function initCamera(w,h) {
+        camera = new THREE.PerspectiveCamera(45, w / h, 1, 2300);
         camera.position.x = 0;
         camera.position.y = 200;
         camera.position.z = positionZ;
         camera.up.x = 0;
         camera.up.y = 1;
         camera.up.z = 0;
-        camera.lookAt({ x: 0, y: 0, z: 0 });   
     }
 
     // Initialize scene
@@ -112,15 +117,13 @@
         // console.log('Line length:' + lineZPosi);
 
         // add line
-        points = spline.getPoints(150);
-        var geometry = new THREE.Geometry();
-        geometry.vertices = points;
+        points = spline.getPoints(50);
+        var geometry = new THREE.BufferGeometry().setFromPoints(points);
+        // geometry.vertices = points;
         var material=new THREE.LineBasicMaterial({ 
             color:0xeeeeee,
-            linecap:'round',
-            linejoin:'round',
         });
-        var line=new THREE.Line(geometry,material);
+        var line = new THREE.Line(geometry,material);
         scene.add(line);
 
         // add star
@@ -137,9 +140,6 @@
             var starField = new THREE.Points( starsGeometry, starsMaterial );
             scene.add( starField );
         }
-        // generateStar(3);
-        // generateStar(7);
-        // generateStar(10);
         generateStar(3, 10000);
         generateStar(7, 10000);
         generateStar(10, 10000);
@@ -147,117 +147,40 @@
         // add spot ----------------------------
     
         circleZPos = 18800;
-        circleXPos = [-160, 0, 40, 80];
-
-        //Spot array
-
-        // var circleGeometry = new THREE.CircleGeometry( 30 , 30 );
-        // var ringGeometry = new THREE.RingGeometry( 45,40,30,20,0,6.3);
-        // for(let i=0; i<=3; i++){
-        //     if(i == 3){
-        //         circleZPos = -1700;
-        //     }else{
-        //         circleZPos -= 4000;
-        //     }
-        //     var spotPosition = new THREE.Vector3(circleXPos[i],0,circleZPos);
-        //     circleGeometry.vertices.push(spotPosition);
-        //     ringGeometry.vertices.push(spotPosition);
-        // }
-        // var spotMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
-        // var CirclesGroup = new THREE.Mesh(circleGeometry,spotMaterial);
-        // var ringsGroup = new THREE.Mesh(ringGeometry,spotMaterial);
-        // scene.add(CirclesGroup);
-        // scene.add(ringsGroup);
+        circleXPos = [-160, 0, 40, 80]; 
         
-    
+        var circleGeometry = new THREE.CircleBufferGeometry( 30 , 30 );
+        //(innerRadius, outerRadius, thetaSegments, phiSegments, thetaStart, thetaLength)
+        var ringGeometry = new THREE.RingBufferGeometry( 45,40,30,20,0,6.3);
+        var spotMaterial = new THREE.MeshBasicMaterial({ 
+            color: 0xffffff, 
+            side: THREE.DoubleSide, 
+        });
+
         for ( let i = 0 ; i <= 3 ; i++ ){
-            // circleZPos -= 4000;
+
             if(i == 3){
                 circleZPos = -1700;
             }else{
                 circleZPos -= 4000;
             }
+
             // Create inner circle
-            var geometry = new THREE.CircleBufferGeometry( 30 , 30 );
-            var material = new THREE.MeshBasicMaterial({ color: 0xffffff });
-            var circle = new THREE.Mesh(geometry, material);
-            
+            var circle = new THREE.Mesh(circleGeometry, spotMaterial);
             circle.position.z = circleZPos;
             circle.position.x = circleXPos[i];
             circle.material.opacity = 0.25;
             circle.rotation.x = Math.PI / -5;
-
             scene.add( circle );
 
             // Create outer ring
-            //(innerRadius, outerRadius, thetaSegments, phiSegments, thetaStart, thetaLength)
-            var geometry = new THREE.RingBufferGeometry( 45,40,30,20,0,6.3);
-            var material = new THREE.MeshBasicMaterial({ 
-                color: 0xffffff, 
-                side: THREE.DoubleSide, 
-            });
-            var ring = new THREE.Mesh( geometry, material );
-            
+            var ring = new THREE.Mesh( ringGeometry, spotMaterial);
             ring.position.z = circleZPos;
             ring.position.x = circleXPos[i];
             ring.rotation.x = Math.PI / -5;
-
             scene.add( ring );
-        }
-
-        
-        // Create enviornment light
-
-        // var  ambientLight = new THREE.AmbientLight('#ffffff');
-        // scene.add(ambientLight);
-
-        // var material = new THREE.MeshBasicMaterial({wireframe:true});
-        // var geometry = new THREE.PlaneGeometry();
-        // var planeMesh = new THREE.Mesh(geometry,material);
-        // planeMesh.position.set(-400,170,7200);
-        // scene.add(planeMesh);
-
-        // var element = document.createElement('img');
-        // element.src = 'img/sample_1.jpg';
-        // element.style.width = '480px';
-        // element.style.height = '360px';
-
-        // var cssObj = new THREE.CSS3DObject(element);
-        // cssObj.position.set(-400,170,7200);
-        // scene.add(cssObj);
-
-        // var cssRenderer = new THREE.CSS3DRenderer();
-        // cssRenderer.setSize(window.innerWidth,window.innerHeight);
-        // cssRenderer.domElement.style.position = 'absolute';
-        // cssRenderer.domElement.style.top = '0';
-
-        // var material   = new THREE.MeshBasicMaterial();
-        // material.color.set('black')
-        // material.opacity   = 0;
-        // material.blending  = THREE.NoBlending;
-
-         
+        } 
     }
-
-    // // Initialize text 
-
-    // function initFont(){
-    //     var loader = new THREE.FontLoader();
-    //     loader.load("./font/testFont.json",function(font){
-    //         var material = new THREE.MeshDepthMaterial();
-    //         var geometry = new THREE.TextGeometry( 'STELLAR', {
-    //             font: font,
-    //             size: 70,
-    //             height: 10,
-    //             curveSegments: 12,
-    //         } );
-
-    //         var text = new THREE.Mesh(geometry,material);
-    //         scene.add(text);
-    //         text.position.set(-175,200,16000);
-            
-    //     })
-    // }
 
     // Start render
 
@@ -935,10 +858,17 @@
         initParallax();
         ImgDriver();
         showCurrentMonth();
+        resizeCanvas(canvasEnv);
 
         window.addEventListener('mousewheel', driver);
         // window.addEventListener('resize',screenVarier);
     }
+
+    window.onresize = function(){
+        resizeCanvas(canvasEnv)
+    };
+
+    
 
     window.onload = threeStart();
 
