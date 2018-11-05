@@ -969,7 +969,6 @@ input[type=text], input[type=password] {
   right: 0;
   left: 0;
   margin: auto;
-  width: 450px;
   border-radius: 5px;
   padding: 20px;
   -webkit-transform: translateY(-50%);
@@ -993,13 +992,7 @@ input[type=text], input[type=password] {
   padding: 15px 0px; }
 
 #album_surfing .report_sort_group {
-  font-size: 0;
   padding: 10px 0px 12px; }
-
-#album_surfing .report_sort {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 8px; }
 
 #album_surfing .report_sort_btn.target {
   color: #dfdfdf;
@@ -1238,6 +1231,20 @@ input[type=text], input[type=password] {
     margin-bottom: 10px; }
   #album_surfing .interval select, #album_surfing .search_bar input[type=text] {
     padding: 5px; }
+  #album_surfing .lightbox_report_popup {
+    width: 240px; }
+  #album_surfing .report_sort_group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  #album_surfing .report_sort {
+    -webkit-box-flex: 50%;
+    -ms-flex: 50%;
+    flex: 50%;
+    text-align: center;
+    margin-bottom: 10px; }
   #album_update .albumUpdate_sec {
     padding: 100px 0; }
   #album_update .album_form_sub input[type=text] {
@@ -1362,6 +1369,14 @@ input[type=text], input[type=password] {
     margin-right: 20px; }
   #album_surfing .interval select, #album_surfing .search_bar input[type=text] {
     padding: 5px; }
+  #album_surfing .lightbox_report_popup {
+    width: 450px; }
+  #album_surfing .report_sort_group {
+    font-size: 0; }
+  #album_surfing .report_sort {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px; }
   #album_update .albumUpdate_sec {
     padding: 130px 0; }
   #album_update .album_form_sub input[type=text] {

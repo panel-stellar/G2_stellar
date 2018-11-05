@@ -628,7 +628,7 @@
                                 </form>
                             </div>
                             <div class="lightbox_box_lower">
-                                <div class="response_box">
+                                <!-- <div class="response_box">
                                     <div class="response_userinfo">
                                         <a href="#" class="response_userpic"><img src="img/album_surfing/sample_8.jpeg" alt="picLost"></a>
                                         <div class="response_p">
@@ -649,12 +649,12 @@
                                             <li><button class="cancel_btn">取消</button></li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="lightbox_report_popup">
                                 <h3 class="report_head">檢舉回報</h3>
                                 <div class="report_content">
-                                    <form action="#">
+                                    <form action="#" method="POST" id="report_form">
                                         <ul class="report_sort_group">
                                             <li class="report_sort"><button value="rude" class="report_sort_btn">不雅內容</button></li>
                                             <li class="report_sort"><button value="insult" class="report_sort_btn">人身攻擊</button></li>
@@ -880,7 +880,7 @@
                     var getMenuCancelBtn = getMenuCancelBtns[i];
                     var getDropDownMenu = getDropDownMenus[i];
 
-                    if(!getDropDownMenu.parentElement.contains(e.target) || getMenuCancelBtn.contains(e.target)){
+                    if(!getDropDownMenu.parentElement.contains(e.target) || getMenuCancelBtn.contains(e.target) || getDropDownMenu.contains(e.target)){
                         if(window.getComputedStyle(getDropDownMenu,null).display == 'block'){
                             getDropDownMenu.style.display = 'none';
                         }
@@ -902,8 +902,12 @@
                 if(getlightBoxBg.contains(e.target)){
                     getLightBox.style.display = 'none';
                     shutTheNavDown();
-                }
+                }                
             }
+
+            // Add click event to report_btn of album
+            
+            document.querySelector('#album_menu .report_btn').onclick = letsReport;
 
             // Message board
             
@@ -1028,7 +1032,9 @@
             
             var getAllReportSwitcher = document.querySelectorAll('.report_btn');
             var getReportPopup = document.querySelector('.lightbox_report_popup');
+            var getReportForm = document.querySelector('#report_form');
             var getSPA = document.querySelector('#report_supplement');
+            var getAllReportSortBtns = document.querySelectorAll('.report_sort_btn');
             var getReportAllBtns = document.querySelectorAll('.lightbox_report_popup button');
 
             console.log(getAllReportSwitcher.length);
@@ -1041,11 +1047,20 @@
             var sort;
 
             function letsReport(){
+                // console.log(this.closest('ul').parentElement.className);
+                if(this.closest('ul').parentElement.className == 'response_menu'){
+                    getReportForm.setAttribute('action','https://www.google.com/');
+                    getAllReportSortBtns[1].innerText = '人身攻擊';
+                    getAllReportSortBtns[1].setAttribute('value','insult');
+                }else{
+                    getReportForm.setAttribute('action','https://www.yahoo.com.tw/');
+                    getAllReportSortBtns[1].innerText = '盜用照片';
+                    getAllReportSortBtns[1].setAttribute('value','stolen');
+                }
                 getReportPopup.style.display = 'block'; 
             }
 
             function worldPeace(e){
-                let getAllReportSortBtns = document.querySelectorAll('.report_sort_btn');
                 console.log(getAllReportSortBtns.length);
                 e.preventDefault();
                 if(this.className == 'report_sort_btn'){
@@ -1057,9 +1072,14 @@
                 }else if(!this.classList.contains('target')){
                     if(this.className == 'send_btn'){
                         if(sort == ''){
-                            alert('幹 是不用選類別喔？');
+                            alert('請選擇檢舉類別');
+                            return false;
                         }else if(getSPA.value == ''){
-                            alert('幹 是不用原因喔？');
+                            alert('請輸入檢舉事由');
+                            return false;
+                        }else if(/^\s+$/.test(getSPA.value)){
+                            alert('檢舉事由不可全為空白字元');
+                            return false;
                         }
                         complainLine.push(sort);
                         complainLine.push(getSPA.value);
@@ -1087,10 +1107,6 @@
                     getLovelyMsgBtn.click();
                 }
             }
-
-
-
-
 
        })
 
