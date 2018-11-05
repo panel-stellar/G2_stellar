@@ -5,9 +5,10 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
 	<script src="http://sqimg.qq.com/qq_product_operations/mma/javanli_test/lib/three.min.js"></script>
-	<link rel="stylesheet" href="css/stellar_initSet.css">
+	<!-- <link rel="stylesheet" href="css/stellar_initSet.css"> -->
 	<link rel="stylesheet" type="text/css" href="css/stellar_nav_login_signup_box.css">
 	<link rel="stylesheet" href="css/event_detail_signup.css">
+	<link rel="stylesheet" href="css/tab.css">
 	<title>event_detail_signup</title>
 </head>
 
@@ -40,7 +41,7 @@
 						</div>
 
 					</div>
-					<img src="img/icon_white_larger.png">
+					<img src="img/larger_1.png">
 				</div>
 
 				<nav>
@@ -63,7 +64,7 @@
 								</div>
 
 							</div>
-							<ul class="member_list web_display">
+							<ul class="member_list">
 								<li><a href="#" class="p_normalformat">會員中心</a></li>
 								<li><a href="#" class="p_normalformat login_box">登出</a></li>
 							</ul>
@@ -109,17 +110,17 @@
 		<div class="main_content_camera">
 			<div class="main_content_space">
 				<div class="main_content">
-					<div class="iframe_map">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.9397968668222!2d121.19002831544614!3d24.96816284708042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDU4JzA1LjQiTiAxMjHCsDExJzMyLjAiRQ!5e0!3m2!1szh-TW!2stw!4v1540788232259"
-						 width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+					<div id="map">
+						<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.9397968668222!2d121.19002831544614!3d24.96816284708042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDU4JzA1LjQiTiAxMjHCsDExJzMyLjAiRQ!5e0!3m2!1szh-TW!2stw!4v1540788232259"
+						 width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
 					</div>
 					<div class="iframe_map_box"></div>
 					<div class="iframe_map_box2"></div>
 					<section class="event_title_map_sec">
 						<div class="event_title_map_content">
 							<div class="title_disc">
-								<h3>玉山觀星</h3>
-								<p class="p_style1_f">在無光害的大雪山森林遊樂區位於高海拔地區，視野遼闊、無光害，一直是愛好天文及星空攝影人士的私房景點。</p>
+								<h3>阿里山觀星</h3>
+								<p class="p_style1_f">在無光害的阿里山森林遊樂區位於高海拔地區，視野遼闊、無光害，一直是愛好天文及星空攝影人士的私房景點。</p>
 							</div>
 						</div>
 					</section>
@@ -134,7 +135,7 @@
 										</div>
 										<div>
 											<p>地點</p>
-											<p>玉山<img class="location_map mobile_display" src="img/google_map.png" alt=""></p>
+											<p>阿里山<img class="location_map mobile_display" src="img/google_map.png" alt=""></p>
 										</div>
 
 										<div>
@@ -163,7 +164,7 @@
 										<div class="event_signup">
 											<h2>報名此揪團</h2>
 											<div class="wrap_btn">
-												<input type="button" class="form_submit_btn" id="btn" value="立即報名">
+												<input type="button" id="btn" value="立即報名">
 											</div>
 										</div>
 										<div class="signup_info">
@@ -191,7 +192,7 @@
 							</div>
 						</div>
 					</section>
-
+					<!-- 
 					<section class="chat_photo_comment_sec">
 						<div class="chat_photo_comment_content">
 							<div class="select_tags">
@@ -250,8 +251,74 @@
 								</div>
 							</div>
 						</div>
-
-
+					</section> -->
+					<section class="tab_sec">
+						<div id="tab-demo">
+							<ul class="tab-title">
+								<li><a href="#tab01" class="tab01">聊天問答</a></li>
+								<li><a href="#tab02" class="tab02">相片牆</a></li>
+								<li><a href="#tab03" class="tab03">心得評論</a></li>
+							</ul>
+							<div id="tab01" class="tab-inner">
+								<div class="chat_photo_comment_col">
+									<div class="comment_box clearfix">
+										<div class="conmment_img">
+											<img src="img/event_detail_signup/p.jpg" alt="img_p">
+										</div>
+										<div class="comment">
+											<p>name</p>
+											<p>1</p>
+											<p>上午 10:21</p>
+										</div>
+									</div>
+									<div class="comment_box clearfix">
+										<div class="conmment_img">
+											<img src="img/event_detail_signup/pppp.jpg" alt="img_p">
+										</div>
+										<div class="comment">
+											<p>name2</p>
+											<p>2</p>
+											<p>上午 9:21</p>
+										</div>
+									</div>
+									<div class="comment_box clearfix">
+										<div class="conmment_img">
+											<img src="img/event_detail_signup/pp.jpg" alt="img_p">
+										</div>
+										<div class="comment">
+											<p>name3</p>
+											<p>3</p>
+											<p>上午 18:21</p>
+										</div>
+									</div>
+									<div class="comment_box clearfix">
+										<div class="conmment_img">
+											<img src="img/event_detail_signup/ppp.jpg" alt="img_p">
+										</div>
+										<div class="comment">
+											<p>name4</p>
+											<p>4</p>
+											<p>上午 11:21</p>
+										</div>
+									</div>
+									<div class="sent_msg">
+										<div class="sent_box">
+											<textarea cols="40" rows="6"></textarea>
+										</div>
+										<div class="sent_btn_box">
+											<input type="button" value="送出">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="tab02" class="tab-inner">
+								<p>相片</p>
+							</div>
+							<div id="tab03" class="tab-inner">
+								<p>心得</p>
+							</div>
+						</div>
+					</section>
 				</div>
 			</div>
 		</div>
@@ -376,6 +443,174 @@
 
 		});
 	</script>
+	<!-- tab -->
+	<script>
+		$(function () {
+			var $li = $('ul.tab-title li');
+			$($li.eq(0).addClass('active').find('a').attr('href')).siblings('.tab-inner').hide();
+
+			$li.click(function () {
+				$($(this).find('a').attr('href')).show().siblings('.tab-inner').hide();
+				$(this).addClass('active').siblings('.active').removeClass('active');
+			});
+		});
+	</script>
+	<!-- maps -->
+	<script>
+		var map;
+
+		function initMap() {
+			map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 15,
+				center: {
+					lat: 23.508324,
+					lng: 120.800959
+				},
+				styles: [{
+						"elementType": "geometry",
+						"stylers": [{
+							"color": "#242f3e"
+						}]
+					},
+					{
+						"elementType": "labels.text.fill",
+						"stylers": [{
+							"color": "#746855"
+						}]
+					},
+					{
+						"elementType": "labels.text.stroke",
+						"stylers": [{
+							"color": "#242f3e"
+						}]
+					},
+					{
+						"featureType": "administrative.locality",
+						"elementType": "labels.text.fill",
+						"stylers": [{
+							"color": "#d59563"
+						}]
+					},
+					{
+						"featureType": "poi",
+						"elementType": "labels.text.fill",
+						"stylers": [{
+							"color": "#d59563"
+						}]
+					},
+					{
+						"featureType": "poi.park",
+						"elementType": "geometry",
+						"stylers": [{
+								"color": "#263c3f"
+							},
+							{
+								"lightness": 15
+							}
+						]
+					},
+					{
+						"featureType": "poi.park",
+						"elementType": "labels.text.fill",
+						"stylers": [{
+							"color": "#ff2d2d"
+						}]
+					},
+					{
+						"featureType": "road",
+						"elementType": "geometry",
+						"stylers": [{
+							"color": "#38414e"
+						}]
+					},
+					{
+						"featureType": "road",
+						"elementType": "geometry.stroke",
+						"stylers": [{
+							"color": "#212a37"
+						}]
+					},
+					{
+						"featureType": "road",
+						"elementType": "labels.text.fill",
+						"stylers": [{
+							"color": "#9ca5b3"
+						}]
+					},
+					{
+						"featureType": "road.highway",
+						"elementType": "geometry",
+						"stylers": [{
+							"color": "#746855"
+						}]
+					},
+					{
+						"featureType": "road.highway",
+						"elementType": "geometry.stroke",
+						"stylers": [{
+							"color": "#1f2835"
+						}]
+					},
+					{
+						"featureType": "road.highway",
+						"elementType": "labels.text.fill",
+						"stylers": [{
+							"color": "#f3d19c"
+						}]
+					},
+					{
+						"featureType": "transit",
+						"elementType": "geometry",
+						"stylers": [{
+							"color": "#2f3948"
+						}]
+					},
+					{
+						"featureType": "transit.station",
+						"elementType": "labels.text.fill",
+						"stylers": [{
+							"color": "#d59563"
+						}]
+					},
+					{
+						"featureType": "water",
+						"elementType": "geometry",
+						"stylers": [{
+							"color": "#17263c"
+						}]
+					},
+					{
+						"featureType": "water",
+						"elementType": "labels.text.fill",
+						"stylers": [{
+							"color": "#515c6d"
+						}]
+					},
+					{
+						"featureType": "water",
+						"elementType": "labels.text.stroke",
+						"stylers": [{
+							"color": "#17263c"
+						}]
+					}
+				]
+			});
+		}
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyCPaRuFqzYG6EzzWbxrbgEUlt_Xf1jlex0&center=23.469905430223896,120.9576629135446&zoom=19&format=png&maptype=roadmap&style=element:geometry%7Ccolor:0x242f3e&style=element:labels.text.fill%7Ccolor:0x746855&style=element:labels.text.stroke%7Ccolor:0x242f3e&style=feature:administrative.locality%7Celement:labels.text.fill%7Ccolor:0xd59563&style=feature:poi%7Celement:labels.text.fill%7Ccolor:0xd59563&style=feature:poi.park%7Celement:geometry%7Ccolor:0x263c3f&style=feature:poi.park%7Celement:labels.text.fill%7Ccolor:0x6b9a76&style=feature:road%7Celement:geometry%7Ccolor:0x38414e&style=feature:road%7Celement:geometry.stroke%7Ccolor:0x212a37&style=feature:road%7Celement:labels.text.fill%7Ccolor:0x9ca5b3&style=feature:road.highway%7Celement:geometry%7Ccolor:0x746855&style=feature:road.highway%7Celement:geometry.stroke%7Ccolor:0x1f2835&style=feature:road.highway%7Celement:labels.text.fill%7Ccolor:0xf3d19c&style=feature:transit%7Celement:geometry%7Ccolor:0x2f3948&style=feature:transit.station%7Celement:labels.text.fill%7Ccolor:0xd59563&style=feature:water%7Celement:geometry%7Ccolor:0x17263c&style=feature:water%7Celement:labels.text.fill%7Ccolor:0x515c6d&style=feature:water%7Celement:labels.text.stroke%7Ccolor:0x17263c&size=480x360">
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPaRuFqzYG6EzzWbxrbgEUlt_Xf1jlex0&amp;callback=initMap"
+	 async="" defer="">
+	</script>
+	<script>
+		var href = location.href;
+		var page = href.split("demo/");
+		var name = page[1].split("-demo")[0];
+		var title = document.querySelector('title').innerHTML;
+		document.getElementById('infoLink').setAttribute('href', '/articles/' + name + '.html');
+		document.getElementById('infoLink').innerHTML = title.split("demo")[0];
+	</script>
+
 </body>
 
 </html>
