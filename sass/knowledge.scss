@@ -1,0 +1,216 @@
+@import "stellar_initSet";
+@import "var.scss";
+@import "nav_login_signup_box";
+@import "style.scss";
+
+
+//手機設定
+@include rwd(mobile) {
+    
+}
+
+//電腦設定
+@include rwd(medium) {
+    // *{
+    //     outline: 1px solid #F00;
+    // }
+    .main_content_camera {
+        width: 100%;
+        .main_content_space{
+            width: 100%;
+            .main_content {
+                section {
+                    width: 100%;
+                    padding: 0;
+                }
+                section > div {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .main_content {
+        section:first-of-type {
+            margin-top: 50px;
+        }
+    }
+    section > div {
+        max-width: none;
+    }
+    #knowledge_switch_sec {
+        display: none;
+    }
+    #stellar_sec {
+        width: 100%;
+        background-color: #222;
+        padding-bottom: 0;
+        #stellar_content {
+            display: flex;
+            align-items: center;
+            #stellar_canvas {
+                height: 100vh;
+                max-width: 60%;
+            }
+            #stellar_text {
+                max-width: 40%;
+                h2 {
+                    text-align: center;
+                    color: #FFF;
+                    padding-top: 40%;
+                }
+                #stellar_text_content {
+                    color: #FFF;
+                    #stellar_star_title {
+                        padding: 20px 30px;
+                        margin-top: 20px;
+                    }
+                    #stelllar_star_info {
+                        text-align: justify;
+                        padding: 0 30px 20px;
+                    }
+                }
+            }
+        }
+    }
+    #meteor_count_down_sec {
+        padding: 0;
+        #meteor_count_down_content {
+            display: flex;
+            width: 100%;
+            #count_down_box {
+                width: 25%;
+                #count_down_bar {
+                    width: 100%;
+                    height: 100vh;
+                    background-color: #222;
+                    color: #FFF;
+                    // padding-top: 50px;
+                    #count_down_object {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        padding: 20px 0;
+                        a {
+                            width: 50%;
+                            margin: 15px auto;
+                            text-align: center;
+                            color: #FFF;
+                            transition: all .5s;
+                        }
+                        a:hover {
+                            color: #000;
+                            background-color: #FFF;
+                            box-shadow: 0px 0px 10px #FFF;
+                            transition: all .5s;
+                        }
+                    }
+                    .count_down_event {
+                        display: block;
+                        text-align: center;
+                        box-shadow: 0px 0px 5px #FFF;
+                        padding: 20px 0 20px 0;
+                        margin: 10px;
+                        p {
+                            font-size: 14px;
+                            text-align: left;
+                            padding: 10px 0 10px 20px;
+                        }
+                        #count_down_time {
+                            background-color: #222;
+                        }
+                        .count_down_time {
+                            margin:0 auto; 
+                            max-width:800px; 
+                            width:calc(100%); 
+                            padding-bottom: 30px; 
+                            display:block;
+                        }
+                        .btn_box {
+                            display: flex;
+                            min-width: 90%;
+                            margin: 0 auto;
+                            justify-content: space-around;
+                            .join_btn {
+                                @include btn-set();
+                            }
+                            .info_btn {
+                                @include btn-set();
+                            }
+                        }
+                    }
+                }
+            }
+            #meteor_shower_canvas {
+                max-width: 75%;
+                height: 100vh;
+                background-color: #000;
+            }
+        }
+    }
+    
+    #astrolabe_content {
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        background-color: #FFF;
+        #astrolabe_object {
+            background-color: #000;    
+            width: 70%;
+            min-width: 800px;
+            height: 100vh;
+            position: relative;
+            #astrolabe_circle{
+                width: 80%;
+                height: 0;
+                padding-bottom: 80%;
+                border-radius: 99em;
+                background-image: url(../img/member_center/album_9.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                overflow: hidden;
+                position: absolute;
+                bottom: -20%; 
+                left: 10%;
+                #astrolabe_triangle {
+                    width: 60%;
+                    height: 0;
+                    padding-bottom: 80%;
+                    overflow: hidden;
+                    margin: 0 auto;
+                    background-color: #FFF;
+                    -webkit-clip-path: polygon(30% 100%, 70% 100%, 100% 0, 0 0);
+                    clip-path: polygon(30% 100%, 70% 100%, 100% 0, 0 0);
+                    // #astrolabe_img_box {
+                    //     overflow: hidden;
+                    //     width: 500%;
+                    //     img {
+                    //         position: relative;
+                    //         width: 550px;
+                    //         margin: 0 auto;
+                    //         left: -48px;
+                    //         top: -50px;
+                    //     }
+                    // }
+                }
+            }
+        }
+        #astrolabe_text {
+            height: 100vh;
+            width: 30%;
+            background-color: #222;
+            color: #FFF;
+            padding-top: 20%;
+            #astrolabe_text_content {
+                padding: 0 20px;
+                text-align: center;
+                .astrolabe_text_title {
+                    padding: 30px 20px;
+                    text-align: left;
+                }
+                .astrolabe_text_info {
+                    text-align: justify;
+                }
+            }
+        }
+    }
+}
