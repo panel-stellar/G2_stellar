@@ -393,6 +393,28 @@
                 this.parentNode.removeChild(this);
             }
 
+            // Check white-space letters and null
+
+            var getSubmitBtn = document.querySelector('.submit_btn');
+            var getAllTextInputs = document.querySelectorAll('#album_update .main_content input[type=text]');
+
+            // console.log(getAllTextAreas);
+            
+            function checkWhiteSpaceOneByOne(elArr){
+                elArr.forEach(function(el){
+                    if(/^\s+$/.test(el.value) || el.value == ''){
+                        alert('不可全為空白字元喔！');
+                        el.value = '';
+                        return false;
+                    }
+                })
+            }
+
+            getSubmitBtn.onclick = function(e){
+                e.preventDefault();
+                checkWhiteSpaceOneByOne(getAllTextInputs);
+            }
+
             // Enable enterkey on some specific function
 
             function enableEnterKeys(e){
