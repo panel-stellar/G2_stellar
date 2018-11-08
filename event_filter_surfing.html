@@ -8,16 +8,16 @@
 	<!-- <link rel="stylesheet" href="css/stellar_initSet.css"> -->
 	<link rel="stylesheet" type="text/css" href="css/stellar_nav_login_signup_box.css">
 	<link rel="stylesheet" href="css/lightbox.css">
+	<link rel="stylesheet" href="css/bg.css">
 	<link rel="stylesheet" href="css/event_filter_surfing.css">
 	<title>event_filter_surfing</title>
 </head>
 
-<body>
+<body id="event_filter_surfing">
 	<canvas id="canvas"></canvas>
 	<div class="wrap_header_nav">
 		<input type="checkbox" name="" id="translate_view">
 		<div class="main_header_content">
-
 			<header class="header_content">
 				<label for="translate_view" class="mobile_display">
 					<div class="wrap_hbg" id="hbg_controller">
@@ -110,54 +110,68 @@
 		<div class="main_content_camera">
 			<div class="main_content_space">
 				<div class="main_content">
+
 					<section class="filter_sec">
 						<div class="filter_content">
-							<div class="wrap_filter">
-								<div class="filter_date">
-									<p>選擇期間</p>
-									<div class="date_bar">
-										<p class="show_date">
-											<span class="start_date">2018/9/1</span>~<span class="end_date">2018/9/30</span>
-										</p>
-										<div class="show_calendar">
-											<img src="img/event_filter_surfing/more.png">
-										</div>
+							<form action="#" method="POST">
+								<div class="wrap_filter">
+									<div class="filter_date">
+										<p>選擇期間</p>
+										<!-- <div class="date_bar">
+											<p class="show_date">
+												<span class="start_date">2018/9/1</span>~<span class="end_date">2018/9/30</span>
+											</p>
+											<div class="show_calendar">
+												<img src="img/event_filter_surfing/more.png">
+											</div>
+										</div> -->
+										<input class="date_select" type="date" value="2018-11-23" size="50" />
+									</div>
+									<div class="filter_area">
+										<p>選擇地區</p>
+										<!-- <ul class="area_list">
+											<li>北</li>
+											<li>中</li>
+											<li>南</li>
+											<li>東</li>
+										</ul> -->
+										<input type="checkbox" name="checkbox_1" id="checkbox_1" value="">
+										<label for="checkbox_1">北</label>
+
+										<input type="checkbox" name="checkbox_2" id="checkbox_2" value="">
+										<label for="checkbox_2">中</label>
+
+										<input type="checkbox" name="checkbox_3" id="checkbox_3" value="">
+										<label for="checkbox_3">南</label>
+
+										<input type="checkbox" name="checkbox_4" id="checkbox_4" value="">
+										<label for="checkbox_4">東</label>
+									</div>
+
+									<div class="filter_search">
+										<p>搜尋</p>
+										<div><input class="input1" type="text" name=""></div>
+										<div class="wrap_btn"><button class="btn" value="">送出</button></div>
+									</div>
+									<div class="group_create">
+										<button value="">揪團去</button>
 									</div>
 								</div>
-								<div class="filter_area">
-									<p>選擇地區</p>
-									<ul class="area_list">
-										<li>北</li>
-										<li>中</li>
-										<li>南</li>
-										<li>東</li>
-									</ul>
-								</div>
-								<div class="filter_search">
-									<p>搜尋</p>
-									<div><input class="input1" type="text" name=""></div>
-									<div class="wrap_btn"><a class="btn" href="#">送出</a></div>
-								</div>
-								<div class="group_create">
-									<a href="#">揪團去</a>
-								</div>
-							</div>
+							</form>
 						</div>
 					</section>
 
 					<section class="choose_sec">
 						<div class="choose_content">
-							<a class="btn" id="a_btn1" href="#">依時間顯示</a>
-							<a class="btn" id="a_btn2" href="#">依地點顯示</a>
+							<button class="btn" id="a_btn1" value="">依時間顯示</button>
+							<button class="btn" id="a_btn2" value="">依地點顯示</button>
 						</div>
 					</section>
 
 					<section class="show_event_info_sec" id="show_event_info_sec2">
 						<div class="show_event_info_content">
 							<div class="wrap_timeline_event">
-								<div class="timeline_space">
-
-								</div>
+								<div class="timeline_space"></div>
 								<div class="show_event">
 									<h3>2018/8/27</h3>
 									<div class="event_row">
@@ -299,6 +313,7 @@
 												</p>
 											</div>
 										</div>
+
 									</div>
 									<h3>2018/9/2</h3>
 
@@ -389,7 +404,6 @@
 							</div>
 						</div>
 					</section>
-
 					<!-- TW -->
 					<section class="tw_sec" id="tw_sec2">
 						<div class="tw_content">
@@ -637,15 +651,15 @@
 											<div class="triangle"></div>
 										</div>
 
-										<div class="tw_p2"  id="tw_p2">
+										<div class="tw_p2" id="tw_p2">
 											<a href="#example1">玉山觀星</a>
 											<div class="triangle"></div>
 										</div>
-										<div class="tw_p3"  id="tw_p3">
+										<div class="tw_p3" id="tw_p3">
 											<a href="#example3">墾丁觀星</a>
 											<div class="triangle"></div>
 										</div>
-										<div class="tw_p4"  id="tw_p4">
+										<div class="tw_p4" id="tw_p4">
 											<a href="#example4">西澳觀星</a>
 											<div class="triangle"></div>
 										</div>
@@ -745,6 +759,7 @@
 							</div>
 						</div>
 					</section>
+
 				</div>
 			</div>
 		</div>
@@ -873,10 +888,12 @@
 		var tw_p3 = document.getElementById('tw_p3');
 		var tw_p4 = document.getElementById('tw_p4');
 
+
 		info1.onclick = function () {
 			info1.style.zIndex = "10";
 			info2.style.zIndex = "0";
 			info3.style.zIndex = "0";
+
 		}
 		info2.onclick = function () {
 			info1.style.zIndex = "0";
@@ -905,131 +922,131 @@
 		}
 
 		var windowWidth = document.body.clientWidth;
-		if(windowWidth < 767){
+		if (windowWidth < 767) {
 			cls1.onclick = function () {
-			cls1.style.fill = "#fff";
-			cls2.style.fill = "#000";
-			cls3.style.fill = "#000";
-			cls4.style.fill = "#000";
-			tw_p.style.display="none";
-			tw_p2.style.display="block";
-			tw_p3.style.display="none";
-			tw_p4.style.display="none";
-		}
-		cls2.onclick = function () {
-			cls1.style.fill = "#000";
-			cls2.style.fill = "#FFF";
-			cls3.style.fill = "#000";
-			cls4.style.fill = "#000";
-			tw_p.style.display="block";
-			tw_p2.style.display="none";
-			tw_p3.style.display="none";
-			tw_p4.style.display="none";
-		}
-		cls3.onclick = function () {
-			cls1.style.fill = "#000";
-			cls2.style.fill = "#000";
-			cls3.style.fill = "#FFF";
-			cls4.style.fill = "#000";
-			tw_p.style.display="none";
-			tw_p2.style.display="none";
-			tw_p3.style.display="block";
-			tw_p4.style.display="none";
-		}
-		cls4.onclick = function () {
-			cls1.style.fill = "#000";
-			cls2.style.fill = "#000";
-			cls3.style.fill = "#000";
-			cls4.style.fill = "#FFF";
-			tw_p.style.display="none";
-			tw_p2.style.display="none";
-			tw_p3.style.display="none";
-			tw_p4.style.display="block";
-		}
-		}else{
+				cls1.style.fill = "#fff";
+				cls2.style.fill = "#000";
+				cls3.style.fill = "#000";
+				cls4.style.fill = "#000";
+				tw_p.style.display = "none";
+				tw_p2.style.display = "block";
+				tw_p3.style.display = "none";
+				tw_p4.style.display = "none";
+			}
+			cls2.onclick = function () {
+				cls1.style.fill = "#000";
+				cls2.style.fill = "#FFF";
+				cls3.style.fill = "#000";
+				cls4.style.fill = "#000";
+				tw_p.style.display = "block";
+				tw_p2.style.display = "none";
+				tw_p3.style.display = "none";
+				tw_p4.style.display = "none";
+			}
+			cls3.onclick = function () {
+				cls1.style.fill = "#000";
+				cls2.style.fill = "#000";
+				cls3.style.fill = "#FFF";
+				cls4.style.fill = "#000";
+				tw_p.style.display = "none";
+				tw_p2.style.display = "none";
+				tw_p3.style.display = "block";
+				tw_p4.style.display = "none";
+			}
+			cls4.onclick = function () {
+				cls1.style.fill = "#000";
+				cls2.style.fill = "#000";
+				cls3.style.fill = "#000";
+				cls4.style.fill = "#FFF";
+				tw_p.style.display = "none";
+				tw_p2.style.display = "none";
+				tw_p3.style.display = "none";
+				tw_p4.style.display = "block";
+			}
+		} else {
 			cls1.onclick = function () {
-			cls1.style.fill = "#FFF";
-			cls1.style.transition="all 1s";
-			cls2.style.fill = "#000";
-			cls3.style.fill = "#000";
-			cls4.style.fill = "#000";
-			info1.style.display = "none";
-			info2.style.display = "none";
-			info3.style.display = "none";
-			info4.style.display = "block";
-			info4.classList.remove("wrap_event_info4");
-			info4.classList.add("wrap_event_info4_active");
-			info5.style.display = "block";
-			info5.classList.remove("wrap_event_info5");
-			info5.classList.add("wrap_event_info5_active");
-			info6.style.display = "none";
-			info7.style.display = "none";
-			info8.style.display = "none";
-			info9.style.display = "none";
-		}
-		cls2.onclick = function () {
-			cls1.style.fill = "#000";
-			cls2.style.fill = "#FFF";
-			cls2.style.transition="all 1s";
-			cls3.style.fill = "#000";
-			cls4.style.fill = "#000";
-			info1.style.display = "block";
-			info1.classList.remove("wrap_event_info1");
-			info1.classList.add("wrap_event_info1_active");
-			info2.style.display = "block";
-			info2.classList.remove("wrap_event_info2");
-			info2.classList.add("wrap_event_info2_active");
-			info3.style.display = "block";
-			info3.classList.remove("wrap_event_info3");
-			info3.classList.add("wrap_event_info3_active");
-			info4.style.display = "none";
-			info5.style.display = "none";
-			info6.style.display = "none";
-			info7.style.display = "none";
-			info8.style.display = "none";
-			info9.style.display = "none";
-		}
-		cls3.onclick = function () {
-			cls1.style.fill = "#000";
-			cls2.style.fill = "#000";
-			cls3.style.fill = "#FFF";
-			cls3.style.transition="all 1s";
-			cls4.style.fill = "#000";
-			info1.style.display = "none";
-			info2.style.display = "none";
-			info3.style.display = "none";
-			info4.style.display = "none";
-			info5.style.display = "none";
-			info6.style.display = "block";
-			info6.classList.remove("wrap_event_info6");
-			info6.classList.add("wrap_event_info6_active");
-			info7.style.display = "block";
-			info7.classList.remove("wrap_event_info7");
-			info7.classList.add("wrap_event_info7_active");
-			info8.style.display = "block";
-			info8.classList.remove("wrap_event_info8");
-			info8.classList.add("wrap_event_info8_active");
-			info9.style.display = "none";
+				cls1.style.fill = "#FFF";
+				cls1.style.transition = "all 1s";
+				cls2.style.fill = "#000";
+				cls3.style.fill = "#000";
+				cls4.style.fill = "#000";
+				info1.style.display = "none";
+				info2.style.display = "none";
+				info3.style.display = "none";
+				info4.style.display = "block";
+				info4.classList.remove("wrap_event_info4");
+				info4.classList.add("wrap_event_info4_active");
+				info5.style.display = "block";
+				info5.classList.remove("wrap_event_info5");
+				info5.classList.add("wrap_event_info5_active");
+				info6.style.display = "none";
+				info7.style.display = "none";
+				info8.style.display = "none";
+				info9.style.display = "none";
+			}
+			cls2.onclick = function () {
+				cls1.style.fill = "#000";
+				cls2.style.fill = "#FFF";
+				cls2.style.transition = "all 1s";
+				cls3.style.fill = "#000";
+				cls4.style.fill = "#000";
+				info1.style.display = "block";
+				info1.classList.remove("wrap_event_info1");
+				info1.classList.add("wrap_event_info1_active");
+				info2.style.display = "block";
+				info2.classList.remove("wrap_event_info2");
+				info2.classList.add("wrap_event_info2_active");
+				info3.style.display = "block";
+				info3.classList.remove("wrap_event_info3");
+				info3.classList.add("wrap_event_info3_active");
+				info4.style.display = "none";
+				info5.style.display = "none";
+				info6.style.display = "none";
+				info7.style.display = "none";
+				info8.style.display = "none";
+				info9.style.display = "none";
+			}
+			cls3.onclick = function () {
+				cls1.style.fill = "#000";
+				cls2.style.fill = "#000";
+				cls3.style.fill = "#FFF";
+				cls3.style.transition = "all 1s";
+				cls4.style.fill = "#000";
+				info1.style.display = "none";
+				info2.style.display = "none";
+				info3.style.display = "none";
+				info4.style.display = "none";
+				info5.style.display = "none";
+				info6.style.display = "block";
+				info6.classList.remove("wrap_event_info6");
+				info6.classList.add("wrap_event_info6_active");
+				info7.style.display = "block";
+				info7.classList.remove("wrap_event_info7");
+				info7.classList.add("wrap_event_info7_active");
+				info8.style.display = "block";
+				info8.classList.remove("wrap_event_info8");
+				info8.classList.add("wrap_event_info8_active");
+				info9.style.display = "none";
 
-		}
-		cls4.onclick = function () {
-			cls1.style.fill = "#000";
-			cls2.style.fill = "#000";
-			cls3.style.fill = "#000";
-			cls4.style.fill = "#FFF";
-			cls4.style.transition="all 1s";
-			info1.style.display = "none";
-			info2.style.display = "none";
-			info3.style.display = "none";
-			info4.style.display = "none";
-			info5.style.display = "none";
-			info6.style.display = "none";
-			info7.style.display = "none";
-			info8.style.display = "none";
-			info9.style.display = "block";
-			info9.classList.remove("wrap_event_info9");
-			info9.classList.add("wrap_event_info9_active");
-		}
+			}
+			cls4.onclick = function () {
+				cls1.style.fill = "#000";
+				cls2.style.fill = "#000";
+				cls3.style.fill = "#000";
+				cls4.style.fill = "#FFF";
+				cls4.style.transition = "all 1s";
+				info1.style.display = "none";
+				info2.style.display = "none";
+				info3.style.display = "none";
+				info4.style.display = "none";
+				info5.style.display = "none";
+				info6.style.display = "none";
+				info7.style.display = "none";
+				info8.style.display = "none";
+				info9.style.display = "block";
+				info9.classList.remove("wrap_event_info9");
+				info9.classList.add("wrap_event_info9_active");
+			}
 		}
 
 		$(function () {

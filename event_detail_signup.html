@@ -5,14 +5,14 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
 	<script src="http://sqimg.qq.com/qq_product_operations/mma/javanli_test/lib/three.min.js"></script>
-	<!-- <link rel="stylesheet" href="css/stellar_initSet.css"> -->
 	<link rel="stylesheet" type="text/css" href="css/stellar_nav_login_signup_box.css">
 	<link rel="stylesheet" href="css/event_detail_signup.css">
+	<link rel="stylesheet" href="css/bg.css">
 	<link rel="stylesheet" href="css/tab.css">
 	<title>event_detail_signup</title>
 </head>
 
-<body>
+<body id="event_detail_signup">
 	<canvas id="canvas"></canvas>
 	<div class="wrap_header_nav">
 		<input type="checkbox" name="" id="translate_view">
@@ -110,215 +110,218 @@
 		<div class="main_content_camera">
 			<div class="main_content_space">
 				<div class="main_content">
-					<div id="map">
-						<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.9397968668222!2d121.19002831544614!3d24.96816284708042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDU4JzA1LjQiTiAxMjHCsDExJzMyLjAiRQ!5e0!3m2!1szh-TW!2stw!4v1540788232259"
-						 width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+					<div id="event_detail_signup">
+						<div id="map"></div>
+						<div class="iframe_map_box"></div>
+						<div class="iframe_map_box2"></div>
+						<section class="event_title_map_sec">
+							<div class="event_title_map_content">
+								<div class="title_disc">
+									<h3>阿里山觀星</h3>
+									<p class="p_style1_f">在無光害的阿里山森林遊樂區位於高海拔地區，視野遼闊、無光害，一直是愛好天文及星空攝影人士的私房景點。</p>
+								</div>
+							</div>
+						</section>
+						<section class="event_detail_sec">
+							<div class="event_detail_content">
+								<div class="wrap_detail_signup" id="wrap_detail_signup">
+									<div class="event_detail">
+										<div class="event_detail_col">
+											<div>
+												<p>出發時間</p>
+												<p>2018/1/30</p>
+											</div>
+											<div>
+												<p>地點</p>
+												<p>阿里山<img class="location_map mobile_display" src="img/google_map.png" alt=""></p>
+											</div>
+
+											<div>
+												<p>費用</p>
+												<p>NTD 800</p>
+											</div>
+										</div>
+										<div class="event_detail_col">
+											<div>
+												<p>集合地點</p>
+												<p>嘉義火車站</p>
+											</div>
+											<div>
+												<p>集合時間</p>
+												<p>PM 04:00</p>
+											</div>
+
+											<div>
+												<p>報名截止日</p>
+												<p>2018/1/15</p>
+											</div>
+										</div>
+									</div>
+									<div class="event_300_box">
+										<div class="event_w300">
+											<div class="event_signup">
+												<h2>報名此揪團</h2>
+												<div class="wrap_btn">
+													<input type="button" id="btn" value="立即報名">
+												</div>
+											</div>
+											<div class="signup_info">
+												<h2>填寫資訊</h2>
+												<form action="">
+													<div>
+														<label>人數</label>
+														<input type="text" class="input1" name="" maxlength="2" id="people_no">
+													</div>
+													<div>
+														<label>手機</label>
+														<input type="text" class="input1" name="" id="tel_no" maxlength="10">
+													</div>
+													<div class="wrap_btn">
+														<input type="button" id="btn2" value="確認" onclick="myFunction()">
+													</div>
+												</form>
+											</div>
+											<div class="finish">
+												<div class="finish_title">
+													<h2>報名完成!</h2>
+													<p>系統將自動發送通知並E-mail給您。</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<div class='solar-syst'>
+							<div class='sun'></div>
+							<div class='mercury'></div>
+							<div class='venus'></div>
+							<div class='earth'></div>
+							<div class='mars'></div>
+							<div class='jupiter'></div>
+							<div class='saturn'></div>
+							<div class='uranus'></div>
+							<div class='neptune'></div>
+							<div class='pluto'></div>
+							<div class='asteroids-belt'></div>
+						</div>
+						<section class="tab_sec">
+							<div id="tab-demo">
+								<ul class="tab-title">
+									<li><a href="#tab01" class="tab01">聊天問答</a></li>
+									<li><a href="#tab02" class="tab02">相片牆</a></li>
+									<li><a href="#tab03" class="tab03">心得評論</a></li>
+								</ul>
+								<div id="tab01" class="tab-inner clearfix">
+									<form action="#" method="POST">
+										<div class="message_wrapper">
+											<div class="message_box">
+												<div class="message_img">
+													<img src="img/p.jpg" alt="">
+													<p class="message_user_name">name</p>
+												</div>
+												<div class="message_p">
+													<p>123</p>
+													<div class="tr"></div>
+													<div class="tr2"></div>
+												</div>
+												<div class="message_time">
+													<p>下午 1:54</p>
+												</div>
+											</div>
+											<div class="message_box2">
+												<div class="message_time">
+													<p>下午 1:54</p>
+												</div>
+												<div class="message_p">
+													<p>123</p>
+													<div class="tr"></div>
+												</div>
+											</div>
+										</div>
+										<div class="reply">
+											<div class="reply_box">
+												<div class="reply_img">
+													<img src="img/p.jpg" alt="">
+												</div>
+												<div class="reply_p">
+													<p>name</p>
+												</div>
+												<div class="reply_content">
+													<p>123</p>
+												</div>
+											</div>
+											<div class="reply_msg">
+												<p>123</p>
+											</div>
+										</div>
+										<div class="sent_msg">
+											<div class="sent_box">
+												<textarea id="message_textarea" cols="40" rows="6"></textarea>
+											</div>
+											<div class="sent_btn_box">
+												<input id="sent_message" type="button" value="送出">
+											</div>
+										</div>
+									</form>
+								</div>
+								<div id="tab02" class="tab-inner">
+									<p>相片</p>
+								</div>
+								<div id="tab03" class="tab-inner">
+									<div class="chat_photo_comment_col" id="chat_photo_comment_Col">
+										<div id="comment_box_wrapper">
+											<div class="comment_box clearfix">
+												<div class="conmment_img">
+													<img src="img/event_detail_signup/p.jpg" alt="img_p">
+												</div>
+												<div class="comment">
+													<p>name</p>
+													<p>1</p>
+													<p>上午 10:21</p>
+												</div>
+												<div class="evaluate_content_test">
+													<form action="" method="">
+														<ul>
+															<li class="star">★</li>
+															<li class="star">★</li>
+															<li class="star">★</li>
+															<li class="star">★</li>
+															<li class="star">★</li>
+														</ul>
+													</form>
+												</div>
+											</div>
+										</div>
+										<div class="evaluate_content">
+											<form action="#" method="POST">
+												<div class="star_content">
+													<span>星級評比:</span> <input required id="star" type="text" name="star" value="" />
+												</div>
+
+												<ul id="starGroup">
+													<li class="e_str" style="color: rgb(231, 231, 231);">★</li>
+													<li class="e_str" style="color: rgb(231, 231, 231);">★</li>
+													<li class="e_str" style="color: rgb(231, 231, 231);">★</li>
+													<li class="e_str" style="color: rgb(231, 231, 231);">★</li>
+													<li class="e_str" style="color: rgb(231, 231, 231);">★</li>
+												</ul>
+												<div class="sent_msg">
+													<div class="sent_box">
+														<textarea id="star_textarea" cols="40" rows="6"></textarea>
+													</div>
+													<div class="sent_btn_box">
+														<input id="sent_btn" type="button" value="送出">
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
 					</div>
-					<div class="iframe_map_box"></div>
-					<div class="iframe_map_box2"></div>
-					<section class="event_title_map_sec">
-						<div class="event_title_map_content">
-							<div class="title_disc">
-								<h3>阿里山觀星</h3>
-								<p class="p_style1_f">在無光害的阿里山森林遊樂區位於高海拔地區，視野遼闊、無光害，一直是愛好天文及星空攝影人士的私房景點。</p>
-							</div>
-						</div>
-					</section>
-					<section class="event_detail_sec">
-						<div class="event_detail_content">
-							<div class="wrap_detail_signup" id="wrap_detail_signup">
-								<div class="event_detail">
-									<div class="event_detail_col">
-										<div>
-											<p>出發時間</p>
-											<p>2018/1/30</p>
-										</div>
-										<div>
-											<p>地點</p>
-											<p>阿里山<img class="location_map mobile_display" src="img/google_map.png" alt=""></p>
-										</div>
-
-										<div>
-											<p>費用</p>
-											<p>NTD 800</p>
-										</div>
-									</div>
-									<div class="event_detail_col">
-										<div>
-											<p>集合地點</p>
-											<p>嘉義火車站</p>
-										</div>
-										<div>
-											<p>集合時間</p>
-											<p>PM 04:00</p>
-										</div>
-
-										<div>
-											<p>報名截止日</p>
-											<p>2018/1/15</p>
-										</div>
-									</div>
-								</div>
-								<div class="event_300_box">
-									<div class="event_w300">
-										<div class="event_signup">
-											<h2>報名此揪團</h2>
-											<div class="wrap_btn">
-												<input type="button" id="btn" value="立即報名">
-											</div>
-										</div>
-										<div class="signup_info">
-											<h2>填寫資訊</h2>
-											<div>
-												<label>人數</label>
-												<input type="text" class="input1" name="">
-											</div>
-											<div>
-												<label>手機</label>
-												<input type="text" class="input1" name="">
-											</div>
-											<div class="wrap_btn">
-												<input type="button" class="form_submit_btn" id="btn2" value="確認">
-											</div>
-										</div>
-										<div class="finish">
-											<div class="finish_title">
-												<h2>報名完成!</h2>
-												<p>系統將自動發送通知並E-mail給您。</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<!-- 
-					<section class="chat_photo_comment_sec">
-						<div class="chat_photo_comment_content">
-							<div class="select_tags">
-								<p>聊天問答</p>
-								<p>相片牆</p>
-								<p>心得評論</p>
-							</div>
-							<div class="chat_photo_comment_col">
-								<div class="comment_box clearfix">
-									<div class="conmment_img">
-										<img src="img/event_detail_signup/p.jpg" alt="img_p">
-									</div>
-									<div class="comment">
-										<p>name</p>
-										<p>1</p>
-										<p>上午 10:21</p>
-									</div>
-								</div>
-								<div class="comment_box clearfix">
-									<div class="conmment_img">
-										<img src="img/event_detail_signup/pppp.jpg" alt="img_p">
-									</div>
-									<div class="comment">
-										<p>name2</p>
-										<p>2</p>
-										<p>上午 9:21</p>
-									</div>
-								</div>
-								<div class="comment_box clearfix">
-									<div class="conmment_img">
-										<img src="img/event_detail_signup/pp.jpg" alt="img_p">
-									</div>
-									<div class="comment">
-										<p>name3</p>
-										<p>3</p>
-										<p>上午 18:21</p>
-									</div>
-								</div>
-								<div class="comment_box clearfix">
-									<div class="conmment_img">
-										<img src="img/event_detail_signup/ppp.jpg" alt="img_p">
-									</div>
-									<div class="comment">
-										<p>name4</p>
-										<p>4</p>
-										<p>上午 11:21</p>
-									</div>
-								</div>
-								<div class="sent_msg">
-									<div class="sent_box">
-										<textarea cols="40" rows="6"></textarea>
-									</div>
-									<div class="sent_btn_box">
-										<input type="button" class="form_submit_btn" value="送出">
-									</div>
-								</div>
-							</div>
-						</div>
-					</section> -->
-					<section class="tab_sec">
-						<div id="tab-demo">
-							<ul class="tab-title">
-								<li><a href="#tab01" class="tab01">聊天問答</a></li>
-								<li><a href="#tab02" class="tab02">相片牆</a></li>
-								<li><a href="#tab03" class="tab03">心得評論</a></li>
-							</ul>
-							<div id="tab01" class="tab-inner">
-								<div class="chat_photo_comment_col">
-									<div class="comment_box clearfix">
-										<div class="conmment_img">
-											<img src="img/event_detail_signup/p.jpg" alt="img_p">
-										</div>
-										<div class="comment">
-											<p>name</p>
-											<p>1</p>
-											<p>上午 10:21</p>
-										</div>
-									</div>
-									<div class="comment_box clearfix">
-										<div class="conmment_img">
-											<img src="img/event_detail_signup/pppp.jpg" alt="img_p">
-										</div>
-										<div class="comment">
-											<p>name2</p>
-											<p>2</p>
-											<p>上午 9:21</p>
-										</div>
-									</div>
-									<div class="comment_box clearfix">
-										<div class="conmment_img">
-											<img src="img/event_detail_signup/pp.jpg" alt="img_p">
-										</div>
-										<div class="comment">
-											<p>name3</p>
-											<p>3</p>
-											<p>上午 18:21</p>
-										</div>
-									</div>
-									<div class="comment_box clearfix">
-										<div class="conmment_img">
-											<img src="img/event_detail_signup/ppp.jpg" alt="img_p">
-										</div>
-										<div class="comment">
-											<p>name4</p>
-											<p>4</p>
-											<p>上午 11:21</p>
-										</div>
-									</div>
-									<div class="sent_msg">
-										<div class="sent_box">
-											<textarea cols="40" rows="6"></textarea>
-										</div>
-										<div class="sent_btn_box">
-											<input type="button" value="送出">
-										</div>
-									</div>
-								</div>
-							</div>
-							<div id="tab02" class="tab-inner">
-								<p>相片</p>
-							</div>
-							<div id="tab03" class="tab-inner">
-								<p>心得</p>
-							</div>
-						</div>
-					</section>
 				</div>
 			</div>
 		</div>
@@ -427,18 +430,12 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="js/canvas.js"></script>
 	<script type="text/javascript" src="js/nav_login_signup_box.js"></script>
+	<script src="js/message_board2.js"></script>
 	<script>
 		$('#btn').click(function () {
 
 			$('.event_w300').animate({
 				top: '-100%',
-			}, 800);
-
-		});
-		$('#btn2').click(function () {
-
-			$('.event_w300').animate({
-				top: '-200%',
 			}, 800);
 
 		});
@@ -450,6 +447,7 @@
 			$($li.eq(0).addClass('active').find('a').attr('href')).siblings('.tab-inner').hide();
 
 			$li.click(function () {
+				event.preventDefault();
 				$($(this).find('a').attr('href')).show().siblings('.tab-inner').hide();
 				$(this).addClass('active').siblings('.active').removeClass('active');
 			});
@@ -602,15 +600,41 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPaRuFqzYG6EzzWbxrbgEUlt_Xf1jlex0&amp;callback=initMap"
 	 async="" defer="">
 	</script>
-	<script>
+	<!-- <script>
 		var href = location.href;
 		var page = href.split("demo/");
 		var name = page[1].split("-demo")[0];
 		var title = document.querySelector('title').innerHTML;
 		document.getElementById('infoLink').setAttribute('href', '/articles/' + name + '.html');
 		document.getElementById('infoLink').innerHTML = title.split("demo")[0];
-	</script>
+	</script> -->
+	<script>
+		function myFunction() {
 
+			var people = document.getElementById("people_no").value;
+			var telno = document.getElementById("tel_no").value;
+			if (people == '') {
+				alert('人數不可空白');
+				return;
+			}
+			if (telno == '') {
+				alert('電話不可空白');
+				return;
+			}
+			var tel = /^09[0-9]{8}$/;
+			if (telno.search(tel) == -1) {
+				alert("手機格式錯誤");
+				return;
+			} else {
+				$('#btn2').click(function () {
+					$('.event_w300').animate({
+						top: '-200%',
+					}, 800);
+
+				});
+			}
+		}
+	</script>
 </body>
 
 </html>
