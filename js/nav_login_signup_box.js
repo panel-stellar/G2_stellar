@@ -9,7 +9,6 @@ function setMainContent() {
 }
 
 
-
 $(window).ready(function() {
 
 
@@ -18,7 +17,9 @@ $(window).ready(function() {
 	$('.bell').click(function(){
 		if (bellFlag == 0 ) {
 			$('#show_info_detail').css('display', 'block');
-			bellFlag = 1;
+			bellFlag = 1;	
+			$('.member_list').css('display', 'none');
+			memberListFlag = 0;
 		} else {
 			$('#show_info_detail').css('display', 'none');
 			bellFlag = 0;
@@ -43,9 +44,9 @@ $(window).ready(function() {
 			$('.member_list').css('display', 'none');
 		} else if (memberListFlag == 0 ) {
 			$('.member_list').css('display', 'block');
-			console.log(memberListFlag);
 			memberListFlag = 1;
-			console.log(memberListFlag);
+			$('#show_info_detail').css('display', 'none');
+			bellFlag = 0;
 		} else {
 			$('.member_list').css('display', 'none');
 			memberListFlag = 0;
@@ -89,20 +90,20 @@ $(window).ready(function() {
 
 	//hover登入時變色
 	$('#login').mouseenter(function() {
-		$(this).css('color','#ff5e6a');
+		$(this).css('color','#fa0006');
 	})
 
 	$('#login').mouseleave(function() {
-		$(this).css('color','#fff');
+		$(this).css('color','#dfdfdf');
 	})
 
 	//hover註冊時變色
 	$('#signup').mouseenter(function() {
-		$(this).css('color','#ff5e6a');
+		$(this).css('color','#fa0006');
 	})
 
 	$('#signup').mouseleave(function() {
-		$(this).css('color','#fff');
+		$(this).css('color','#dfdfdf');
 	})
 
 
@@ -112,7 +113,7 @@ $(window).ready(function() {
 		$(this).css('color','#ff5e6a');
 		$('.login_display').css('display','block');
 		$('.signup_display').css('display','none');
-		$('.switch_light').css('left','38px');
+		$('.switch_light').css('left','29px');
 		$('.login_signup_sec').css('height','380px');
 		$('.error_forgot_submit_bar').css({
 			'text-align': 'left',
@@ -136,7 +137,7 @@ $(window).ready(function() {
 		$(this).css('color','#ff5e6a');
 		$('.login_display').css('display','none');
 		$('.signup_display').css('display','block');
-		$('.switch_light').css('left','111px');
+		$('.switch_light').css('left','92px');
 
 		$('.login_signup_sec').css('height','500px');
 		$('.error_forgot_submit_bar').css({
@@ -172,12 +173,33 @@ $(window).ready(function() {
 	});
 
 	//桌機點擊其他區域也可關閉
-	$('#close_login_signup_box, .main_content').click(function() {
+	$('#close_login_signup_box, .main_content_space').click(function() {
 		$('.login_signup_sec').css('display', 'none');
 			loginBoxFlag = 0;
 	});
 
 
+
+	//hover通知項目時變色
+	$('.info_detail_list > li').mouseenter(function() {
+		$(this).find('p, span, a').css('color','#fa0006');
+	})
+
+	$('.info_detail_list > li').mouseleave(function() {
+		$(this).find('p, span, a').css('color','#dfdfdf');
+	})
+
+	//member_list
+	$('.p_normalformat, .web_logout').mouseenter(function() {
+		$(this).css('color','#fa0006');
+		$(this).find('a').css('color','#fa0006');
+	})
+
+	$('.p_normalformat, .web_logout').mouseleave(function() {
+		$(this).css('color','#dfdfdf');
+		$(this).find('a').css('color','#dfdfdf');
+	})
+	
 })
 
 

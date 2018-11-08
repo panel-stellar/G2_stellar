@@ -1,0 +1,99 @@
+@media screen and (min-width: 320px) and (max-width: 767px){
+    /* gallery box */
+    .gallery_box{
+        width: 85%;
+    }
+    /* parallax settings */
+    .layerBg{
+        max-height:600px;
+    }
+    /* act settings */
+
+    .act_content_box.calendar_block{
+        left:-3999px;
+        max-width: 300px;
+        margin:auto;
+        position: absolute;
+        left: -3999px;
+        right: 0;
+        z-index: 5;
+        top:-20%;
+    }
+    .act_content_box.map{
+        right:-3999px;
+        transform: translateY(0%); 
+    }
+    /* lightbox setting */
+    .lightbox_content.act_box {
+        width: 90%;
+    }
+    #calendar{display: none;}
+    .cancel_calendar {
+        transform: rotate(90deg);
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width:1439px){
+    /* gallery box */
+    .gallery_box{
+        width: 40%;
+        transform: translateY(-40%);
+    }
+    /* parallax settings */
+    .layerBg{
+        max-height:600px;
+    }
+    /* act settings */
+    .act_content_box{
+        width: 50%;
+        margin:0 auto;
+    }
+    .act_content_box.map,.act_content_box.calendar_block{
+        position: absolute;
+        top: 50%;
+    }
+    .act_content_box.map{
+        right:-3999px;  
+    }
+    .act_content_box.calendar_block{
+        left:-3999px;
+    }
+    /* lightbox setting */
+    .lightbox_content.act_box {
+        width: 45%;  
+    }
+    .cancel_calendar {
+        transform: rotate(-90deg);
+    }
+}
+
+@media screen and (min-width:1440px){
+    /* gallery box */
+    .gallery_box{
+        width: 25%;
+    }
+    /* parallax settings */    
+    .layerBg{
+        max-height:800px;
+    }
+    /* act settings */
+    .act_content_box{
+        width: 40%;
+        position: absolute;
+        margin:0 calc(20% / 4);
+    }
+
+    .act_content_box.map{
+        right:-3999px;  
+    }
+    .act_content_box.calendar_block{
+        left:-3999px;
+    }
+    /* lightbox setting */
+    .lightbox_content.act_box {
+        width: 30%;  
+    }
+    .cancel_calendar {
+        transform: rotate(-90deg);
+    }
+}

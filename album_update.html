@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no,shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>album_update</title>
-    <link rel="stylesheet" href="css/stellar_initSet.css">
+    <link rel="stylesheet" href="css/stellar_styling_Fin.css">
     <link rel="stylesheet" href="css/stellar_nav_login_signup_box.css">
-    <link rel="stylesheet" href="css/album_update.css">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
-<body id="albumUpdate_page">
+<body id="album_update">
 
     <div class="wrap_header_nav">
         <input type="checkbox" name="" id="translate_view">
@@ -115,7 +114,7 @@
                     <!-- 畫面放這裡 -->
                     <section class="albumUpdate_sec">
                         <div class="albumUpdate_content">
-                            <form action="#" method="POST">
+                            <form action="#" method="POST" class="albumUpdate_form">
                                 <div class="album_form_top">
                                     <div class="album_form_sub form_cell">
                                         <label class="album_form_title">相簿名稱</label>
@@ -125,11 +124,6 @@
                                 <div class="album_form_dragArea">
                                     <input type="file" name="img_uploader" class="album_form_uploader" accept="image/*" multiple>
                                     <ul class="album_form_images clearfix">
-                                        <!-- <li class="album_form_image_line">
-                                            <img src="../../../pic/sample_1.jpg" alt="picLost">
-                                            <p class="image_name">JustForTest.jpg</p>
-                                            <button class="delete_btn"><i class="fas fa-times"></i></button>
-                                        </li> -->
                                     </ul>   
                                     <div class="hint_form">
                                         <i class="fas fa-cloud-upload-alt"></i>
@@ -139,12 +133,10 @@
                                 <div class="album_form_bottom">
                                     <div class="album_form_desc form_cell">
                                         <label class="album_form_title">相簿描述</label>
-                                        <!-- <input type="text" placeholder="幫這本相簿加上一點敘述吧！"> -->
                                         <textarea name="descInput" id="descInput" cols="30" rows="10" placeholder="幫這本相簿加上一點敘述吧！"></textarea>
                                     </div>
                                     <div class="album_form_tags form_cell">
                                         <label class="album_form_title">相簿標籤</label>
-                                        <!-- <input type="text" placeholder="幫這本相簿加上一些標籤會讓其他人更容易找到你喔！（每個標籤請用逗點隔開 ex: 九份,基隆）"> -->
                                         <textarea name="tagInput" id="tagInput" cols="30" rows="10" placeholder="幫這本相簿加上一些標籤會讓其他人更容易找到你喔！（每個標籤請用逗點隔開 ex: 九份,基隆）"></textarea>
                                         <button class="add_btn">新增標籤</button>
                                         <div class="album_form_tagsArea">
@@ -279,7 +271,7 @@
     <!-- nav common settings -->
     <script src="js/nav_login_signup_box.js"></script>
     <!-- Particle.js -->
-    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>  
+    <script src="js/Particle.js"></script>  
     <script src="js/app.js"></script> 
 
     <script>
@@ -313,17 +305,17 @@
                 var uploadedImgs = getUploader.files;
                 
                 for(let i=0; i<uploadedImgs.length; i++){
-                    var imgReader = new FileReader();
-                    var previewImg = document.createElement('img');
-                    var uploadedImgName = uploadedImgs[i].name;
+                    let imgReader = new FileReader();
+                    let previewImg = document.createElement('img');
+                    let uploadedImgName = uploadedImgs[i].name;
                     imgReader.readAsDataURL(uploadedImgs[i]);
                     imgReader.onload = function(){
                         // console.log(this.result);
                         previewImg.src = this.result;
                     }
-                    var deleteBtn = document.createElement('button');
-                    var previewImgName = document.createElement('p');
-                    var previewImgLine = document.createElement('li');
+                    let deleteBtn = document.createElement('button');
+                    let previewImgName = document.createElement('p');
+                    let previewImgLine = document.createElement('li');
 
                     previewImgLine.classList.add('album_form_image_line');
                     previewImgName.classList.add('image_name');
@@ -399,6 +391,28 @@
             function deleteTag(e){
                 e.preventDefault();
                 this.parentNode.removeChild(this);
+            }
+
+            // Check white-space letters and null
+
+            var getSubmitBtn = document.querySelector('.submit_btn');
+            var getAllTextInputs = document.querySelectorAll('#album_update .main_content input[type=text]');
+
+            // console.log(getAllTextAreas);
+            
+            function checkWhiteSpaceOneByOne(elArr){
+                elArr.forEach(function(el){
+                    if(/^\s+$/.test(el.value) || el.value == ''){
+                        alert('不可全為空白字元喔！');
+                        el.value = '';
+                        return false;
+                    }
+                })
+            }
+
+            getSubmitBtn.onclick = function(e){
+                e.preventDefault();
+                checkWhiteSpaceOneByOne(getAllTextInputs);
             }
 
             // Enable enterkey on some specific function

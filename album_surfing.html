@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no,shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>stellar_photoWall</title>
-    <link rel="stylesheet" href="css/stellar_initSet.css">
+    <link rel="stylesheet" href="css/stellar_styling_Fin.css">
     <link rel="stylesheet" href="css/stellar_nav_login_signup_box.css">
-    <link rel="stylesheet" href="css/album_surfing.css">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/tiny-slider.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
-<body>
+<body id="album_surfing">
     
    <div class="wrap_header_nav">
 		<input type="checkbox" name="" id="translate_view">
@@ -31,18 +30,18 @@
 				</label>
 
 				<div class="logo">
-					<a href="index.html"><img src="img/album_surfing/logo1.png"></a>
+					<a href="index.html"><img src="img/logo1.png"></a>
 				</div>
 
 				<div class="larger mobile_display">
 					<div class="bell" id="mobile_bell">
-						<img class="mobile_display" src="img/album_surfing/icon_yellow_bell.png">
+						<img class="mobile_display" src="img/icon_white_bell.png">
 						<div class="showinfo mobile_display">
 							<span>3</span>
 						</div>
 		
 					</div>
-					<img src="img/album_surfing/icon_white_larger.png">
+					<img src="img/icon_white_larger.png">
 				</div>
 
 				<nav>
@@ -50,14 +49,14 @@
 						<li>
 							<div class="mem_info">
 								<div class="bell web_bell web_display" id="web_bell_web">
-									<img class="web_display" src="img/album_surfing/icon_yellow_bell.png">
+									<img class="web_display" src="img/icon_white_bell.png">
 									<div class="showinfo web_display">
 										<span>3</span>
 									</div>
 								</div>
 
 								<div class="mem_img mem_name_center">	
-									<img src="img/album_surfing/p.jpg">
+									<img src="img/p.jpg">
 								</div>
 								<div class="mem_name_center" id="mem_name_center">
 									<p class="mem_name">Michelle</p>
@@ -570,91 +569,109 @@
                     </section>
                 </div>	
                 <section class="lightbox_sec">
-                        <div class="lightbox_bg">
-                            <button class="lightbox_close_btn"><i class="fas fa-times"></i></button>
-                        </div>
-                        <div class="lightbox_content">
-                            <div class="lightbox_box">
-                                <div class="lightbox_box_upper">
-                                    <div class="album_userinfo lightbox">
-                                        <a href="#" class="album_userpic lightbox"><img src="img/album_surfing/sample_8.jpeg" alt="picLost"></a>
-                                        <div class="album_p lightbox">
-                                            <h4 class="album_username lightbox"><a href="#">Gin Huang</a></h4>
-                                            <a href="#" class="album_loc lightbox">Taichung</a>
-                                            <p class="album_date lightbox">2018.09.25</p>
+                    <div class="lightbox_bg">
+                        <button class="lightbox_close_btn"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="lightbox_content">
+                        <div class="lightbox_box">
+                            <div class="lightbox_box_upper">
+                                <div class="album_userinfo lightbox">
+                                    <a href="#" class="album_userpic lightbox"><img src="img/album_surfing/sample_8.jpeg" alt="picLost"></a>
+                                    <div class="album_p lightbox">
+                                        <h4 class="album_username lightbox"><a href="#">Gin Huang</a></h4>
+                                        <a href="#" class="album_loc lightbox">Taichung</a>
+                                        <p class="album_date lightbox">2018.09.25</p>
+                                    </div>
+                                </div>
+                                <div id="album_menu">
+                                    <button class="menu_btn"><i class="fas fa-angle-down"></i></button>
+                                    <ul class="drop_down_menu">
+                                        <li><button class="edit_btn">編輯相簿</button></li>
+                                        <li><button class="report_btn">檢舉相簿</button></li>
+                                        <li><button class="cancel_btn">取消</button></li>
+                                    </ul>
+                                </div>
+                                <div class="album_carousel">
+                                    <div class="track clearfix">
+                                        <div><img src="img/album_surfing/sample_1.jpg" alt="picLost"></div>
+                                        <div><img src="img/album_surfing/sample_2.jpg" alt="picLost"></div>
+                                        <div><img src="img/album_surfing/sample_3.jpg" alt="picLost"></div>
+                                        <div><img src="img/album_surfing/sample_4.jpg" alt="picLost"></div>
+                                        <div><img src="img/album_surfing/sample_5.jpg" alt="picLost"></div>
+                                    </div>
+                                    <div class="control_btns">
+                                        <div class="prev"><i class="fas fa-angle-left"></i></div>
+                                        <div class="next"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                                <div class="album_tags">
+                                    <p>Tags:</p>
+                                    <a href="#" class="album_tag">飛牛牧場</a>
+                                    <a href="#" class="album_tag">Nikon</a>
+                                    <a href="#" class="album_tag">D5300</a>
+                                </div>
+                                <div class="album_statistics lightbox">
+                                    <div class="album_view lightbox">
+                                        <i class="fas fa-eye icon lightbox"></i>
+                                        <span class="album_view_num lightbox">1</span>
+                                    </div>
+                                    <div class="album_comment lightbox">
+                                        <i class="far fa-comment-alt icon lightbox"></i>
+                                        <span class="album_comment_num lightbox">25</span>
+                                    </div>
+                                </div>
+                                <form action="#" method="POST" class="album_msg_box">
+                                    <img class="album_userpic" src="img/album_surfing/sample_8.jpeg" alt="picLost">
+                                    <!-- <input type="text" id="msg_input" class="msg_box" placeholder="在這裡回覆此相簿吧！"> -->
+                                    <textarea name="msgBoard" id="msg_input" class="msg_box" cols="30" rows="10" placeholder="在這裡回覆此相簿吧！"></textarea>
+                                    <button id="msg_send" class="send_btn">SEND</button>
+                                </form>
+                            </div>
+                            <div class="lightbox_box_lower">
+                                <!-- <div class="response_box">
+                                    <div class="response_userinfo">
+                                        <a href="#" class="response_userpic"><img src="img/album_surfing/sample_8.jpeg" alt="picLost"></a>
+                                        <div class="response_p">
+                                            <h4 class="response_username"><a href="#">Gin Huang</a></h4>
+                                            <p class="response_floor">B1</p>
+                                            <p class="response_date">2018.09.25</p>
+                                            <p class="response_time">18:34</p>
                                         </div>
                                     </div>
-                                    <div id="album_menu">
+                                    <div class="response_msg">
+                                        <p>永久的一樓佔位哥</p>
+                                    </div>
+                                    <div class="response_menu">
                                         <button class="menu_btn"><i class="fas fa-angle-down"></i></button>
                                         <ul class="drop_down_menu">
-                                            <li><button class="edit_btn">編輯相簿</button></li>
-                                            <li><button class="report_btn">檢舉相簿</button></li>
+                                            <li><button class="edit_btn">編輯留言</button></li>
+                                            <li><button class="report_btn">檢舉留言</button></li>
                                             <li><button class="cancel_btn">取消</button></li>
                                         </ul>
                                     </div>
-                                    <div class="album_carousel">
-                                        <div class="track clearfix">
-                                            <div><img src="img/album_surfing/sample_1.jpg" alt="picLost"></div>
-                                            <div><img src="img/album_surfing/sample_2.jpg" alt="picLost"></div>
-                                            <div><img src="img/album_surfing/sample_3.jpg" alt="picLost"></div>
-                                            <div><img src="img/album_surfing/sample_4.jpg" alt="picLost"></div>
-                                            <div><img src="img/album_surfing/sample_5.jpg" alt="picLost"></div>
+                                </div> -->
+                            </div>
+                            <div class="lightbox_report_popup">
+                                <h3 class="report_head">檢舉回報</h3>
+                                <div class="report_content">
+                                    <form action="#" method="POST" id="report_form">
+                                        <ul class="report_sort_group">
+                                            <li class="report_sort"><button value="rude" class="report_sort_btn">不雅內容</button></li>
+                                            <li class="report_sort"><button value="insult" class="report_sort_btn">人身攻擊</button></li>
+                                            <li class="report_sort"><button value="businessSpam" class="report_sort_btn">商業推銷</button></li>
+                                            <li class="report_sort"><button value="other" class="report_sort_btn">其他原因</button></li>
+                                        </ul>
+                                        <textarea name="report_supplement" id="report_supplement" cols="30" rows="10"></textarea>
+                                        <div class="report_function_btn_groups">
+                                            <button type="submit" class="send_btn">送出</button>
+                                            <button class="cancel_btn">取消</button>
                                         </div>
-                                        <div class="control_btns">
-                                            <div class="prev"><i class="fas fa-angle-left"></i></div>
-                                            <div class="next"><i class="fas fa-angle-right"></i></div>
-                                        </div>
-                                    </div>
-                                    <div class="album_tags">
-                                        <p>Tags:</p>
-                                        <a href="#" class="album_tag">飛牛牧場</a>
-                                        <a href="#" class="album_tag">Nikon</a>
-                                        <a href="#" class="album_tag">D5300</a>
-                                    </div>
-                                    <div class="album_statistics lightbox">
-                                        <div class="album_view lightbox">
-                                            <i class="fas fa-eye icon lightbox"></i>
-                                            <span class="album_view_num lightbox">1</span>
-                                        </div>
-                                        <div class="album_comment lightbox">
-                                            <i class="far fa-comment-alt icon lightbox"></i>
-                                            <span class="album_comment_num lightbox">25</span>
-                                        </div>
-                                    </div>
-                                    <form action="#" method="POST" class="album_msg_box">
-                                        <img class="album_userpic" src="img/album_surfing/sample_8.jpeg" alt="picLost">
-                                        <!-- <input type="text" id="msg_input" class="msg_box" placeholder="在這裡回覆此相簿吧！"> -->
-                                        <textarea name="msgBoard" id="msg_input" class="msg_box" cols="30" rows="10" placeholder="在這裡回覆此相簿吧！"></textarea>
-                                        <button id="msg_send" class="send_btn">SEND</button>
                                     </form>
-                                </div>
-                                <div class="lightbox_box_lower">
-                                    <div class="response_box">
-                                        <div class="response_userinfo">
-                                            <a href="#" class="response_userpic"><img src="img/album_surfing/sample_8.jpeg" alt="picLost"></a>
-                                            <div class="response_p">
-                                                <h4 class="response_username"><a href="#">Gin Huang</a></h4>
-                                                <p class="response_floor">B1</p>
-                                                <p class="response_date">2018.09.25</p>
-                                                <p class="response_time">18:34</p>
-                                            </div>
-                                        </div>
-                                        <div class="response_msg">
-                                            <p>永久的一樓佔位哥</p>
-                                        </div>
-                                        <div class="response_menu">
-                                            <button class="menu_btn"><i class="fas fa-angle-down"></i></button>
-                                            <ul class="drop_down_menu">
-                                                <li><button class="edit_btn">編輯留言</button></li>
-                                                <li><button class="report_btn">檢舉留言</button></li>
-                                                <li><button class="cancel_btn">取消</button></li>
-                                            </ul>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </div>
+                </section>
 			</div>
 		</div>
 
@@ -669,11 +686,11 @@
 			<div class="wrap_login_signup">
 				<div class="wrap_logo_switch clearfix">
 					<div class="decorate_logo">
-						<img src="img/album_surfing/logo1.png">
+						<img src="img/logo1.png">
 					</div>
 					<div class="switch_display">
 						<div class="close_box" id="close_box">
-							<img id="close_login_signup_box" src="img/album_surfing/icon_white_X.png">
+							<img id="close_login_signup_box" src="img/icon_white_X.png">
 						</div>
 
 						<div class="switch_selector">
@@ -749,7 +766,7 @@
 						<a class="forget_password login_display">忘記密碼</a>
 						<button class="login_submit_btn form_submit_btn">
 							<p class="signup_display">註冊</p>
-							<img class="login_display" src="img/album_surfing/icon_white_goleftarrow.png">
+							<img class="login_display" src="img/icon_white_goleftarrow.png">
 						</button>
 					</div>
 
@@ -768,7 +785,7 @@
     <!-- nav common settings -->
     <script src="js/nav_login_signup_box.js"></script>
     <!-- Particle.js -->
-    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>  
+    <script src="js/Particle.js"></script>  
     <script src="js/app.js"></script> 
     <!-- Masonry.js -->
     <script src="js/Masonry.js"></script>
@@ -863,7 +880,7 @@
                     var getMenuCancelBtn = getMenuCancelBtns[i];
                     var getDropDownMenu = getDropDownMenus[i];
 
-                    if(!getDropDownMenu.parentElement.contains(e.target) || getMenuCancelBtn.contains(e.target)){
+                    if(!getDropDownMenu.parentElement.contains(e.target) || getMenuCancelBtn.contains(e.target) || getDropDownMenu.contains(e.target)){
                         if(window.getComputedStyle(getDropDownMenu,null).display == 'block'){
                             getDropDownMenu.style.display = 'none';
                         }
@@ -885,8 +902,12 @@
                 if(getlightBoxBg.contains(e.target)){
                     getLightBox.style.display = 'none';
                     shutTheNavDown();
-                }
+                }                
             }
+
+            // Add click event to report_btn of album
+            
+            document.querySelector('#album_menu .report_btn').onclick = letsReport;
 
             // Message board
             
@@ -901,7 +922,7 @@
 
                 e.preventDefault();
 
-                if(/^\s+$/.test(getLovelyMsgBox.value)){
+                if(/^\s+$/.test(getLovelyMsgBox.value) || getLovelyMsgBox.value == ''){
                     alert('不能發送空白留言喔');
                     getLovelyMsgBox.value = '';
                     return false;
@@ -986,6 +1007,7 @@
                                             btn.innerText = '編輯留言';
                                         }else if(e == 1){
                                             btn.innerText = '檢舉留言';
+                                            btn.onclick = letsReport;
                                         }else if(e == 2){
                                             btn.innerText = '取消';
                                         }
@@ -1006,6 +1028,77 @@
             } 
 
 
+            // Report popup
+            
+            var getAllReportSwitcher = document.querySelectorAll('.report_btn');
+            var getReportPopup = document.querySelector('.lightbox_report_popup');
+            var getReportForm = document.querySelector('#report_form');
+            var getSPA = document.querySelector('#report_supplement');
+            var getAllReportSortBtns = document.querySelectorAll('.report_sort_btn');
+            var getReportAllBtns = document.querySelectorAll('.lightbox_report_popup button');
+
+            console.log(getAllReportSwitcher.length);
+
+            for(let i=0; i<getReportAllBtns.length; i++){
+                getReportAllBtns[i].onclick = worldPeace;
+            }
+
+            var complainLine = [];
+            var sort;
+
+            function letsReport(){
+                // console.log(this.closest('ul').parentElement.className);
+                if(this.closest('ul').parentElement.className == 'response_menu'){
+                    getReportForm.setAttribute('action','https://www.google.com/');
+                    getAllReportSortBtns[1].innerText = '人身攻擊';
+                    getAllReportSortBtns[1].setAttribute('value','insult');
+                }else{
+                    getReportForm.setAttribute('action','https://www.yahoo.com.tw/');
+                    getAllReportSortBtns[1].innerText = '盜用照片';
+                    getAllReportSortBtns[1].setAttribute('value','stolen');
+                }
+                getReportPopup.style.display = 'block'; 
+            }
+
+            function worldPeace(e){
+                console.log(getAllReportSortBtns.length);
+                e.preventDefault();
+                if(this.className == 'report_sort_btn'){
+                    sort = this.value;
+                    for(let i=0; i<getAllReportSortBtns.length; i++){
+                        getAllReportSortBtns[i].classList.remove('target');
+                    }
+                    this.classList.add('target');
+                }else if(!this.classList.contains('target')){
+                    if(this.className == 'send_btn'){
+                        if(sort == ''){
+                            alert('請選擇檢舉類別');
+                            return false;
+                        }else if(getSPA.value == ''){
+                            alert('請輸入檢舉事由');
+                            return false;
+                        }else if(/^\s+$/.test(getSPA.value)){
+                            alert('檢舉事由不可全為空白字元');
+                            return false;
+                        }
+                        complainLine.push(sort);
+                        complainLine.push(getSPA.value);
+                        console.log('From send_btn: '+complainLine);
+                    }else{
+                        getReportPopup.style.display = 'none';
+                    }
+                    for(let i=0; i<getAllReportSortBtns.length; i++){
+                        getAllReportSortBtns[i].classList.remove('target');
+                    }
+                    sort = '';
+                    getSPA.value = '';
+                    complainLine.length = 0;
+                    console.log('From end: '+complainLine);
+                }
+            }
+
+
+
             // Enable enterkey on some specific function
 
             function enableEnterKeys(e){
@@ -1014,10 +1107,6 @@
                     getLovelyMsgBtn.click();
                 }
             }
-
-
-
-
 
        })
 
